@@ -1,7 +1,7 @@
 <script setup lang="js">
-import { RouterLink, RouterView } from 'vue-router'
-import steps from './components/steps.vue'
+import { RouterView } from 'vue-router'
 import { ref } from 'vue'
+import steps from './components/steps.vue'
 
 const step = ref(1)
 
