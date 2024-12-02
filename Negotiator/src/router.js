@@ -5,10 +5,11 @@ import Finish from "./pages/Finish.vue"
 import Preparation from "./pages/Preparation.vue"
 
 const routes = [
-    {path: '/', component: Introduction},
+    {path: '/description', component: Introduction},
     {path: '/preparation', component: Preparation},
     {path: '/negotiation', component: Negotiation},
     {path: '/finish', component: Finish},
+    { path: '/', redirect: '/description' }, 
 ]
 
 const router = createRouter({

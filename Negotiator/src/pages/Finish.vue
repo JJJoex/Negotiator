@@ -8,7 +8,7 @@ import { ArrowRightBold } from '@element-plus/icons-vue';
         Congratulations! You have successfully completed the negotiation process.
     </div>
     <div style="border: 1px black solid;">
-        <RouterLink to="/" @click="$emit('nextPage')">
+        <RouterLink to="/description" @click="$emit('nextPage')">
             <el-icon>
                 <ArrowRightBold />
             </el-icon>
