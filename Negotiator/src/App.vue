@@ -1,40 +1,25 @@
-<script setup lang="js">
-import { RouterView } from 'vue-router'
-import { ref } from 'vue'
+<script setup>
 import steps from './components/steps.vue'
-
-const step = ref(1)
-
-const next = () => {
-  step.value += 1;
-  if (step.value > 4) {
-    step.value = 1;
-  }
-};
-
-const previous = () => {
-  step.value -= 1;
-  if (step.value < 0) {
-    step.value = 0;
-  }
-};
-
 </script>
 
 <template>
   <el-container>
     <el-header>
-      <div></div>
+      <div>Title</div>
       <div class="steps">
-        <steps :activate="step"/>
+        <steps />
       </div>
     </el-header>
     <el-main>
-      <RouterView @previous-page="previous" @next-page="next" />
+      
     </el-main>
   </el-container>
 </template>
 
 <style scoped>
-
+el-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 </style>
