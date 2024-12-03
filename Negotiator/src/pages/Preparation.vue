@@ -17,7 +17,7 @@ const activeName = ref('first');
     </el-tabs>
   </div>
   <div style='border: 1px solid black'>
-    <RouterLink to="/" @click="$emit('previousPage')">
+    <RouterLink to="/description" @click="$emit('previousPage')">
       <el-icon>
         <ArrowLeftBold />
       </el-icon>
