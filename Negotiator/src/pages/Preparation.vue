@@ -1,22 +1,27 @@
 <script setup lang="js">
 import { RouterLink } from 'vue-router';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { ArrowLeftBold, ArrowRightBold } from '@element-plus/icons-vue';
-const activeName = ref('first');
+import domainsData from './specific_contents/domains_n_descriptions.json';
+import Preparation1NegoSettings from './Preparation_1_nego_settings.vue'; // 引入新组件
 
+const activeName = ref('first');
 </script>
 
 <template>
-  <div style='border: 1px solid black'>
+  <div style="border: 1px solid black; display: flex; align-items: flex-start;">
     <el-tabs v-model="activeName" class="demo-tabs">
-      <el-tab-pane label="Negotiation Settings" name="first">Negotiation Settings</el-tab-pane>
+      <el-tab-pane label="谈判设置" name="first">
+        <Preparation1NegoSettings :domainsData="domainsData" /> <!-- 使用新组件 -->
+      </el-tab-pane>
       <el-tab-pane label="My Interests" name="second">My Interests</el-tab-pane>
       <el-tab-pane label="My Issues" name="third">My Issues</el-tab-pane>
       <el-tab-pane label="Opponent's Interests" name="fourth">Opponent's Interests</el-tab-pane>
       <el-tab-pane label="Opponent's Issues" name="fifth">Opponent's Issues</el-tab-pane>
     </el-tabs>
   </div>
-  <div style='border: 1px solid black'>
+
+  <div style="border: 1px solid black">
     <RouterLink to="/description" @click="$emit('previousPage')">
       <el-icon>
         <ArrowLeftBold />
@@ -31,21 +36,3 @@ const activeName = ref('first');
     </RouterLink>
   </div>
 </template>
-
-<style>
-.demo-tabs>.el-tabs__content {
-  padding: 32px;
-  color: #6b778c;
-  font-size: 32px;
-  font-weight: 600;
-}
-
-.demo-tabs .custom-tabs-label .el-icon {
-  vertical-align: middle;
-}
-
-.demo-tabs .custom-tabs-label span {
-  vertical-align: middle;
-  margin-left: 4px;
-}
-</style>
