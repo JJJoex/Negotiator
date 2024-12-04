@@ -11,6 +11,8 @@ import Preparation3MyIssues from './Preparation_3_my_issues.vue';
 import Preparation4OpInterests from './Preparation_4_op_interests.vue'; 
 import Preparation5OpIssues from './Preparation_5_op_issues.vue'; 
 
+import Preparation6Ensure from './Preparation_6_ensure.vue'; 
+
 const activeName = ref('first');
 
 
@@ -50,7 +52,7 @@ const handleDataFromOpInterests = (data) => {
 const handleDataFromOpIssues = (data) => {
   op_issues_data.value = data;
   console.log('Received data from page 5 op issues:', op_issues_data.value);
-  op_issues_data.value='fifth';
+  activeName.value='sixth';
 };
 
 
@@ -64,25 +66,35 @@ const handleDataFromOpIssues = (data) => {
 <template>
   <div style="border: 1px solid black; display: flex; align-items: flex-start;">
     <el-tabs v-model="activeName" class="demo-tabs">
-      <el-tab-pane label="谈判设置" name="first">
+      <el-tab-pane label="谈判设置" name="first" :disabled="true">
         <Preparation1NegoSettings :domainsData="domainsData" @submit-data="handleDataFromNegoSettings" /> 
       </el-tab-pane>
 
-      <el-tab-pane label="我的兴趣" name="second">
+      <el-tab-pane label="我的兴趣" name="second" :disabled="true">
         <Preparation2MyInterests :nego_settings_data="nego_settings_data" @submit-data="handleDataFromMyInterests"/> 
       </el-tab-pane>
-      <el-tab-pane label="我的议题" name="third">
+      <el-tab-pane label="我的议题" name="third" :disabled="true">
         <Preparation3MyIssues :my_interests_data="my_interests_data" :nego_settings_data="nego_settings_data" :key="my_interests_data" 
                                                                                               @submit-data="handleDataFromMyIssues" /> 
       </el-tab-pane>
       
-      <el-tab-pane label="对手的兴趣" name="fourth">
+      <el-tab-pane label="对手的兴趣" name="fourth" :disabled="true">
         <Preparation4OpInterests :nego_settings_data="nego_settings_data" @submit-data="handleDataFromOpInterests"/> 
       </el-tab-pane>
-      <el-tab-pane label="对手的议题" name="fifth">
-        <Preparation5OpIssues :my_interests_data="my_interests_data" :nego_settings_data="nego_settings_data" :key="my_interests_data" 
+      <el-tab-pane label="对手的议题" name="fifth" :disabled="true">
+        <Preparation5OpIssues :my_interests_data="my_interests_data" :nego_settings_data="nego_settings_data" :op_interests_data="op_interests_data" :key="op_interests_data" 
                                                                                               @submit-data="handleDataFromOpIssues" /> 
 
+      </el-tab-pane>
+      <el-tab-pane label="确认" name="sixth" :disabled="true">
+        
+        <Preparation6Ensure   :nego_settings_data="nego_settings_data" 
+                              :my_interests_data="my_interests_data"
+                              :my_issues_data="my_issues_data"
+                              :op_interests_data="op_interests_data"
+                              :op_issues_data="op_issues_data"
+        
+        /> 
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -97,10 +109,10 @@ const handleDataFromOpIssues = (data) => {
 
     <!-- 控制 "Start Negotiation" 链接的禁用状态 -->
     <RouterLink 
-      v-if="activeName === 'fifth'" 
+      v-if="activeName === 'sixth'" 
       to="/negotiation" 
       @click="$emit('nextPage')"
-      :class="{ 'disabled-link': activeName !== 'fifth' }"
+      :class="{ 'disabled-link': activeName !== 'sixth' }"
     >
       <el-icon>
         <ArrowRightBold />

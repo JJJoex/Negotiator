@@ -4,6 +4,14 @@ import issuesData from './specific_contents/interests_issues.json';
 import * as echarts from 'echarts';
 import { ElMessage } from 'element-plus';
 
+
+import {  onUnmounted } from 'vue';
+
+let pageContainer;
+
+
+
+
 const props = defineProps({
   my_interests_data: Object,
   nego_settings_data: Object
@@ -60,22 +68,37 @@ watch(
 
 // 更新饼图
 const updateChart = (category) => {
+  const chartContainer = document.querySelector(`.pie-chart-${category}`);
+  if (!chartContainer) {
+    console.error(`Chart container for category "${category}" not found.`);
+    return;
+  }
+
+  // 尝试获取已存在的实例
+  let chartInstance = echarts.getInstanceByDom(chartContainer);
+
+  // 如果实例不存在，则初始化新的实例
+  if (!chartInstance) {
+    chartInstance = echarts.init(chartContainer);
+  }
+
+  // 更新或设置图表的选项
   const chartData = Object.keys(sliders.value[category]).map((key) => ({
     name: key,
-    value: sliders.value[category][key]
+    value: sliders.value[category][key],
   }));
 
-  const chartInstance = echarts.init(document.querySelector(`.pie-chart-${category}`)); 
   chartInstance.setOption({
     series: [
       {
         type: 'pie',
         radius: '50%',
-        data: chartData
-      }
-    ]
+        data: chartData,
+      },
+    ],
   });
 };
+
 
 // 初始化 ECharts 饼图
 onMounted(() => {
@@ -137,13 +160,16 @@ const handleSubmit = () => {
 
   // 使用 $emit 发送归一化后的数据给父组件
   emit('submit-data', normalizedData);
+
+
+
 };
 </script>
 
 
 
 <template>
-    <div>
+    <div class="prep-3">
       <div class="domain-section">
         <h2>兴趣-议题设置</h2>
         <div v-if="domain && issuesData[domain]" class="slider-container">
@@ -190,6 +216,9 @@ const handleSubmit = () => {
   </template>
   
   <style scoped>
+  .prep-3{
+    margin: 0;
+  }
   /* 整体布局 */
   body, html {
     margin: 0;

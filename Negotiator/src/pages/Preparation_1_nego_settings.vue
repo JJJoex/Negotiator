@@ -8,7 +8,10 @@ const sliderValue = ref(10); // 为滑块值创建一个 ref
 const options = ref([]); // 存储选项
 const selectedOption = ref(null); // 存储选中的选项
 
+const timeLimit = ref(10);
+
 const roles = ref([]); 
+const radio1 = ref("1");
 
 // 从父组件传递的数据
 const { domainsData } = defineProps({
@@ -66,12 +69,7 @@ const loadRoles = () => {
 
 
 const swapRoles = () => {
-    // console.log("111111")
     roles.value = [roles.value[1], roles.value[0]];
-//   if (roles.length === 2) {
-//     const temp=roles["0"]
-//     roles.value = [roles.value[1], roles.value[0]];
-//   }
 };
 
 
@@ -95,7 +93,9 @@ const emit = defineEmits();
 const handleSubmit = () => {
   const dataToSend = {
     BiddingRounds:sliderValue.value,
+    BiddingTime:timeLimit.value,
     Domain:selectedOption.value.label,
+    whoFirst:radio1.value,
     roles:{
         my:roles.value[0],
         op:roles.value[1],
@@ -158,6 +158,11 @@ const handleRandomClick = () => {
       <el-slider v-model="sliderValue" :min="10" :max="1000" show-input />
     </div>
 
+    <div class="slider-demo-block">
+      <span class="slider-label">谈判时间(分钟)</span>
+      <el-slider v-model="timeLimit" :min="10" :max="45" show-input />
+    </div>
+
     <!-- Option Group -->
     <div style="display: flex; align-items: flex-start;">
       <div class="option-group" v-if="options.length > 0">
@@ -185,6 +190,13 @@ const handleRandomClick = () => {
         <button @click="swapRoles">互换</button>
         <span>对手角色<br>{{ roles[1] }}</span>
     </div>
+
+    <div class="who-first">
+    <el-radio-group v-model="radio1">
+      <el-radio value="1" size="large">我方先手</el-radio>
+      <el-radio value="2" size="large">对方先手</el-radio>
+    </el-radio-group>
+  </div>
 
 
     <div style="display: flex; align-items: flex-start;">
@@ -312,6 +324,11 @@ const handleRandomClick = () => {
 </template>
 
 <style scoped>
+
+.who-first{
+  margin-left: 30px;
+  font-size: 20px;
+}
 .slider-demo-block {
   max-width: 600px;
   display: flex;
