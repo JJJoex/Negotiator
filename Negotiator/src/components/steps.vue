@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 步骤条 -->
-    <el-steps :active="activeStep" align-center>
+    <el-steps :active="activeStep" align-center finish-status='success'>
       <el-step title="Description" @click="goToStep('/description')" />
       <el-step title="Preparation" @click="goToStep('/preparation')" />
       <el-step title="Negotiation" @click="goToStep('/negotiation')" />
@@ -25,7 +25,7 @@ export default {
         '/description': 0,
         '/preparation': 1,
         '/negotiation': 2,
-        '/finish': 3,
+        '/finish': 4,
       };
       return stepMap[this.$route.path] || 0;
     },
