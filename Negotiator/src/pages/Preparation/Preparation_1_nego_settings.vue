@@ -1,7 +1,7 @@
 <script setup lang="js">
 import { onMounted, ref } from 'vue';
 
-import rolesData from './specific_contents/domains_n_roles.json'; 
+import rolesData from '../specific_contents/domains_n_roles.json'; 
 
 
 const sliderValue = ref(10); // 为滑块值创建一个 ref

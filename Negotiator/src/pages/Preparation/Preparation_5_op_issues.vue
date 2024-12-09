@@ -1,6 +1,6 @@
 <script setup lang="js">
 import { ref, watch, onMounted, nextTick } from 'vue';
-import issuesData from './specific_contents/interests_issues.json';
+import issuesData from '../specific_contents/interests_issues.json';
 import * as echarts from 'echarts';
 import { ElMessage } from 'element-plus';
 

@@ -1,25 +1,181 @@
 <script setup>
+import { ref } from 'vue';
 import steps from './components/steps.vue'
+import { ArrowRightBold, ArrowLeftBold } from '@element-plus/icons-vue';
+import { useRouter, useRoute, RouterView } from 'vue-router';
+
+const nextPage = ref('准备阶段');
+const previousPage = ref('查看结果');
+const showPrevious = ref(false);
+
+const router = useRouter();
+const route = useRoute();
+const goToNext = () => {
+  if (route.path === '/description') {
+    router.push('/preparation');
+    showPrevious.value = true;
+    nextPage.value = '谈判阶段';
+    previousPage.value = '欢迎页面';
+  }
+  else if (route.path === '/preparation') {
+    router.push('/negotiation');
+    showPrevious.value = true;
+    nextPage.value = '查看结果';
+    previousPage.value = '准备阶段';
+  }
+  else if (route.path === '/negotiation') {
+    router.push('/finish');
+    showPrevious.value = false;
+    nextPage.value = '欢迎页面';
+    previousPage.value = '';
+  }
+  else if (route.path === '/finish') {
+    router.push('/description');
+    showPrevious.value = false;
+    nextPage.value = '准备阶段';
+    previousPage.value = '';
+  }
+}
+const goToPrevious = () => {
+  if (route.path === '/preparation') {
+    router.push('/description');
+    showPrevious.value = false;
+    nextPage.value = '准备阶段';
+    previousPage.value = '';
+  }
+  else if (route.path === '/negotiation') {
+    router.push('/preparation');
+    showPrevious.value = true;
+    nextPage.value = '谈判阶段';
+    previousPage.value = '欢迎页面';
+  }
+};
+
+
+
 </script>
 
 <template>
-  <el-container>
-    <el-header>
-      <div>Title</div>
-      <div class="steps">
+  <div id="app">
+    <div class="header">
+      <div id="title">自动谈判平台</div>
+      <div id="steps">
         <steps />
       </div>
-    </el-header>
-    <el-main>
-      
-    </el-main>
-  </el-container>
+    </div>
+    <div class="body">
+      <RouterView style="width: 100%;"/>
+    </div>
+    <div class="footer">
+      <div id="previous" @click="goToPrevious" v-if="showPrevious">
+        <div style="font-size: 5px; text-align: right;">
+          <ArrowLeftBold style="width: 5em; height: 5em; margin: 20px;" />
+        </div>
+        <div style="text-align: left;">
+          <p>上一步</p>
+          <p style="font-size: 25px; font-weight: bolder;">{{ previousPage }}</p>
+        </div>
+      </div>
+      <div id="next" @click="goToNext">
+        <div style="text-align: right;">
+          <p>下一步</p>
+          <p style="font-size: 25px; font-weight: bolder;">{{ nextPage }}</p>
+        </div>
+        <div style="font-size: 5px; text-align: left;">
+          <ArrowRightBold style="width: 5em; height: 5em; margin: 20px;" />
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
-<style scoped>
-el-header {
+<style>
+*{ 
+ -webkit-touch-callout:none; 
+ -webkit-user-select:none; 
+ -khtml-user-select:none; 
+ -moz-user-select:none;
+ -ms-user-select:none; 
+ user-select:none; 
+} 
+
+#app {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  font-family: "Times New Roman", "宋体";
+}
+
+.header {
+  font-weight: bold;
   align-items: center;
+  display: flex;
+  width: 100%;
+  height: 10%;
+  background-color: #8fcedac8;
+}
+
+.body {
+  width: 100%;
+  height: 80%;
+  overflow: scroll;
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  background-color: #8fcedac8;
+  justify-content: right;
+}
+
+#title {
+  display: flex;
+  width: 30%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+#steps {
+  width: 70%;
+  height: 80%;
+  padding: 10px 0 0;
+}
+
+#previous,
+#next {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#previous div,
+#next div {
+  width: 50%;
+  flex-direction: row;
+  align-items: center;
+}
+
+p {
+  margin: 0;
+}
+
+#previous:hover,
+#next:hover {
+  background-color: #77adb7;
+}
+
+::-webkit-scrollbar {
+  /* display: none; */
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c5c5c5;
+  /* border-radius: 10px; */
 }
 </style>

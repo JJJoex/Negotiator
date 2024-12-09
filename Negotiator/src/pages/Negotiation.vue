@@ -18,7 +18,7 @@ const tableData = reactive([
 </script>
 
 <template>
-    <div style="border: 1px solid black">
+    <div>
         <el-form style="padding: 10px" v-model="form">
             <el-form-item lable="interest">
                 <el-select v-model="form.interest" placeholder="Select Interest" clearable>
@@ -34,26 +34,12 @@ const tableData = reactive([
             </el-form-item>
         </el-form>
     </div>
-    <div style="border: 1px solid black">
+    <div>
         <el-table :data="tableData" style="width: 100%" :row-class-name="tableRowClassName">
             <el-table-column prop="role" label="Role" width="180" />
             <el-table-column prop="interest" label="Interest" width="180" />
             <el-table-column prop="bidding" label="Bidding" />
         </el-table>
-    </div>
-    <div style="border: 1px solid black">
-        <RouterLink to="/preparation" @click="$emit('previousPage')">
-            <el-icon>
-                <ArrowLeftBold />
-            </el-icon>
-            <span>Back to Preparation</span>
-        </RouterLink>
-        <RouterLink to="/finish" @click="$emit('nextPage')">
-            <el-icon>
-                <ArrowRightBold />
-            </el-icon>
-            <span>Get the Result</span>
-        </RouterLink>
     </div>
 </template>
 

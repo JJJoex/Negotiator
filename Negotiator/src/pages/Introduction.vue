@@ -4,13 +4,7 @@ import { ArrowRightBold } from '@element-plus/icons-vue';
 </script>
 
 <template>
-    <div style="border: 1px black solid;">
+    <div>
         Introduction: Welcome to BotNegotiation Platform
-    </div>
-    <div style="border: 1px solid black;">
-    <RouterLink to="/preparation" @click="$emit('nextPage')">
-        <el-icon><ArrowRightBold /></el-icon>
-        <span>Preparation Now</span>
-    </RouterLink>
     </div>
 </template>
