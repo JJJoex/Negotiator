@@ -1,6 +1,6 @@
 <script setup lang="js">
 import { ref, watch, onMounted, nextTick } from 'vue';
-import issuesData from './specific_contents/interests_issues.json';
+import issuesData from '../specific_contents/interests_issues.json';
 import * as echarts from 'echarts';
 import { ElMessage } from 'element-plus';
 
@@ -36,7 +36,7 @@ watch(
 const chart = ref(null); // 存储饼形图容器的引用
 
 // 初始化饼图
-const updatePieChart = () => {
+const updatepieChart_op = () => {
     if (chart.value) {
         const pieData = Object.keys(sliders.value).map(key => ({
             name: key,
@@ -78,15 +78,15 @@ const updatePieChart = () => {
 onMounted(() => {
     // 等待 DOM 渲染完成
     nextTick(() => {
-        chart.value = echarts.init(document.getElementById('pieChart'));
-        updatePieChart();
+        chart.value = echarts.init(document.getElementById('pieChart_op'));
+        updatepieChart_op();
     });
 });
 
 // 监听滑块值变化并更新图表
 watch(sliders, () => {
     nextTick(() => {
-        updatePieChart(); // 直接调用 updatePieChart 更新图表
+        updatepieChart_op(); // 直接调用 updatepieChart_op 更新图表
     });
 }, { deep: true });  // 使用 deep:true 监听对象内部变化
 
@@ -125,11 +125,13 @@ const handleSubmit = () => {
   const dataToSend = {};
   const total=Object.values(sliders.value).reduce((sum, value) => sum + value, 0);
 
+
   for (const [key, value] of Object.entries(sliders.value)) {
     dataToSend[key] = total > 0 ? value / total : 0; 
   }
 
 
+  // 使用 $emit 发送数据给父组件
   emit('submit-data', dataToSend);
 };
 
@@ -168,7 +170,7 @@ const handleSubmit = () => {
           </el-col>
       </el-row>
 
-      <h1 class="title2">我的兴趣</h1>
+      <h1 class="title2">对手的兴趣</h1>
 
       <!-- 滑块区域和饼图容器并排显示 -->
       <div class="sliders-and-chart">
@@ -183,7 +185,7 @@ const handleSubmit = () => {
           </div>
 
           <!-- 饼形图容器 -->
-          <div id="pieChart" class="pie-chart"></div>
+          <div id="pieChart_op" class="pie-chart"></div>
       </div>
 
 

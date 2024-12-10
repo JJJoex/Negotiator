@@ -4,14 +4,14 @@ import { onMounted, ref } from 'vue';
 import { ArrowLeftBold, ArrowRightBold } from '@element-plus/icons-vue';
 import domainsData from './specific_contents/domains_n_descriptions.json';
 
-import Preparation1NegoSettings from './Preparation_1_nego_settings.vue'; 
-import Preparation2MyInterests from './Preparation_2_my_interests.vue'; 
-import Preparation3MyIssues from './Preparation_3_my_issues.vue'; 
+import Preparation1NegoSettings from './Preparation/Preparation_1_nego_settings.vue'; 
+import Preparation2MyInterests from './Preparation/Preparation_2_my_interests.vue'; 
+import Preparation3MyIssues from './Preparation/Preparation_3_my_issues.vue'; 
 
-import Preparation4OpInterests from './Preparation_4_op_interests.vue'; 
-import Preparation5OpIssues from './Preparation_5_op_issues.vue'; 
+import Preparation4OpInterests from './Preparation/Preparation_4_op_interests.vue'; 
+import Preparation5OpIssues from './Preparation/Preparation_5_op_issues.vue'; 
 
-import Preparation6Ensure from './Preparation_6_ensure.vue'; 
+import Preparation6Ensure from './Preparation/Preparation_6_ensure.vue'; 
 
 const activeName = ref('first');
 
@@ -64,7 +64,7 @@ const handleDataFromOpIssues = (data) => {
 </script>
 
 <template>
-  <div style="border: 1px solid black; display: flex; align-items: flex-start;">
+  <div style=" display: flex; align-items: flex-start;">
     <el-tabs v-model="activeName" class="demo-tabs">
       <el-tab-pane label="谈判设置" name="first" :disabled="true">
         <Preparation1NegoSettings :domainsData="domainsData" @submit-data="handleDataFromNegoSettings" /> 
@@ -97,28 +97,6 @@ const handleDataFromOpIssues = (data) => {
         /> 
       </el-tab-pane>
     </el-tabs>
-  </div>
-
-  <div style="border: 1px solid black">
-    <RouterLink to="/description" @click="$emit('previousPage')">
-      <el-icon>
-        <ArrowLeftBold />
-      </el-icon>
-      <span>Back to Introduction</span>
-    </RouterLink>
-
-    <!-- 控制 "Start Negotiation" 链接的禁用状态 -->
-    <RouterLink 
-      v-if="activeName === 'sixth'" 
-      to="/negotiation" 
-      @click="$emit('nextPage')"
-      :class="{ 'disabled-link': activeName !== 'sixth' }"
-    >
-      <el-icon>
-        <ArrowRightBold />
-      </el-icon>
-      <span>Start Negotiation</span>
-    </RouterLink>
   </div>
 </template>
 

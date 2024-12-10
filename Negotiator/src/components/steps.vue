@@ -1,18 +1,10 @@
 <template>
-  <div>
-    <!-- 步骤条 -->
-    <el-steps :active="activeStep" align-center finish-status='success'>
-      <el-step title="Description" @click="goToStep('/description')" />
-      <el-step title="Preparation" @click="goToStep('/preparation')" />
-      <el-step title="Negotiation" @click="goToStep('/negotiation')" />
-      <el-step title="Finish" @click="goToStep('/finish')" />
-    </el-steps>
-
-    <!-- 渲染当前路由对应的组件 -->
-    <div style="margin-top: 20px;">
-      <router-view />
-    </div>
-  </div>
+  <el-steps :active="activeStep" align-center finish-status="success">
+    <el-step title="欢迎页面"/>
+    <el-step title="准备阶段"/>
+    <el-step title="谈判阶段"/>
+    <el-step title="查看结果"/>
+  </el-steps>
 </template>
 
 <script>
@@ -30,11 +22,15 @@ export default {
       return stepMap[this.$route.path] || 0;
     },
   },
-  methods: {
-    // 跳转到指定步骤的路由
-    goToStep(path) {
-      this.$router.push(path);
-    },
-  },
 };
 </script>
+
+<style scoped>
+el-steps {
+  width: 100%;
+  height: 100%;
+}
+el-step {
+  font-weight: bold;
+}
+</style>

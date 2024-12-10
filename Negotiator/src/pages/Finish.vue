@@ -4,15 +4,7 @@ import { ArrowRightBold } from '@element-plus/icons-vue';
 </script>
 
 <template>
-    <div style="border: 1px black solid;">
+    <div >
         Congratulations! You have successfully completed the negotiation process.
-    </div>
-    <div style="border: 1px black solid;">
-        <RouterLink to="/description" @click="$emit('nextPage')">
-            <el-icon>
-                <ArrowRightBold />
-            </el-icon>
-            <span>Back to Start</span>
-        </RouterLink>
     </div>
 </template>

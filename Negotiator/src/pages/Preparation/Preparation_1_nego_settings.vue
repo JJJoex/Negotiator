@@ -1,7 +1,7 @@
 <script setup lang="js">
 import { onMounted, ref } from 'vue';
 
-import rolesData from './specific_contents/domains_n_roles.json'; 
+import rolesData from '../specific_contents/domains_n_roles.json'; 
 
 
 const sliderValue = ref(10); // 为滑块值创建一个 ref
@@ -147,6 +147,41 @@ const handleRandomClick = () => {
     op_value5.value = randomValue();
 };
 
+const marks_1 = {
+  "-2": "完全不倾向竞争",
+  "-1": "不太倾向竞争",
+  "0": "中立/无明显倾向",
+  "1": "较倾向竞争",
+  "2": "非常倾向竞争"
+};
+const marks_2 = {
+  "-2": "完全不愿意妥协",
+  "-1": "不太愿意妥协",
+  "0": "中立/无明显倾向",
+  "1": "较愿意妥协",
+  "2": "非常愿意妥协"
+};
+const marks_3 = {
+  "-2": "完全不关心达成协议",
+  "-1": "比较不关心达成协议",
+  "0": "不太重视达成协议",
+  "1": "较重视达成协议",
+  "2": "非常重视达成协议"
+};
+const marks_4 = {
+  "-2": "非常依赖随机与直觉",
+  "-1": "较依赖随机与直觉",
+  "0": "无明显依赖",
+  "1": "较依赖经验",
+  "2": "非常依赖经验"
+};
+const marks_5 = {
+  "-2": "完全避免任何风险",
+  "-1": "不愿意承担风险",
+  "0": "追求较为保守的选择",
+  "1": "愿意承担一定风险",
+  "2": "完全愿意承担风险"
+};
 </script>
 
 
@@ -205,52 +240,33 @@ const handleRandomClick = () => {
         <div class="role-setting-sliderpacks">
             <span style="text-align: center;font-size: 30px;">我...</span>
             <div class="role-setting-slider">
-                <span class="demonstration">喜欢激烈的竞争</span>
-                <div class="slider-labels-bottom">
-                    <span class="slider-label-left">否</span>
-                    <span class="slider-label-right">是</span>
-                </div>
-                <el-slider v-model="my_value1" :min="-2" :max="2" :step="1" show-stops>
+                <span class="demonstration">你是否倾向于通过强力手段来压迫对方或争取更好的条件？</span>
+                <el-slider v-model="my_value1" :min="-2" :max="2" :step="1" show-stops :marks="marks_1">
                 </el-slider>
             </div>
 
             <div class="role-setting-slider">
-                <span class="demonstration">愿意合作</span>
-                <div class="slider-labels-bottom">
-                    <span class="slider-label-left">否</span>
-                    <span class="slider-label-right">是</span>
-                </div>
-                <el-slider v-model="my_value2" :min="-2" :max="2" :step="1" show-stops>
+                <span class="demonstration">当面对对方提出的条件时，你愿意在什么程度上做出让步？</span>
+                <el-slider v-model="my_value2" :min="-2" :max="2" :step="1" show-stops :marks="marks_2">
                 </el-slider>
             </div>
 
             <div class="role-setting-slider">
-                <span class="demonstration">真的需要这次谈判达成协议</span>
-                <div class="slider-labels-bottom">
-                    <span class="slider-label-left">否</span>
-                    <span class="slider-label-right">是</span>
-                </div>
-                <el-slider v-model="my_value3" :min="-2" :max="2" :step="1" show-stops>
+                <span class="demonstration">你是否特别关注达成协议，还是倾向于仅仅在自己能接受的条件下才同意协议？</span>
+                <el-slider v-model="my_value3" :min="-2" :max="2" :step="1" show-stops :marks="marks_3">
                 </el-slider>
             </div>
 
             <div class="role-setting-slider">
-                <span class="demonstration">谈判经验很丰富</span>
-                <div class="slider-labels-bottom">
-                    <span class="slider-label-left">否</span>
-                    <span class="slider-label-right">是</span>
-                </div>
-                <el-slider v-model="my_value4" :min="-2" :max="2" :step="1" show-stops>
+                <span class="demonstration">你通常依赖于过去的经验来做决策，还是依赖直觉或随机选择？</span>
+
+                <el-slider v-model="my_value4" :min="-2" :max="2" :step="1" show-stops :marks="marks_4">
                 </el-slider>
             </div>
 
             <div class="role-setting-slider">
-                <span class="demonstration">备用</span>
-                <div class="slider-labels-bottom">
-                    <span class="slider-label-left">否</span>
-                    <span class="slider-label-right">是</span>
-                </div>
-                <el-slider v-model="my_value5" :min="-2" :max="2" :step="1" show-stops>
+                <span class="demonstration">你如何看待风险和不确定性？</span>
+                <el-slider v-model="my_value5" :min="-2" :max="2" :step="1" show-stops :marks="marks_5">
                 </el-slider>
             </div>
         </div>
@@ -259,61 +275,43 @@ const handleRandomClick = () => {
         <div class="role-setting-sliderpacks">
             <span style="text-align: center;font-size: 30px;">对手...</span>
             <div class="role-setting-slider">
-                <span class="demonstration">喜欢激烈的竞争</span>
-                <div class="slider-labels-bottom">
-                    <span class="slider-label-left">否</span>
-                    <span class="slider-label-right">是</span>
-                </div>
-                <el-slider v-model="op_value1" :min="-2" :max="2" :step="1" show-stops>
+                <span class="demonstration">你是否倾向于通过强力手段来压迫对方或争取更好的条件？</span>
+                <el-slider v-model="op_value1" :min="-2" :max="2" :step="1" show-stops :marks="marks_1">
                 </el-slider>
             </div>
 
             <div class="role-setting-slider">
-                <span class="demonstration">愿意合作</span>
-                <div class="slider-labels-bottom">
-                    <span class="slider-label-left">否</span>
-                    <span class="slider-label-right">是</span>
-                </div>
-                <el-slider v-model="op_value2" :min="-2" :max="2" :step="1" show-stops>
+                <span class="demonstration">当面对对方提出的条件时，你愿意在什么程度上做出让步？</span>
+                <el-slider v-model="op_value2" :min="-2" :max="2" :step="1" show-stops :marks="marks_2">
                 </el-slider>
             </div>
 
             <div class="role-setting-slider">
-                <span class="demonstration">真的需要这次谈判达成协议</span>
-                <div class="slider-labels-bottom">
-                    <span class="slider-label-left">否</span>
-                    <span class="slider-label-right">是</span>
-                </div>
-                <el-slider v-model="op_value3" :min="-2" :max="2" :step="1" show-stops>
+                <span class="demonstration">你是否特别关注达成协议，还是倾向于仅仅在自己能接受的条件下才同意协议？</span>
+                <el-slider v-model="op_value3" :min="-2" :max="2" :step="1" show-stops :marks="marks_3">
                 </el-slider>
             </div>
 
             <div class="role-setting-slider">
-                <span class="demonstration">谈判经验很丰富</span>
-                <div class="slider-labels-bottom">
-                    <span class="slider-label-left">否</span>
-                    <span class="slider-label-right">是</span>
-                </div>
-                <el-slider v-model="op_value4" :min="-2" :max="2" :step="1" show-stops>
+                <span class="demonstration">你通常依赖于过去的经验来做决策，还是依赖直觉或随机选择？</span>
+
+                <el-slider v-model="op_value4" :min="-2" :max="2" :step="1" show-stops :marks="marks_4">
                 </el-slider>
             </div>
 
             <div class="role-setting-slider">
-                <span class="demonstration">备用</span>
-                <div class="slider-labels-bottom">
-                    <span class="slider-label-left">否</span>
-                    <span class="slider-label-right">是</span>
-                </div>
-                <el-slider v-model="op_value5" :min="-2" :max="2" :step="1" show-stops>
+                <span class="demonstration">你如何看待风险和不确定性？</span>
+                <el-slider v-model="op_value5" :min="-2" :max="2" :step="1" show-stops :marks="marks_5">
                 </el-slider>
             </div>
         </div>
 
-        <div class="centered-container">
-            <el-button type="primary" round size="large" @click="handleRandomClick" >随机！</el-button>
-            <el-button type="primary" round size="large" @click="handleSubmit" >下一步</el-button>
-        </div>
+        
     </div>
+    <div class="centered-container">
+          <el-button type="primary" round size="large" @click="handleRandomClick" >随机！</el-button>
+          <el-button type="primary" round size="large" @click="handleSubmit" >下一步</el-button>
+      </div>
     
 
 
@@ -424,19 +422,20 @@ const handleRandomClick = () => {
 
 
 .role-setting-sliderpacks {
-    margin-left: 50px;
-    max-width: 1000px; /* 适应父容器 */
+    margin-left: 150px;
+    max-width: 1500px; /* 适应父容器 */
     display: flex;
     flex-direction: column; /* 使所有滑块容器竖着排列 */
-    width: 400px;
+    width: 600px;
     margin-top: 30px;
+    margin-right: 100px;
 }
 
 .role-setting-slider {
     display: flex;
     flex-direction: column; /* 让描述和滑块垂直排列 */
     align-items: center; /* 使内容水平居中 */
-    margin-bottom: 20px; /* 适当的间距 */
+    margin-bottom: 50px; /* 适当的间距 */
 }
 
 .role-setting-slider .el-slider {
@@ -445,11 +444,11 @@ const handleRandomClick = () => {
 }
 
 .role-setting-slider .demonstration {
-    font-size: 20px;
-    line-height: 44px;
-    color: #333;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
     text-align: center; /* 水平居中 */
-    margin-bottom: -25px; /* 描述与滑块之间的间距 */
+    margin-bottom: -5px; /* 描述与滑块之间的间距 */
 }
 
 
@@ -476,12 +475,12 @@ const handleRandomClick = () => {
 
 .centered-container {
     display: flex; /* 激活 flex 布局 */
-    flex-direction: column; /* 设置垂直排列 */
+    flex-direction:row; 
     justify-content: center; /* 垂直居中 */
     align-items: center; /* 水平居中 */
-    margin-top: 300px; /* 调整顶部间距 */
+    margin-top: 0px; /* 调整顶部间距 */
     gap: 30px; 
-    margin-left: 100px;
+    margin-left: 0px;
 }
 
 

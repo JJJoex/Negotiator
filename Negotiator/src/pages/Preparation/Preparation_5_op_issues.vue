@@ -1,16 +1,8 @@
 <script setup lang="js">
 import { ref, watch, onMounted, nextTick } from 'vue';
-import issuesData from './specific_contents/interests_issues.json';
+import issuesData from '../specific_contents/interests_issues.json';
 import * as echarts from 'echarts';
 import { ElMessage } from 'element-plus';
-
-
-import {  onUnmounted } from 'vue';
-
-let pageContainer;
-
-
-
 
 const props = defineProps({
   my_interests_data: Object,
@@ -48,7 +40,6 @@ watch(
           });
         });
       } else {
-        console.error(`Invalid data structure for ${domain.value}`);
       }
     }
   },
@@ -68,37 +59,38 @@ watch(
 
 // 更新饼图
 const updateChart = (category) => {
-  const chartContainer = document.querySelector(`.pie-chart-${category}`);
+  const chartId = "chart-"+category; // 唯一的 id
+  const chartContainer = document.getElementById(chartId);
+
   if (!chartContainer) {
-    console.error(`Chart container for category "${category}" not found.`);
     return;
   }
 
-  // 尝试获取已存在的实例
-  let chartInstance = echarts.getInstanceByDom(chartContainer);
-
-  // 如果实例不存在，则初始化新的实例
-  if (!chartInstance) {
-    chartInstance = echarts.init(chartContainer);
+  // 动态获取实例，避免重复注册
+  const existingInstance = echarts.getInstanceByDom(chartContainer);
+  if (existingInstance) {
+    existingInstance.dispose(); // 销毁旧的实例
   }
 
-  // 更新或设置图表的选项
+  const chartInstance = echarts.init(chartContainer); // 初始化新的图表实例
+
+  // 准备数据
   const chartData = Object.keys(sliders.value[category]).map((key) => ({
     name: key,
-    value: sliders.value[category][key],
+    value: sliders.value[category][key]
   }));
 
+  // 设置图表的配置
   chartInstance.setOption({
     series: [
       {
         type: 'pie',
         radius: '50%',
-        data: chartData,
-      },
-    ],
+        data: chartData
+      }
+    ]
   });
 };
-
 
 // 初始化 ECharts 饼图
 onMounted(() => {
@@ -160,16 +152,13 @@ const handleSubmit = () => {
 
   // 使用 $emit 发送归一化后的数据给父组件
   emit('submit-data', normalizedData);
-
-
-
 };
 </script>
 
 
 
 <template>
-    <div class="prep-3">
+    <div>
       <div class="domain-section">
         <h2>兴趣-议题设置</h2>
         <div v-if="domain && issuesData[domain]" class="slider-container">
@@ -201,7 +190,7 @@ const handleSubmit = () => {
                 </div>
                 </div>
                 <!-- 右侧的饼图 -->
-                <div ref="pieChart" :class="'pie-chart-' + category" class="pie-chart"></div>
+                <div :id="'chart-' + category" :class="'pie-chart-' + category" class="pie-chart"></div>
             </div>
             </div>
         </div>
@@ -216,9 +205,6 @@ const handleSubmit = () => {
   </template>
   
   <style scoped>
-  .prep-3{
-    margin: 0;
-  }
   /* 整体布局 */
   body, html {
     margin: 0;
@@ -333,4 +319,3 @@ const handleSubmit = () => {
     -webkit-text-fill-color: #ffffff;
 }
   </style>
-  
