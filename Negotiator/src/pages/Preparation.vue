@@ -59,7 +59,9 @@ const handleDataFromOpIssues = (data) => {
 
 
 
-
+defineExpose({
+  activeName,
+});
 
 </script>
 
