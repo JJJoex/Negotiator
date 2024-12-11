@@ -13,6 +13,8 @@ import Preparation5OpIssues from './Preparation/Preparation_5_op_issues.vue';
 
 import Preparation6Ensure from './Preparation/Preparation_6_ensure.vue'; 
 
+import { useStore } from 'vuex';
+
 const activeName = ref('first');
 
 
@@ -53,17 +55,60 @@ const handleDataFromOpIssues = (data) => {
   op_issues_data.value = data;
   console.log('Received data from page 5 op issues:', op_issues_data.value);
   activeName.value='sixth';
+  updateDataToStore();
+  console.log("子页面Preparation.vue 提交数据到App.vue成功");
 };
 
 
+// 获取 Vuex store 实例
+const store = useStore();
 
+// 提交数据到 Vuex 的方法
+const updateDataToStore = () => {
 
-
-defineExpose({
-  activeName,
-});
+  console.log('Submitting to Vuex:');
+  console.log('Nego Settings:', nego_settings_data.value);
+  console.log('My Interests:', my_interests_data.value);
+  console.log('My Issues:', my_issues_data.value);
+  console.log('Op Interests:', op_interests_data.value);
+  console.log('Op Issues:', op_issues_data.value);
+  
+  store.commit('setNegoSettingsData', nego_settings_data.value);
+  store.commit('setMyInterestsData', my_interests_data.value);
+  store.commit('setMyIssuesData', my_issues_data.value);
+  store.commit('setOpInterestsData', op_interests_data.value);
+  store.commit('setOpIssuesData', op_issues_data.value);
+};
 
 </script>
+
+
+
+<!-- <script>
+import { useStore } from 'vuex';
+
+export default {
+  data() {
+    return {
+      nego_settings_data: 'some value',
+      my_interests_data: 'some value',
+      my_issues_data: 'some value',
+      op_interests_data: 'some value',
+      op_issues_data: 'some value'
+    };
+  },
+  methods: {
+    updateData() {
+      const store = useStore();
+      store.commit('setNegoSettingsData', this.nego_settings_data);
+      store.commit('setMyInterestsData', this.my_interests_data);
+      store.commit('setMyIssuesData', this.my_issues_data);
+      store.commit('setOpInterestsData', this.op_interests_data);
+      store.commit('setOpIssuesData', this.op_issues_data);
+    }
+  }
+};
+</script> -->
 
 <template>
   <div style=" display: flex; align-items: flex-start;">

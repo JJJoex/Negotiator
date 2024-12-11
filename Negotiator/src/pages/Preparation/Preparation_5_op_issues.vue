@@ -290,11 +290,15 @@ const handleSubmit = () => {
   
 /* 按钮容器样式 */
 .button-container {
-    display: flex; /* 水平排列 */
-    justify-content: center; /* 居中对齐 */
-    margin-top: 0px; /* 按钮与上方内容的间距 */
-    margin-bottom: 20px;
+
+position: fixed; /* 固定位置 */
+bottom: 100px; /* 距离底部 20px */
+right: 20px; /* 距离右边 20px */
+z-index: 1000; /* 确保按钮在其他元素之上 */
+display: flex; /* 使用 flexbox 布局 */
+gap: 10px; /* 按钮之间的间距 */
 }
+
 
 /* 按钮样式 */
 .button {

@@ -1,8 +1,11 @@
-<script setup>
-import { ref } from 'vue';
+<script setup lang="js">
+import { ref ,reactive,watch} from 'vue';
 import steps from './components/steps.vue'
 import { ArrowRightBold, ArrowLeftBold } from '@element-plus/icons-vue';
 import { useRouter, useRoute, RouterView } from 'vue-router';
+
+import { useStore } from 'vuex';
+
 
 const nextPage = ref('准备阶段');
 const previousPage = ref('查看结果');
@@ -51,9 +54,42 @@ const goToPrevious = () => {
   }
 };
 
+// 获取 Vuex store 实例
+const store = useStore();
 
+// 获取 Vuex 数据
+const nego_settings_data = store.state.nego_settings_data;
+const my_interests_data = store.state.my_interests_data;
+const my_issues_data = store.state.my_issues_data;
+const op_interests_data = store.state.op_interests_data;
+const op_issues_data = store.state.op_issues_data;
+
+// 监听 Vuex 数据变化
+watch(
+  [
+    () => store.state.nego_settings_data,
+    () => store.state.my_interests_data,
+    () => store.state.my_issues_data,
+    () => store.state.op_interests_data,
+    () => store.state.op_issues_data
+  ],
+  () => {
+    // 打印所有相关的数据
+    console.log('App.vue中, Nego Settings:', store.state.nego_settings_data);
+    console.log('App.vue中, My Interests:', store.state.my_interests_data);
+    console.log('App.vue中, My Issues:', store.state.my_issues_data);
+    console.log('App.vue中, Op Interests:', store.state.op_interests_data);
+    console.log('App.vue中, Op Issues:', store.state.op_issues_data);
+  },
+  { deep: true }
+);
 
 </script>
+
+
+
+
+
 
 <template>
   <div id="app">
@@ -65,6 +101,8 @@ const goToPrevious = () => {
     </div>
     <div class="body">
       <RouterView style="width: 100%;"/>
+
+
     </div>
     <div class="footer">
       <div id="previous" @click="goToPrevious" v-if="showPrevious">

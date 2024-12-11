@@ -1,50 +1,31 @@
 <script setup lang="js">
-import { ref, reactive, onMounted , computed  } from 'vue';
+import { ref, reactive, onMounted , computed, watch,onBeforeUnmount  } from 'vue';
 import { ElMessage } from 'element-plus';  // 引入 ElMessage 用于 Toast 提示
 
-// 初始倒计时设置为 100 秒
-const countdown = ref(100);
+import issuesData from './specific_contents/interests_issues.json';
 
-// 定义计时器 ID，确保唯一性
-let timerId = null;
-
-// 倒计时结束的逻辑
-const onCountdownEnd = () => {
-    alert('倒计时结束！触发逻辑。');
-};
-
-// 开始倒计时
-const startCountdown = () => {
-    timerId = setInterval(() => {
-        if (countdown.value > 0) {
-            countdown.value--;
-        } else {
-            clearInterval(timerId); // 停止计时器
-            onCountdownEnd(); // 调用倒计时结束逻辑
-        }
-    }, 1000); // 每秒减少 1
-};
-
-// 启动倒计时
-onMounted(() => startCountdown());
+// 初始倒计时
+const countdown = ref(null);
+const remainingRounds=ref(null);
 
 // 子页面数据定义
 const subPages = ref([
     { title: '我的出价', content: '' },
     { title: '我方Agent建议出价', content: '' },
-    { title: '子页面3', content: '这里是子页面3的内容' },
-    { title: '子页面4', content: '这里是子页面4的内容' },
+    { title: '出价历史', content: '' },
+    { title: '实时图片', content: '边界' },
 ]);
 
 // 商品分类数据
-const groceryStore = reactive({
-    "面包类": ["法棍", "饼干", "羊角面包", "普通面包"],
-    "水果类": ["苹果", "香蕉", "樱桃", "葡萄", "梨", "瓜", "草莓"],
-    "零食类": ["巧克力棒", "甜甜圈", "玉米片", "爆米花", "薯片", "糖果", "饼干"],
-    "酱料类": ["奶酪", "果酱", "花生酱", "三明治酱", "巧克力酱", "火腿", "萨拉米香肠", "蛋沙拉"],
-    "蔬菜类": ["豆子", "西兰花", "韭菜", "土豆", "菠菜", "胡萝卜", "西红柿"],
-    "饮料类": ["能量饮料", "牛奶", "茶", "咖啡", "果汁", "可乐", "芬达", "啤酒", "葡萄酒"]
-});
+// const groceryStore = reactive({
+//     "面包类": ["法棍", "饼干", "羊角面包", "普通面包"],
+//     "水果类": ["苹果", "香蕉", "樱桃", "葡萄", "梨", "瓜", "草莓"],
+//     "零食类": ["巧克力棒", "甜甜圈", "玉米片", "爆米花", "薯片", "糖果", "饼干"],
+//     "酱料类": ["奶酪", "果酱", "花生酱", "三明治酱", "巧克力酱", "火腿", "萨拉米香肠", "蛋沙拉"],
+//     "蔬菜类": ["豆子", "西兰花", "韭菜", "土豆", "菠菜", "胡萝卜", "西红柿"],
+//     "饮料类": ["能量饮料", "牛奶", "茶", "咖啡", "果汁", "可乐", "芬达", "啤酒", "葡萄酒"]
+// });
+const groceryStore = reactive({});
 
 // 出价历史数据，包含轮次、出价方和出价内容（索引数组）
 const bidHistory = ref([
@@ -61,20 +42,146 @@ const bidHistory = ref([
     { round: 11, bidder: "我方", bidContent: [3, 0, 2, 1, 3, 4] }
 ]);
 
+// 假设 agent 提供了一个出价建议
+// const agentSuggestion = reactive({
+//     "面包类": "饼干",  // agent 提供的建议
+//     "水果类": "苹果",
+//     "零食类": "巧克力棒",
+//     "酱料类": "奶酪",
+//     "蔬菜类": "西兰花",
+//     "饮料类": "能量饮料"
+// });
+const agentSuggestion=reactive({});
+
+
+import { useRoute } from 'vue-router';
+
+import { useStore } from 'vuex'; 
+
+// 获取 Vuex store 实例
+const store = useStore();
+
+// 定义响应式变量，用于存储 Vuex 数据
+const negoSettingsData = ref(null);
+const myInterestsData = ref(null);
+const myIssuesData = ref(null);
+const opInterestsData = ref(null);
+const opIssuesData = ref(null);
+
+const domain_data_content=ref(null);
+
+// 在组件挂载时从 Vuex 获取数据
+onMounted(() => {
+  negoSettingsData.value = store.state.nego_settings_data;
+  myInterestsData.value = store.state.my_interests_data;
+  myIssuesData.value = store.state.my_issues_data;
+  opInterestsData.value = store.state.op_interests_data;
+  opIssuesData.value = store.state.op_issues_data;
+
+  // 打印加载的 Vuex 数据
+  console.log('加载的 Nego Settings:', negoSettingsData.value);
+  console.log('加载的 My Interests:', myInterestsData.value);
+  console.log('加载的 My Issues:', myIssuesData.value);
+  console.log('加载的 Op Interests:', opInterestsData.value);
+  console.log('加载的 Op Issues:', opIssuesData.value);
+
+    countdown.value=negoSettingsData.value["BiddingTime"]*60;
+    remainingRounds.value=negoSettingsData.value["BiddingRounds"];
+    
+    const domain= negoSettingsData.value["Domain"];
+
+    
+    domain_data_content.value=issuesData[domain];
+
+    console.log("aaa",issuesData[domain],domain_data_content.value);
+
+
+    Object.keys(domain_data_content.value).forEach(key => {
+        console.log("bbb",key);
+        groceryStore[key] = domain_data_content.value[key] || [];
+        userSelections[key] = groceryStore[key][0];
+    });
+
+    // 初始化agentSuggestion，每个都选第一个，测试用
+    Object.keys(domain_data_content.value).forEach(key => {
+        // agentSuggestion[key] = domain_data_content.value[key][0] || [];
+        agentSuggestion[key] = 0;
+    });
+    
+
+});
+
+
+
+
+
+
+
+
+
+// 定义计时器 ID，确保唯一性
+let timerId = null;
+
+// 倒计时结束的逻辑
+const onCountdownEnd = () => {
+    alert('倒计时结束！触发逻辑。');
+};
+
+const stopCountdown = () => {
+    if (timerId !== null) {
+        clearInterval(timerId);
+        timerId = null;
+    }
+};
+
+// 修改 startCountdown 函数
+const startCountdown = () => {
+    stopCountdown(); // 确保之前的计时器被清除
+    timerId = setInterval(() => {
+        if (countdown.value > 0) {
+            countdown.value--;
+        } else {
+            stopCountdown();
+            onCountdownEnd();
+        }
+    }, 1000);
+};
+
+// 格式化倒计时为 "xxx分xxx秒" 格式
+const formattedCountdown = computed(() => {
+  const minutes = Math.floor(countdown.value / 60); // 计算分钟
+  const seconds = countdown.value % 60; // 计算剩余秒数
+  return `${minutes}分${seconds}秒`; // 返回格式化后的字符串
+});
+
+// 在组件销毁前停止计时器
+onBeforeUnmount(() => stopCountdown());
+
+// 启动倒计时
+onMounted(() => startCountdown());
+
+const route = useRoute();
+
+watch(
+    () => route.path, // 监听路由路径
+    (newPath, oldPath) => {
+        if (newPath === '/negotiation') {
+            startCountdown(); // 如果是当前页面，启动倒计时
+        } else {
+            stopCountdown(); // 如果离开页面，停止倒计时
+        }
+    },
+    { immediate: true } // 初始化时立即触发一次
+);
+
+
+
 // 计算属性：倒序排列出价历史
 const reversedBidHistory = computed(() => {
   return [...bidHistory.value].reverse(); // 使用 reverse 返回倒序数组
 });
 
-// 假设 agent 提供了一个出价建议
-const agentSuggestion = reactive({
-    "面包类": "饼干",  // agent 提供的建议
-    "水果类": "苹果",
-    "零食类": "巧克力棒",
-    "酱料类": "奶酪",
-    "蔬菜类": "西兰花",
-    "饮料类": "能量饮料"
-});
+
 
 // 控制提示显示状态的开关
 const showHints = ref(false); // 默认不显示提示
@@ -125,14 +232,34 @@ const handleBidClick = () => {
         message: `选择的选项索引: [${selectionIndices.join(', ')}]`,
         type: 'info',  // 提示类型
     });
+    remainingRounds.value--;
+
+};
+
+const handleBidSuggestionClick = () => {
+    remainingRounds.value--;
+
+};
+
+const handleAcceptClick = () => {
+
+};
+
+const handleRejectClick = () => {
+
 };
 </script>
 
 <template>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; border: 1px solid black; position: relative;">
+    <div v-bind="$attrs" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; border: 1px solid black; position: relative;">
+        
+        <!-- 剩余轮数显示 (左上角) -->
+        <div class="remaining-rounds" style="position: absolute; top: 10px; left: 10px; font-size: 16px; font-weight: bold;">
+            剩余轮数: {{ remainingRounds }} 轮
+        </div>
         <!-- 倒计时显示 -->
         <div class="countdown-timer">
-            倒计时: {{ countdown }} 秒
+            倒计时: {{ formattedCountdown }}
         </div>
 
         <!-- 四个子页面 -->
@@ -169,6 +296,9 @@ const handleBidClick = () => {
                     <template #default>
                     <span>
                         {{ showHints ? agentSuggestion[category] : "?" }}
+                        <!-- {{ showHints ? domain_data_content.value[category][agentSuggestion[category]] : "?" }} -->
+                        <!-- {{ showHints ? index : "?" }} -->
+                        
                     </span>
                     </template>
                 </el-table-column>
@@ -176,21 +306,7 @@ const handleBidClick = () => {
             </div>
 
 
-            <!-- <div v-if="index === 2">
-                <el-table :data="bidHistory" style="width: 100%">
-                    <el-table-column label="轮次" prop="round"></el-table-column>
-                    <el-table-column label="出价方" prop="bidder"></el-table-column>
 
-                    
-                    <template v-for="(items, category) in groceryStore" :key="category">
-                        <el-table-column :label="category">
-                            <template #default="{ row }">
-                                <span>{{ getBidItemsByCategory(row.bidContent)[Object.keys(groceryStore).indexOf(category)] }}</span>
-                            </template>
-                        </el-table-column>
-                    </template>
-                </el-table>
-            </div> -->
 
             <div v-if="index === 2" class="scrollable-table">
                 <el-table :data="reversedBidHistory" style="width: 100%">
@@ -209,7 +325,7 @@ const handleBidClick = () => {
             </div>
 
             <div v-if="index === 3" class="image-display">
-                <img src="@/assets/3.jpg" alt="展示图片" style="max-width: 100%; height: auto;">
+                <img src="@/assets/3.png" alt="展示图片" style="max-width: 100%; height: auto;">
             </div>
 
 
@@ -217,7 +333,7 @@ const handleBidClick = () => {
     </div>
 
     <!-- 底部按钮 -->
-    <div style="margin-top: 20px; text-align: center;">
+    <div class="button-container" style="margin-top: 20px; text-align: center;">
         <el-button type="primary" @click="handleTest">测试</el-button>
         <el-button type="primary" @click="handleBidClick">出价</el-button>
         <el-button type="primary" @click="handleBidSuggestionClick">按照代理建议出价</el-button>
@@ -270,6 +386,15 @@ div {
     font-weight: bold;
 }
 
+.button-container {
+  position: fixed; /* 固定位置 */
+  bottom: 100px; /* 距离底部 100px */
+  left: 50%; /* 从左边 50% */
+  transform: translateX(-50%); /* 使容器居中 */
+  z-index: 1000; /* 确保按钮在其他元素之上 */
+  display: flex; /* 使用 flexbox 布局 */
+  gap: 10px; /* 按钮之间的间距 */
+}
 
 .scrollable-table {
   width: 100%;

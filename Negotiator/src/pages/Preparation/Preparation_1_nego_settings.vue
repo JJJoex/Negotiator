@@ -187,9 +187,12 @@ const marks_5 = {
 
 <template>
   <div>
+    <div class="container">
+    <div class="scrollable-content">
+
     <!-- Slider Block -->
     <div class="slider-demo-block">
-      <span class="slider-label">谈判轮数</span>
+      <span class="slider-label">谈判轮数（我方出价轮数）</span>
       <el-slider v-model="sliderValue" :min="10" :max="1000" show-input />
     </div>
 
@@ -308,17 +311,26 @@ const marks_5 = {
 
         
     </div>
-    <div class="centered-container">
-          <el-button type="primary" round size="large" @click="handleRandomClick" >随机！</el-button>
-          <el-button type="primary" round size="large" @click="handleSubmit" >下一步</el-button>
-      </div>
+
+  </div>
+
+  
     
 
 
+  </div>
 
+
+  
     
 
   </div>
+  
+
+  <div class="fixed-buttons">
+        <el-button type="primary" round size="large" @click="handleRandomClick" >随机！</el-button>
+        <el-button type="primary" round size="large" @click="handleSubmit" >下一步</el-button>
+    </div>
 </template>
 
 <style scoped>
@@ -473,15 +485,30 @@ const marks_5 = {
     align-items: center; /* 垂直居中 */
 }
 
-.centered-container {
-    display: flex; /* 激活 flex 布局 */
-    flex-direction:row; 
-    justify-content: center; /* 垂直居中 */
-    align-items: center; /* 水平居中 */
-    margin-top: 0px; /* 调整顶部间距 */
-    gap: 30px; 
-    margin-left: 0px;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* 子页面的高度，继承外部高度 */
+  box-sizing: border-box;
 }
 
+.scrollable-content {
+  height: calc(90% - 60px); /* 设置最大高度为父容器的 90%，减去按钮区域的高度 */
+  overflow-y: auto; /* 启用垂直滚动 */
+  padding: 16px; /* 内边距 */
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* 可选背景色 */
+}
 
+/* 按钮区域 */
+.fixed-buttons {
+  position: fixed; /* 固定位置 */
+  bottom: 100px; /* 距离底部 20px */
+  right: 20px; /* 距离右边 20px */
+  z-index: 1000; /* 确保按钮在其他元素之上 */
+  display: flex; /* 使用 flexbox 布局 */
+  gap: 10px; /* 按钮之间的间距 */
+}
 </style>
+
