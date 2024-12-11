@@ -97,7 +97,7 @@ onMounted(() => {
 
 
     Object.keys(domain_data_content.value).forEach(key => {
-        console.log("bbb",key);
+        // console.log("bbb",key);
         groceryStore[key] = domain_data_content.value[key] || [];
         userSelections[key] = groceryStore[key][0];
     });
@@ -295,8 +295,8 @@ const handleRejectClick = () => {
                 >
                     <template #default>
                     <span>
-                        {{ showHints ? agentSuggestion[category] : "?" }}
-                        <!-- {{ showHints ? domain_data_content.value[category][agentSuggestion[category]] : "?" }} -->
+                        <!-- {{ showHints ? agentSuggestion[category] : "?" }} -->
+                        {{ showHints ? domain_data_content[category][agentSuggestion[category]] : "?" }}
                         <!-- {{ showHints ? index : "?" }} -->
                         
                     </span>
@@ -333,7 +333,7 @@ const handleRejectClick = () => {
     </div>
 
     <!-- 底部按钮 -->
-    <div class="button-container" style="margin-top: 20px; text-align: center;">
+    <div class="button-container-bidding" style="margin-top: 20px; text-align: center;">
         <el-button type="primary" @click="handleTest">测试</el-button>
         <el-button type="primary" @click="handleBidClick">出价</el-button>
         <el-button type="primary" @click="handleBidSuggestionClick">按照代理建议出价</el-button>
@@ -386,10 +386,10 @@ div {
     font-weight: bold;
 }
 
-.button-container {
+.button-container-bidding {
   position: fixed; /* 固定位置 */
   bottom: 100px; /* 距离底部 100px */
-  left: 50%; /* 从左边 50% */
+  left: 50%; 
   transform: translateX(-50%); /* 使容器居中 */
   z-index: 1000; /* 确保按钮在其他元素之上 */
   display: flex; /* 使用 flexbox 布局 */
