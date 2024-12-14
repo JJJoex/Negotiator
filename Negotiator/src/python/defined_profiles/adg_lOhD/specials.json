@@ -1,0 +1,329 @@
+{
+  "size": 15625,
+  "opposition": 0.06473976416057779,
+  "distribution": 0.4167391284918978,
+  "social_welfare": {
+    "bid": {
+      "CD player": "good",
+      "Extra speakers": "fairly good",
+      "Airconditioning": "fairly good",
+      "Tow hedge": "fairly good",
+      "Tow hedge2": "fairly good",
+      "Tow hedge3": "good"
+    },
+    "utility": [
+      0.9933000000000001,
+      0.9541206932
+    ]
+  },
+  "nash": {
+    "bid": {
+      "CD player": "good",
+      "Extra speakers": "fairly good",
+      "Airconditioning": "fairly good",
+      "Tow hedge": "fairly good",
+      "Tow hedge2": "fairly good",
+      "Tow hedge3": "good"
+    },
+    "utility": [
+      0.9933000000000001,
+      0.9541206932
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "CD player": "meager",
+      "Extra speakers": "fairly good",
+      "Airconditioning": "fairly good",
+      "Tow hedge": "fairly good",
+      "Tow hedge2": "fairly good",
+      "Tow hedge3": "good"
+    },
+    "utility": [
+      0.9533,
+      0.955163106
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "CD player": "none",
+        "Extra speakers": "fairly good",
+        "Airconditioning": "none",
+        "Tow hedge": "fairly good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.665,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "meager",
+        "Extra speakers": "fairly good",
+        "Airconditioning": "none",
+        "Tow hedge": "fairly good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.785,
+        0.9956824128
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "standard",
+        "Extra speakers": "fairly good",
+        "Airconditioning": "none",
+        "Tow hedge": "fairly good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.8122,
+        0.9952316368
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "fairly good",
+        "Extra speakers": "fairly good",
+        "Airconditioning": "none",
+        "Tow hedge": "fairly good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.8218000000000001,
+        0.9951753032
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "good",
+        "Extra speakers": "fairly good",
+        "Airconditioning": "none",
+        "Tow hedge": "fairly good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.8250000000000001,
+        0.9946400000000001
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "good",
+        "Extra speakers": "good",
+        "Airconditioning": "none",
+        "Tow hedge": "fairly good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.8266000000000001,
+        0.98384
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "good",
+        "Extra speakers": "fairly good",
+        "Airconditioning": "none",
+        "Tow hedge": "good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.8267000000000001,
+        0.9740239895
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "good",
+        "Extra speakers": "good",
+        "Airconditioning": "none",
+        "Tow hedge": "good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.8283,
+        0.9632239895
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "none",
+        "Extra speakers": "fairly good",
+        "Airconditioning": "fairly good",
+        "Tow hedge": "fairly good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.8333,
+        0.9594806932000001
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "meager",
+        "Extra speakers": "fairly good",
+        "Airconditioning": "fairly good",
+        "Tow hedge": "fairly good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.9533,
+        0.955163106
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "standard",
+        "Extra speakers": "fairly good",
+        "Airconditioning": "fairly good",
+        "Tow hedge": "fairly good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.9805,
+        0.95471233
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "fairly good",
+        "Extra speakers": "fairly good",
+        "Airconditioning": "fairly good",
+        "Tow hedge": "fairly good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.9901000000000001,
+        0.9546559964
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "good",
+        "Extra speakers": "fairly good",
+        "Airconditioning": "fairly good",
+        "Tow hedge": "fairly good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.9933000000000001,
+        0.9541206932
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "good",
+        "Extra speakers": "good",
+        "Airconditioning": "fairly good",
+        "Tow hedge": "fairly good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.9949000000000001,
+        0.9433206932
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "good",
+        "Extra speakers": "fairly good",
+        "Airconditioning": "good",
+        "Tow hedge": "fairly good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.9950000000000001,
+        0.936346352
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "good",
+        "Extra speakers": "good",
+        "Airconditioning": "good",
+        "Tow hedge": "fairly good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.9966,
+        0.925546352
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "good",
+        "Extra speakers": "fairly good",
+        "Airconditioning": "good",
+        "Tow hedge": "good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.9967000000000001,
+        0.9157303415000001
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "good",
+        "Extra speakers": "good",
+        "Airconditioning": "good",
+        "Tow hedge": "good",
+        "Tow hedge2": "fairly good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.9983000000000001,
+        0.9049303415
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "good",
+        "Extra speakers": "fairly good",
+        "Airconditioning": "good",
+        "Tow hedge": "good",
+        "Tow hedge2": "good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        0.9984000000000002,
+        0.8305881585
+      ]
+    },
+    {
+      "bid": {
+        "CD player": "good",
+        "Extra speakers": "good",
+        "Airconditioning": "good",
+        "Tow hedge": "good",
+        "Tow hedge2": "good",
+        "Tow hedge3": "good"
+      },
+      "utility": [
+        1.0,
+        0.8197881585
+      ]
+    }
+  ]
+}

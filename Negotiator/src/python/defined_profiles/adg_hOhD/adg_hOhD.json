@@ -1,0 +1,59 @@
+{
+  "name": "adg_hOhD",
+  "issuesValues": {
+    "CD player": {
+      "values": [
+        "good",
+        "fairly good",
+        "standard",
+        "meager",
+        "none"
+      ]
+    },
+    "Extra speakers": {
+      "values": [
+        "good",
+        "fairly good",
+        "standard",
+        "meager",
+        "none"
+      ]
+    },
+    "Airconditioning": {
+      "values": [
+        "good",
+        "fairly good",
+        "standard",
+        "meager",
+        "none"
+      ]
+    },
+    "Tow hedge": {
+      "values": [
+        "good",
+        "fairly good",
+        "standard",
+        "meager",
+        "none"
+      ]
+    },
+    "Tow hedge2": {
+      "values": [
+        "good",
+        "fairly good",
+        "standard",
+        "meager",
+        "none"
+      ]
+    },
+    "Tow hedge3": {
+      "values": [
+        "good",
+        "fairly good",
+        "standard",
+        "meager",
+        "none"
+      ]
+    }
+  }
+}

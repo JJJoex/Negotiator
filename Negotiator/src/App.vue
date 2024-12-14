@@ -6,6 +6,8 @@ import { useRouter, useRoute, RouterView } from 'vue-router';
 
 import { useStore } from 'vuex';
 
+import {sendJson} from './pages/SendMessage';
+
 
 const nextPage = ref('准备阶段');
 const previousPage = ref('查看结果');
@@ -13,6 +15,20 @@ const showPrevious = ref(false);
 
 const router = useRouter();
 const route = useRoute();
+
+
+// 自动获取最大的小数位数
+const getPrecision = (num) => {
+  const str = num.toString();
+  const dotIndex = str.indexOf('.');
+  return dotIndex === -1 ? 0 : str.length - dotIndex - 1;
+};
+
+
+
+
+
+
 const goToNext = () => {
   if (route.path === '/description') {
     router.push('/preparation');
@@ -25,6 +41,76 @@ const goToNext = () => {
     showPrevious.value = true;
     nextPage.value = '查看结果';
     previousPage.value = '准备阶段';
+
+    // 用函数传参
+    console.log('App.vue中, Nego Settings:', store.state.nego_settings_data);
+    console.log('App.vue中, My Interests:', store.state.my_interests_data);
+    console.log('App.vue中, My Issues:', store.state.my_issues_data);
+    console.log('App.vue中, Op Interests:', store.state.op_interests_data);
+    console.log('App.vue中, Op Issues:', store.state.op_issues_data);
+    // console.log(store.state.nego_settings_data['whoFirst'],store.state.nego_settings_data['whoFirst']==="1");
+
+    
+    
+    const my_intr = Object.values(store.state.my_interests_data).map(value => {
+      const precision = getPrecision(value);
+      return parseFloat(value.toFixed(precision)); // 保留原始精度
+    });
+
+    const op_intr = Object.values(store.state.op_interests_data).map(value => {
+      const precision = getPrecision(value);
+      return parseFloat(value.toFixed(precision)); // 保留原始精度
+    });
+
+    console.log(my_intr,op_intr);
+
+
+    const my_issues = Object.values(store.state.my_issues_data).map(category => Object.values(category));
+    const op_issues = Object.values(store.state.op_issues_data).map(category => Object.values(category));
+
+    console.log(my_issues,op_issues);
+
+
+
+
+
+
+    const data_to_send={
+      Domain: store.state.nego_settings_data["Domain"],
+      Rounds: store.state.nego_settings_data["BiddingRounds"],
+      Times: store.state.nego_settings_data["BiddingTime"],
+      First: store.state.nego_settings_data['whoFirst']==="1"?true:false,
+      Profile: {
+        my:[
+          store.state.nego_settings_data['settingValues']['my']["value1"],
+          store.state.nego_settings_data['settingValues']['my']["value2"],
+          store.state.nego_settings_data['settingValues']['my']["value3"],
+          store.state.nego_settings_data['settingValues']['my']["value4"],
+          store.state.nego_settings_data['settingValues']['my']["value5"]
+        ],
+        op:[
+          store.state.nego_settings_data['settingValues']['op']["value1"],
+          store.state.nego_settings_data['settingValues']['op']["value2"],
+          store.state.nego_settings_data['settingValues']['op']["value3"],
+          store.state.nego_settings_data['settingValues']['op']["value4"],
+          store.state.nego_settings_data['settingValues']['op']["value5"]
+        ]
+      },
+      Role:store.state.nego_settings_data['roles']['my'],
+
+      MyInterests:my_intr,
+      MyIssues:my_issues,
+      OpInterests:op_intr,
+      OpIssues:op_issues
+
+
+
+    }
+
+    console.log('App.vue中, data_to_send:', data_to_send);
+    return_data=sendJson(1,data_to_send);
+    console.log(return_data);
+
   }
   else if (route.path === '/negotiation') {
     router.push('/finish');
@@ -75,11 +161,11 @@ watch(
   ],
   () => {
     // 打印所有相关的数据
-    console.log('App.vue中, Nego Settings:', store.state.nego_settings_data);
-    console.log('App.vue中, My Interests:', store.state.my_interests_data);
-    console.log('App.vue中, My Issues:', store.state.my_issues_data);
-    console.log('App.vue中, Op Interests:', store.state.op_interests_data);
-    console.log('App.vue中, Op Issues:', store.state.op_issues_data);
+    // console.log('App.vue中, Nego Settings:', store.state.nego_settings_data);
+    // console.log('App.vue中, My Interests:', store.state.my_interests_data);
+    // console.log('App.vue中, My Issues:', store.state.my_issues_data);
+    // console.log('App.vue中, Op Interests:', store.state.op_interests_data);
+    // console.log('App.vue中, Op Issues:', store.state.op_issues_data);
   },
   { deep: true }
 );

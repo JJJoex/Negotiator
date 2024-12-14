@@ -1,0 +1,307 @@
+{
+  "size": 188160,
+  "opposition": 0.32446344308050323,
+  "distribution": 0.41284052420339507,
+  "social_welfare": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Nightclubs",
+      "Culinary": "Local cuisine",
+      "Shopping": "Streets",
+      "Culture": "Theater",
+      "Sport": "Bike tours",
+      "Environment": "Monuments"
+    },
+    "utility": [
+      0.942686212,
+      0.7207555260999999
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Nightclubs",
+      "Culinary": "Local cuisine",
+      "Shopping": "Streets",
+      "Culture": "Theater",
+      "Sport": "Bike tours",
+      "Environment": "Monuments"
+    },
+    "utility": [
+      0.942686212,
+      0.7207555260999999
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Atmosphere": "Political stability",
+      "Amusement": "Nightclubs",
+      "Culinary": "Local cuisine",
+      "Shopping": "Streets",
+      "Culture": "Theater",
+      "Sport": "Bike tours",
+      "Environment": "Monuments"
+    },
+    "utility": [
+      0.770100966,
+      0.7710393918999999
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Atmosphere": "Liveliness",
+        "Amusement": "Nightclubs",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.25949084510000003,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Liveliness",
+        "Amusement": "Nightclubs",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.3773279365,
+        0.9872385912999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightclubs",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.44416387460000006,
+        0.9321922756000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightclubs",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.562000966,
+        0.9194308669
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Nightclubs",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.6158681005,
+        0.8979746203
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightclubs",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.6167491206,
+        0.8819084098000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightclubs",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.734586212,
+        0.8691470011
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Festivals",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.735608219,
+        0.7980066083
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.757580078,
+        0.7912628052999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightclubs",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.770100966,
+        0.7710393918999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Nightclubs",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.8239681005000001,
+        0.7495831452999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightclubs",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.8248491206,
+        0.7335169348
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightclubs",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.942686212,
+        0.7207555260999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Festivals",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.943708219,
+        0.6496151333
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9656800780000001,
+        0.6428713302999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.985736212,
+        0.5474562372999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        1.0,
+        0.2517162373
+      ]
+    }
+  ]
+}

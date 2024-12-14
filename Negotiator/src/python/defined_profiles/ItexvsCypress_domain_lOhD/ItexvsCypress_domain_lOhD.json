@@ -1,0 +1,36 @@
+{
+  "name": "ItexvsCypress_domain_lOhD",
+  "issuesValues": {
+    "Price": {
+      "values": [
+        "$4.37",
+        "$4.12",
+        "$3.98",
+        "$3.71",
+        "$3.47"
+      ]
+    },
+    "Delivery": {
+      "values": [
+        "60 days",
+        "45 days",
+        "30 days",
+        "20 days"
+      ]
+    },
+    "Payment": {
+      "values": [
+        "Upon delivery",
+        "30 days after delivery",
+        "60 days after delivery"
+      ]
+    },
+    "Returns": {
+      "values": [
+        "Full price",
+        "5% spoilage allowed",
+        "10% spoilage allowed"
+      ]
+    }
+  }
+}

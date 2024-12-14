@@ -1,0 +1,337 @@
+{
+  "size": 188160,
+  "opposition": 0.4500763134826257,
+  "distribution": 0.4898340397257286,
+  "social_welfare": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "International cuisine",
+      "Shopping": "Shopping malls",
+      "Culture": "Theater",
+      "Sport": "Bike tours",
+      "Environment": "Historical places"
+    },
+    "utility": [
+      0.6372406408,
+      0.9711503584000001
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "International cuisine",
+      "Shopping": "Shopping malls",
+      "Culture": "Theater",
+      "Sport": "Bike tours",
+      "Environment": "Historical places"
+    },
+    "utility": [
+      0.6372406408,
+      0.9711503584000001
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Atmosphere": "Political stability",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "International cuisine",
+      "Shopping": "Shopping malls",
+      "Culture": "Theater",
+      "Sport": "Bike tours",
+      "Environment": "Monuments"
+    },
+    "utility": [
+      0.71527885,
+      0.6514278343
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Amusement park",
+        "Culinary": "International cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Indoor activities",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.4113092608,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Amusement park",
+        "Culinary": "International cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.4445992608,
+        0.9994602544000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.4646553948,
+        0.9971860264
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "International cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Indoor activities",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.5838945068,
+        0.973964332
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "International cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.6171845068,
+        0.9734245864000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.6372406408,
+        0.9711503584000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Indoor activities",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.6529504108,
+        0.872709575
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.6862404108000001,
+        0.8721698294
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.7062965447999999,
+        0.8698956014000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.71527885,
+        0.6514278343
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "International cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Indoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.8345179620000001,
+        0.6282061399000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "International cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.8678079620000001,
+        0.6276663943
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.887864096,
+        0.6253921663
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Indoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9035738660000001,
+        0.5269513829
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9368638660000002,
+        0.5264116373000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.95692,
+        0.5241374093000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Markets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9577872004,
+        0.3035599379
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9799438660000002,
+        0.24326544260000002
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        1.0,
+        0.2409912146
+      ]
+    }
+  ]
+}

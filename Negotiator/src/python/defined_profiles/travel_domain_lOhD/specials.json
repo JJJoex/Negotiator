@@ -1,0 +1,442 @@
+{
+  "size": 188160,
+  "opposition": 0.18958441985976812,
+  "distribution": 0.5068849420190409,
+  "social_welfare": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Zoo",
+      "Culinary": "Local cuisine",
+      "Shopping": "Shopping malls",
+      "Culture": "Congress center",
+      "Sport": "Outdoor activities",
+      "Environment": "Monuments"
+    },
+    "utility": [
+      0.86375932,
+      0.8681640058
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Zoo",
+      "Culinary": "Local cuisine",
+      "Shopping": "Shopping malls",
+      "Culture": "Congress center",
+      "Sport": "Outdoor activities",
+      "Environment": "Monuments"
+    },
+    "utility": [
+      0.86375932,
+      0.8681640058
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Zoo",
+      "Culinary": "Local cuisine",
+      "Shopping": "Shopping malls",
+      "Culture": "Congress center",
+      "Sport": "Outdoor activities",
+      "Environment": "Monuments"
+    },
+    "utility": [
+      0.86375932,
+      0.8681640058
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Atmosphere": "Liveliness",
+        "Amusement": "Zoo",
+        "Culinary": "International cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "See, river, etc."
+      },
+      "utility": [
+        0.1824251405,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Liveliness",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "See, river, etc."
+      },
+      "utility": [
+        0.25148104450000003,
+        0.9968704462
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Liveliness",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Markets",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "See, river, etc."
+      },
+      "utility": [
+        0.2523482449,
+        0.9859424193999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Zoo",
+        "Culinary": "International cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "See, river, etc."
+      },
+      "utility": [
+        0.5396834159999999,
+        0.968749228
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "See, river, etc."
+      },
+      "utility": [
+        0.60873932,
+        0.9656196741999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Markets",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "See, river, etc."
+      },
+      "utility": [
+        0.6096065204,
+        0.9546916474
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "See, river, etc."
+      },
+      "utility": [
+        0.6225355534999999,
+        0.934503081
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Markets",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "See, river, etc."
+      },
+      "utility": [
+        0.6234027538999999,
+        0.9235750542
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "See, river, etc."
+      },
+      "utility": [
+        0.65181932,
+        0.9052176367
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "See, river, etc."
+      },
+      "utility": [
+        0.6656155534999999,
+        0.8741010435
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Zoo",
+        "Culinary": "International cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.7947034159999999,
+        0.8712935596
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.86375932,
+        0.8681640058
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Markets",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.8646265204,
+        0.857235979
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.8775555534999999,
+        0.8370474126
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Markets",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.8784227538999999,
+        0.8261193858
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.90683932,
+        0.8077619683
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9206355534999999,
+        0.7766453751
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Music hall",
+        "Sport": "Outdoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9211822798,
+        0.7045526607
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9397404928,
+        0.6542998210000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9535367263,
+        0.6231832278
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Music hall",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9540834526,
+        0.5510905134
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Cinema",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9642021463000001,
+        0.4929143464
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Theater",
+        "Sport": "Outdoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9670988272,
+        0.49083537509999997
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Cinema",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9779983798,
+        0.46179775320000005
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9862037665000001,
+        0.368489821
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        1.0,
+        0.3373732278
+      ]
+    }
+  ]
+}

@@ -1,0 +1,399 @@
+{
+  "size": 98784,
+  "opposition": 0.34887165827154604,
+  "distribution": 0.5146222363505911,
+  "social_welfare": {
+    "bid": {
+      "Bread type": "Baguette",
+      "Fruit": "Apples",
+      "Snacks": "Cookies",
+      "Spreads": "Peanut butter",
+      "Vegetables": "Spinach",
+      "Drinks": "Juice"
+    },
+    "utility": [
+      0.753472,
+      0.87057
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Bread type": "Baguette",
+      "Fruit": "Apples",
+      "Snacks": "Cookies",
+      "Spreads": "Peanut butter",
+      "Vegetables": "Spinach",
+      "Drinks": "Juice"
+    },
+    "utility": [
+      0.753472,
+      0.87057
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Bread type": "Baguette",
+      "Fruit": "Strawberries",
+      "Snacks": "Cookies",
+      "Spreads": "Sandwichspread",
+      "Vegetables": "Tomatos",
+      "Drinks": "Juice"
+    },
+    "utility": [
+      0.792361,
+      0.7196475795999999
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Cookies",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Tomatos",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.614583,
+        0.9999999999999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Cookies",
+        "Spreads": "Salami",
+        "Vegetables": "Tomatos",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.631251,
+        0.9708916731999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Cookies",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Spinach",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.670138,
+        0.9464499999999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Cookies",
+        "Spreads": "Ham",
+        "Vegetables": "Tomatos",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.6812505,
+        0.9244933296
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Cookies",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.697917,
+        0.9241199999999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Cookies",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Spinach",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.720139,
+        0.8710677727999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Cookies",
+        "Spreads": "Ham",
+        "Vegetables": "Spinach",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.7368055,
+        0.8709433296
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Cookies",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Spinach",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.753472,
+        0.87057
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Strawberries",
+        "Snacks": "Cookies",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Tomatos",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.792361,
+        0.7196475795999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Pears",
+        "Snacks": "Cookies",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Tomatos",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.814583,
+        0.71764
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Pears",
+        "Snacks": "Cookies",
+        "Spreads": "Salami",
+        "Vegetables": "Tomatos",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.831251,
+        0.6885316732
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Strawberries",
+        "Snacks": "Cookies",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Spinach",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.847916,
+        0.6660975795999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Pears",
+        "Snacks": "Cookies",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Spinach",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.870138,
+        0.66409
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Strawberries",
+        "Snacks": "Cookies",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.875695,
+        0.6437675796
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Pears",
+        "Snacks": "Cookies",
+        "Spreads": "Ham",
+        "Vegetables": "Tomatos",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.8812504999999999,
+        0.6421333296
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Pears",
+        "Snacks": "Cookies",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.897917,
+        0.64176
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Strawberries",
+        "Snacks": "Cookies",
+        "Spreads": "Ham",
+        "Vegetables": "Spinach",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.9145835,
+        0.5905909092
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Strawberries",
+        "Snacks": "Cookies",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Spinach",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.93125,
+        0.5902175796
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Pears",
+        "Snacks": "Cookies",
+        "Spreads": "Ham",
+        "Vegetables": "Spinach",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.9368055,
+        0.5885833296
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Pears",
+        "Snacks": "Cookies",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Spinach",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.953472,
+        0.58821
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Pears",
+        "Snacks": "Cookies",
+        "Spreads": "Ham",
+        "Vegetables": "Spinach",
+        "Drinks": "Energy Drinks"
+      },
+      "utility": [
+        0.9555555,
+        0.3639094296
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Pears",
+        "Snacks": "Cookies",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Spinach",
+        "Drinks": "Energy Drinks"
+      },
+      "utility": [
+        0.972222,
+        0.3635361
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Pears",
+        "Snacks": "Popcorn",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Spinach",
+        "Drinks": "Juice"
+      },
+      "utility": [
+        0.9812500000000001,
+        0.25281
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Pears",
+        "Snacks": "Candy",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Spinach",
+        "Drinks": "Energy Drinks"
+      },
+      "utility": [
+        0.9833335000000001,
+        0.06697877399999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Pears",
+        "Snacks": "Popcorn",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Spinach",
+        "Drinks": "Energy Drinks"
+      },
+      "utility": [
+        1.0,
+        0.0281361
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "name": "travel_domain_lOlD",
+  "issuesValues": {
+    "Atmosphere": {
+      "values": [
+        "Cultural heritage",
+        "Local traditions",
+        "Political stability",
+        "Security (personal)",
+        "Liveliness",
+        "Turistic activities",
+        "Hospitality"
+      ]
+    },
+    "Amusement": {
+      "values": [
+        "Nightlife and entertainment",
+        "Nightclubs",
+        "Excursion",
+        "Casinos",
+        "Zoo",
+        "Festivals",
+        "Amusement park"
+      ]
+    },
+    "Culinary": {
+      "values": [
+        "Local cuisine",
+        "Lunch facilities",
+        "International cuisine",
+        "Cooking workshops"
+      ]
+    },
+    "Shopping": {
+      "values": [
+        "Shopping malls",
+        "Markets",
+        "Streets",
+        "Small boutiques"
+      ]
+    },
+    "Culture": {
+      "values": [
+        "Museum",
+        "Music hall",
+        "Theater",
+        "Art gallery",
+        "Cinema",
+        "Congress center"
+      ]
+    },
+    "Sport": {
+      "values": [
+        "Bike tours",
+        "Hiking",
+        "Indoor activities",
+        "Outdoor activities",
+        "Adventure"
+      ]
+    },
+    "Environment": {
+      "values": [
+        "Parks and Gardens",
+        "Square",
+        "Historical places",
+        "See, river, etc.",
+        "Monuments",
+        "Special streets",
+        "Palace",
+        "Landscape and nature"
+      ]
+    }
+  }
+}

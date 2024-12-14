@@ -1,0 +1,622 @@
+{
+  "size": 188160,
+  "opposition": 0.4109250328081615,
+  "distribution": 0.33858595840927874,
+  "social_welfare": {
+    "bid": {
+      "Atmosphere": "Cultural heritage",
+      "Amusement": "Casinos",
+      "Culinary": "Local cuisine",
+      "Shopping": "Shopping malls",
+      "Culture": "Theater",
+      "Sport": "Bike tours",
+      "Environment": "Monuments"
+    },
+    "utility": [
+      0.9365109444,
+      0.5639731855
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Atmosphere": "Cultural heritage",
+      "Amusement": "Casinos",
+      "Culinary": "Local cuisine",
+      "Shopping": "Shopping malls",
+      "Culture": "Cinema",
+      "Sport": "Bike tours",
+      "Environment": "Monuments"
+    },
+    "utility": [
+      0.6609428127,
+      0.8223669839
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Atmosphere": "Security (personal)",
+      "Amusement": "Casinos",
+      "Culinary": "Cooking workshops",
+      "Shopping": "Shopping malls",
+      "Culture": "Cinema",
+      "Sport": "Bike tours",
+      "Environment": "Palace"
+    },
+    "utility": [
+      0.7064725141,
+      0.7124221886000001
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.2776707144,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Landscape and nature"
+      },
+      "utility": [
+        0.2996565244,
+        0.9942879625000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.31556094440000004,
+        0.9815359375
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.3378123864,
+        0.9679588168
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Landscape and nature"
+      },
+      "utility": [
+        0.3597981964,
+        0.9622467793
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.3757026164,
+        0.9494947543
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.3868123864,
+        0.9357467668
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.39734625360000003,
+        0.9105122967
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Cinema",
+        "Sport": "Bike tours",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.4014342547,
+        0.9054096904
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.5594307144,
+        0.9033801727999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Landscape and nature"
+      },
+      "utility": [
+        0.5814165244,
+        0.8976681353
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.5973209444,
+        0.8849161103
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.6084307144000001,
+        0.8711681228
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.6189645816,
+        0.8459336527
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Bike tours",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.6230525827,
+        0.8408310464
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Bike tours",
+        "Environment": "Landscape and nature"
+      },
+      "utility": [
+        0.6450383927,
+        0.8351190089
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.6609428127,
+        0.8223669839
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.6720525827,
+        0.8086189964
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.6825864499000001,
+        0.7833845263
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.6936962199000001,
+        0.7696365388
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7008118683000001,
+        0.7422559608
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Casinos",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7064725141,
+        0.7124221886000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Zoo",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7135881625,
+        0.6850416106
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Casinos",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7173162199,
+        0.6684757175
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Zoo",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7244318683000001,
+        0.6410951395000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7260023864,
+        0.614803842
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.7365362536000001,
+        0.5895693719
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.8986207144,
+        0.582437248
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Landscape and nature"
+      },
+      "utility": [
+        0.9206065244,
+        0.5767252105
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9365109444,
+        0.5639731855
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9476207144000001,
+        0.550225198
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9581545816,
+        0.5249907279
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Casinos",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9692643516,
+        0.5112427404
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9763800000000001,
+        0.48386216239999996
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Casinos",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9820406458000001,
+        0.4540283902
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Zoo",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9891562942000001,
+        0.4266478122
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Casinos",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9928843516000001,
+        0.41008191909999997
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Security (personal)",
+        "Amusement": "Zoo",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        1.0,
+        0.38270134110000004
+      ]
+    }
+  ]
+}

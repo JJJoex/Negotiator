@@ -1,0 +1,173 @@
+{
+  "LinearAdditiveUtilitySpace": {
+    "issueUtilities": {
+      "Atmosphere": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Cultural heritage": 1.0,
+            "Local traditions": 0.38653,
+            "Political stability": 0.07028,
+            "Security (personal)": 0.78477,
+            "Liveliness": 0.0,
+            "Turistic activities": 0.96047,
+            "Hospitality": 0.40556
+          }
+        }
+      },
+      "Amusement": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Nightlife and entertainment": 0.36536,
+            "Nightclubs": 0.39648,
+            "Excursion": 0.4249,
+            "Casinos": 1.0,
+            "Zoo": 0.78078,
+            "Festivals": 0.03789,
+            "Amusement park": 0.0
+          }
+        }
+      },
+      "Culinary": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Local cuisine": 1.0,
+            "Lunch facilities": 0.00813,
+            "International cuisine": 0.0,
+            "Cooking workshops": 0.43902
+          }
+        }
+      },
+      "Shopping": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Shopping malls": 0.53664,
+            "Markets": 0.0,
+            "Streets": 1.0,
+            "Small boutiques": 0.84634
+          }
+        }
+      },
+      "Culture": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Museum": 0.23026,
+            "Music hall": 0.3693,
+            "Theater": 0.04116,
+            "Art gallery": 0.0,
+            "Cinema": 0.81313,
+            "Congress center": 1.0
+          }
+        }
+      },
+      "Sport": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Bike tours": 0.28208,
+            "Hiking": 0.0,
+            "Indoor activities": 1.0,
+            "Outdoor activities": 0.43341,
+            "Adventure": 0.87167
+          }
+        }
+      },
+      "Environment": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Parks and Gardens": 1.0,
+            "Square": 0.29837,
+            "Historical places": 0.26567,
+            "See, river, etc.": 0.0,
+            "Monuments": 0.62125,
+            "Special streets": 0.38965,
+            "Palace": 0.33924,
+            "Landscape and nature": 0.88283
+          }
+        }
+      }
+    },
+    "issueWeights": {
+      "Atmosphere": 0.18112,
+      "Amusement": 0.1249,
+      "Culinary": 0.10199,
+      "Shopping": 0.20852,
+      "Culture": 0.33472,
+      "Sport": 0.0,
+      "Environment": 0.04875
+    },
+    "domain": {
+      "name": "travel_domain_hOmD",
+      "issuesValues": {
+        "Atmosphere": {
+          "values": [
+            "Cultural heritage",
+            "Local traditions",
+            "Political stability",
+            "Security (personal)",
+            "Liveliness",
+            "Turistic activities",
+            "Hospitality"
+          ]
+        },
+        "Amusement": {
+          "values": [
+            "Nightlife and entertainment",
+            "Nightclubs",
+            "Excursion",
+            "Casinos",
+            "Zoo",
+            "Festivals",
+            "Amusement park"
+          ]
+        },
+        "Culinary": {
+          "values": [
+            "Local cuisine",
+            "Lunch facilities",
+            "International cuisine",
+            "Cooking workshops"
+          ]
+        },
+        "Shopping": {
+          "values": [
+            "Shopping malls",
+            "Markets",
+            "Streets",
+            "Small boutiques"
+          ]
+        },
+        "Culture": {
+          "values": [
+            "Museum",
+            "Music hall",
+            "Theater",
+            "Art gallery",
+            "Cinema",
+            "Congress center"
+          ]
+        },
+        "Sport": {
+          "values": [
+            "Bike tours",
+            "Hiking",
+            "Indoor activities",
+            "Outdoor activities",
+            "Adventure"
+          ]
+        },
+        "Environment": {
+          "values": [
+            "Parks and Gardens",
+            "Square",
+            "Historical places",
+            "See, river, etc.",
+            "Monuments",
+            "Special streets",
+            "Palace",
+            "Landscape and nature"
+          ]
+        }
+      }
+    },
+    "name": "profileB"
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "size": 98784,
+  "opposition": 0.12212527694187632,
+  "distribution": 0.2503068098941003,
+  "social_welfare": {
+    "bid": {
+      "Bread type": "Croissants",
+      "Fruit": "Grapes",
+      "Snacks": "Doughnuts",
+      "Spreads": "Sandwichspread",
+      "Vegetables": "Broccoli",
+      "Drinks": "Coffee"
+    },
+    "utility": [
+      0.9055133206,
+      0.9226252581000001
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Bread type": "Croissants",
+      "Fruit": "Grapes",
+      "Snacks": "Doughnuts",
+      "Spreads": "Sandwichspread",
+      "Vegetables": "Broccoli",
+      "Drinks": "Coffee"
+    },
+    "utility": [
+      0.9055133206,
+      0.9226252581000001
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Bread type": "Croissants",
+      "Fruit": "Grapes",
+      "Snacks": "Doughnuts",
+      "Spreads": "Sandwichspread",
+      "Vegetables": "Broccoli",
+      "Drinks": "Coffee"
+    },
+    "utility": [
+      0.9055133206,
+      0.9226252581000001
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Melons",
+        "Snacks": "Doughnuts",
+        "Spreads": "Cheese",
+        "Vegetables": "Broccoli",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.48744541640000005,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Melons",
+        "Snacks": "Doughnuts",
+        "Spreads": "Cheese",
+        "Vegetables": "Broccoli",
+        "Drinks": "Tea"
+      },
+      "utility": [
+        0.5709061656000001,
+        0.9997922569
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Melons",
+        "Snacks": "Doughnuts",
+        "Spreads": "Cheese",
+        "Vegetables": "Broccoli",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.6004654164000001,
+        0.9994919183
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Melons",
+        "Snacks": "Doughnuts",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Broccoli",
+        "Drinks": "Tea"
+      },
+      "utility": [
+        0.6822940698000001,
+        0.9928395462999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Melons",
+        "Snacks": "Doughnuts",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Broccoli",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.7118533206000001,
+        0.9925392076999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Bananas",
+        "Snacks": "Doughnuts",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Broccoli",
+        "Drinks": "Tea"
+      },
+      "utility": [
+        0.7842366938,
+        0.9335686335
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Bananas",
+        "Snacks": "Doughnuts",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Broccoli",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.8137959446,
+        0.9332682949
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Grapes",
+        "Snacks": "Doughnuts",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Broccoli",
+        "Drinks": "Tea"
+      },
+      "utility": [
+        0.8759540698,
+        0.9229255967000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Grapes",
+        "Snacks": "Doughnuts",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Broccoli",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.9055133206,
+        0.9226252581000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Grapes",
+        "Snacks": "Cookies",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Broccoli",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.9071560955000001,
+        0.8358380206
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Grapes",
+        "Snacks": "Doughnuts",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Broccoli",
+        "Drinks": "Tea"
+      },
+      "utility": [
+        0.9298328254,
+        0.6469387295
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Grapes",
+        "Snacks": "Doughnuts",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Broccoli",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.9593920762,
+        0.6466383909
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Grapes",
+        "Snacks": "Doughnuts",
+        "Spreads": "Salami",
+        "Vegetables": "Broccoli",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.9624618786,
+        0.5632289240999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Grapes",
+        "Snacks": "Cookies",
+        "Spreads": "Salami",
+        "Vegetables": "Broccoli",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.9641046535000001,
+        0.47644168659999997
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Grapes",
+        "Snacks": "Doughnuts",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Leek",
+        "Drinks": "Tea"
+      },
+      "utility": [
+        0.9657281719,
+        0.3241411295
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Grapes",
+        "Snacks": "Doughnuts",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Leek",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.9952874227,
+        0.3238407909
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Grapes",
+        "Snacks": "Doughnuts",
+        "Spreads": "Salami",
+        "Vegetables": "Leek",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.9983572251,
+        0.2404313241
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Croissants",
+        "Fruit": "Grapes",
+        "Snacks": "Cookies",
+        "Spreads": "Salami",
+        "Vegetables": "Leek",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        1.0,
+        0.1536440866
+      ]
+    }
+  ]
+}

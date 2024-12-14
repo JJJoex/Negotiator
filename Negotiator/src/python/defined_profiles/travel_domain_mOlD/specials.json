@@ -1,0 +1,427 @@
+{
+  "size": 188160,
+  "opposition": 0.3268301560013235,
+  "distribution": 0.30783223304182633,
+  "social_welfare": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "International cuisine",
+      "Shopping": "Markets",
+      "Culture": "Museum",
+      "Sport": "Bike tours",
+      "Environment": "Palace"
+    },
+    "utility": [
+      0.8240992831,
+      0.7200875181999999
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "International cuisine",
+      "Shopping": "Markets",
+      "Culture": "Museum",
+      "Sport": "Bike tours",
+      "Environment": "Palace"
+    },
+    "utility": [
+      0.8240992831,
+      0.7200875181999999
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Atmosphere": "Turistic activities",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "International cuisine",
+      "Shopping": "Markets",
+      "Culture": "Museum",
+      "Sport": "Bike tours",
+      "Environment": "Palace"
+    },
+    "utility": [
+      0.7663388916,
+      0.7714820854
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.2641392831,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.4587288916000001,
+        0.9918846754
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.5164892831,
+        0.9404901082
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.5304214168000001,
+        0.8873525406
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Casinos",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.5362474748,
+        0.8813473157
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.5727098651,
+        0.8619986002000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.5881818083,
+        0.8359579734
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Casinos",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.5924680568,
+        0.8028558077000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.6009392831,
+        0.7878740602
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Casinos",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.60794,
+        0.7768151809
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7663388916,
+        0.7714820854
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8240992831,
+        0.7200875181999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8380314168,
+        0.6669499506
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Casinos",
+        "Culinary": "International cuisine",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8438574748000001,
+        0.6609447257
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8803198650999999,
+        0.6415960102
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8957918083,
+        0.6155553833999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Casinos",
+        "Culinary": "International cuisine",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9000780568,
+        0.5824532177
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9085492831,
+        0.5674714702
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Casinos",
+        "Culinary": "International cuisine",
+        "Shopping": "Markets",
+        "Culture": "Museum",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9155500000000001,
+        0.5564125909
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9224814168,
+        0.5143339026
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Casinos",
+        "Culinary": "International cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9283074748000001,
+        0.5083286777
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9647698651000001,
+        0.48897996219999995
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9802418083,
+        0.4629393354
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Casinos",
+        "Culinary": "International cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9845280568000001,
+        0.42983716969999997
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Casinos",
+        "Culinary": "International cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        1.0,
+        0.4037965429
+      ]
+    }
+  ]
+}

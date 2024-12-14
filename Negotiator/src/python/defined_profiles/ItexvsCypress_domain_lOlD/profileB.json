@@ -1,0 +1,88 @@
+{
+  "LinearAdditiveUtilitySpace": {
+    "issueUtilities": {
+      "Price": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "$4.37": 0.46771,
+            "$4.12": 1.0,
+            "$3.98": 0.0,
+            "$3.71": 0.66841,
+            "$3.47": 0.94939
+          }
+        }
+      },
+      "Delivery": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "60 days": 1.0,
+            "45 days": 0.0,
+            "30 days": 0.73445,
+            "20 days": 0.14713
+          }
+        }
+      },
+      "Payment": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Upon delivery": 0.05676,
+            "30 days after delivery": 0.0,
+            "60 days after delivery": 1.0
+          }
+        }
+      },
+      "Returns": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Full price": 0.0,
+            "5% spoilage allowed": 0.72603,
+            "10% spoilage allowed": 1.0
+          }
+        }
+      }
+    },
+    "issueWeights": {
+      "Price": 0.3793,
+      "Delivery": 0.08834,
+      "Payment": 0.0777,
+      "Returns": 0.45466
+    },
+    "domain": {
+      "name": "ItexvsCypress_domain_lOlD",
+      "issuesValues": {
+        "Price": {
+          "values": [
+            "$4.37",
+            "$4.12",
+            "$3.98",
+            "$3.71",
+            "$3.47"
+          ]
+        },
+        "Delivery": {
+          "values": [
+            "60 days",
+            "45 days",
+            "30 days",
+            "20 days"
+          ]
+        },
+        "Payment": {
+          "values": [
+            "Upon delivery",
+            "30 days after delivery",
+            "60 days after delivery"
+          ]
+        },
+        "Returns": {
+          "values": [
+            "Full price",
+            "5% spoilage allowed",
+            "10% spoilage allowed"
+          ]
+        }
+      }
+    },
+    "name": "profileB"
+  }
+}

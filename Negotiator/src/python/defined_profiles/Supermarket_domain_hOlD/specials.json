@@ -1,0 +1,763 @@
+{
+  "size": 98784,
+  "opposition": 0.47162782316020496,
+  "distribution": 0.24959205360768558,
+  "social_welfare": {
+    "bid": {
+      "Bread type": "Crackers",
+      "Fruit": "Apples",
+      "Snacks": "Popcorn",
+      "Spreads": "Cheese",
+      "Vegetables": "Tomatos",
+      "Drinks": "Milk"
+    },
+    "utility": [
+      0.5409299069000001,
+      0.9484038911
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Bread type": "Crackers",
+      "Fruit": "Apples",
+      "Snacks": "Popcorn",
+      "Spreads": "Cheese",
+      "Vegetables": "Leek",
+      "Drinks": "Milk"
+    },
+    "utility": [
+      0.5538247337000001,
+      0.9331675117
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Bread type": "Crackers",
+      "Fruit": "Apples",
+      "Snacks": "Popcorn",
+      "Spreads": "Jam",
+      "Vegetables": "Tomatos",
+      "Drinks": "Wine"
+    },
+    "utility": [
+      0.672744705,
+      0.6603873155
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Bread type": "Plain bread",
+        "Fruit": "Apples",
+        "Snacks": "Candy",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.1056804694,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Candy",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.1112174512,
+        0.9989393745
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Plain bread",
+        "Fruit": "Apples",
+        "Snacks": "Potato Chips",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.1434369346,
+        0.9964091216000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Potato Chips",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.14897391640000002,
+        0.9953484961
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Plain bread",
+        "Fruit": "Apples",
+        "Snacks": "Candy",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.27476597340000003,
+        0.9951782869
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Candy",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.28030295520000004,
+        0.9941176614
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Plain bread",
+        "Fruit": "Apples",
+        "Snacks": "Potato Chips",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.31252243860000006,
+        0.9915874085
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Potato Chips",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.3180594204,
+        0.990526783
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Plain bread",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.37810914300000004,
+        0.9879965301
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.38364612480000004,
+        0.9869359046
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.4156548138,
+        0.9842665301
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Plain bread",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Tomatos",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.4565897728,
+        0.9745474479
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Plain bread",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Tomatos",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.46930261780000004,
+        0.9738758628999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Tomatos",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.4748395996,
+        0.9728152374
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Tomatos",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.49413544360000006,
+        0.9708174479
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Tomatos",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.5068482886000001,
+        0.9701458628999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Leek",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.5070302704,
+        0.9555810685
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Leek",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.5197431154000001,
+        0.9549094835
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Cheese",
+        "Vegetables": "Tomatos",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.5409299069000001,
+        0.9484038911
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Cheese",
+        "Vegetables": "Leek",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.5538247337000001,
+        0.9331675117
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Chocolate",
+        "Vegetables": "Leek",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.5661681866,
+        0.8722002353
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Jam",
+        "Vegetables": "Tomatos",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.5755648138,
+        0.8356597815
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Jam",
+        "Vegetables": "Leek",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.5884596406,
+        0.8204234021
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Tomatos",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.5913153348,
+        0.7955449819
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Tomatos",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.6040281798,
+        0.7948733968999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Cheese",
+        "Vegetables": "Carrots",
+        "Drinks": "Milk"
+      },
+      "utility": [
+        0.6058105971000001,
+        0.7807980293
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Leek",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.6169230066,
+        0.7796370175
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Cheese",
+        "Vegetables": "Tomatos",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.6381097981000001,
+        0.7731314251
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Cheese",
+        "Vegetables": "Leek",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.6510046249000001,
+        0.7578950457
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Chocolate",
+        "Vegetables": "Leek",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.6633480778,
+        0.6969277693
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Jam",
+        "Vegetables": "Tomatos",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.672744705,
+        0.6603873155
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Jam",
+        "Vegetables": "Leek",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.6856395318,
+        0.6451509361
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Cheese",
+        "Vegetables": "Carrots",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.7029904883,
+        0.6055255633
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Plain bread",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.737663639,
+        0.5859954162000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.7432006207999999,
+        0.5849347907
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Tomatos",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.7752093098,
+        0.5822654162
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Plain bread",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Tomatos",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.8161442688,
+        0.5725463340000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Plain bread",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Tomatos",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.8288571138,
+        0.571874749
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Baguette",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Tomatos",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.8343940956,
+        0.5708141234999999
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Tomatos",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.8536899396,
+        0.5688163340000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Tomatos",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.8664027846,
+        0.568144749
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Leek",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.8665847663999999,
+        0.5535799546
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Leek",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.8792976114,
+        0.5529083696
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Cheese",
+        "Vegetables": "Tomatos",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.9004844029000001,
+        0.5464027772
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Cheese",
+        "Vegetables": "Leek",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.9133792297000001,
+        0.5311663978000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Chocolate",
+        "Vegetables": "Leek",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.9257226826,
+        0.47019912140000003
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Jam",
+        "Vegetables": "Tomatos",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.9351193098,
+        0.4336586676
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Jam",
+        "Vegetables": "Leek",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.9480141366,
+        0.4184222882
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Cheese",
+        "Vegetables": "Carrots",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.9653650931,
+        0.3787969154
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Chocolate",
+        "Vegetables": "Carrots",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        0.977708546,
+        0.317829639
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Apples",
+        "Snacks": "Popcorn",
+        "Spreads": "Jam",
+        "Vegetables": "Carrots",
+        "Drinks": "Coffee"
+      },
+      "utility": [
+        1.0,
+        0.2660528058
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "size": 180,
+  "opposition": 0.28429902014279823,
+  "distribution": 0.37631933056200456,
+  "social_welfare": {
+    "bid": {
+      "Price": "$3.47",
+      "Delivery": "30 days",
+      "Payment": "30 days after delivery",
+      "Returns": "10% spoilage allowed"
+    },
+    "utility": [
+      0.6248902077999999,
+      1.0
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Price": "$3.47",
+      "Delivery": "30 days",
+      "Payment": "30 days after delivery",
+      "Returns": "Full price"
+    },
+    "utility": [
+      0.8555202077999999,
+      0.75515
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Price": "$3.47",
+      "Delivery": "30 days",
+      "Payment": "30 days after delivery",
+      "Returns": "Full price"
+    },
+    "utility": [
+      0.8555202077999999,
+      0.75515
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Price": "$3.47",
+        "Delivery": "30 days",
+        "Payment": "30 days after delivery",
+        "Returns": "10% spoilage allowed"
+      },
+      "utility": [
+        0.6248902077999999,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.47",
+        "Delivery": "30 days",
+        "Payment": "30 days after delivery",
+        "Returns": "5% spoilage allowed"
+      },
+      "utility": [
+        0.6977208555,
+        0.898636997
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.47",
+        "Delivery": "30 days",
+        "Payment": "30 days after delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        0.8555202077999999,
+        0.75515
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.47",
+        "Delivery": "20 days",
+        "Payment": "30 days after delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        0.8860402077999999,
+        0.4794
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.47",
+        "Delivery": "30 days",
+        "Payment": "Upon delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        0.96948,
+        0.40186
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.47",
+        "Delivery": "20 days",
+        "Payment": "Upon delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        1.0,
+        0.12611
+      ]
+    }
+  ]
+}

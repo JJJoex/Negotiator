@@ -1,0 +1,103 @@
+{
+  "size": 180,
+  "opposition": 0.3214465047104088,
+  "distribution": 0.3981457197167633,
+  "social_welfare": {
+    "bid": {
+      "Price": "$3.71",
+      "Delivery": "20 days",
+      "Payment": "30 days after delivery",
+      "Returns": "Full price"
+    },
+    "utility": [
+      0.8016763179999999,
+      0.9909613079999999
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Price": "$3.71",
+      "Delivery": "20 days",
+      "Payment": "30 days after delivery",
+      "Returns": "Full price"
+    },
+    "utility": [
+      0.8016763179999999,
+      0.9909613079999999
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Price": "$3.47",
+      "Delivery": "20 days",
+      "Payment": "30 days after delivery",
+      "Returns": "Full price"
+    },
+    "utility": [
+      0.8860402077999999,
+      0.6994321688
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Price": "$4.12",
+        "Delivery": "20 days",
+        "Payment": "30 days after delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        0.5244867232,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.71",
+        "Delivery": "20 days",
+        "Payment": "30 days after delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        0.8016763179999999,
+        0.9909613079999999
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.47",
+        "Delivery": "20 days",
+        "Payment": "30 days after delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        0.8860402077999999,
+        0.6994321688
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.71",
+        "Delivery": "20 days",
+        "Payment": "Upon delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        0.9156361102,
+        0.587381308
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.47",
+        "Delivery": "20 days",
+        "Payment": "Upon delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        1.0,
+        0.29585216880000004
+      ]
+    }
+  ]
+}
