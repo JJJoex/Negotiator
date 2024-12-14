@@ -16,12 +16,6 @@ export default {
       const stepMap = {
         '/description': 0,
         '/preparation': 1,
-        '/preparation/setting': 1,
-        '/preparation/myInterest': 1,
-        '/preparation/myIssue': 1,
-        '/preparation/opponentInterest': 1,
-        '/preparation/opponentIssue': 1,
-        '/preparation/confirmation': 1,
         '/negotiation': 2,
         '/finish': 4,
       };

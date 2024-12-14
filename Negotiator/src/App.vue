@@ -17,46 +17,10 @@ const goToNext = () => {
   if (route.path === '/description') {
     router.push('/preparation');
     showPrevious.value = true;
-    nextPage.value = '谈判设定';
+    nextPage.value = '开始谈判';
     previousPage.value = '欢迎页面';
   }
   else if (route.path === '/preparation') {
-    router.push('/preparation/setting');
-    showPrevious.value = true;
-    nextPage.value = '我方兴趣';
-    previousPage.value = '谈判准备';
-  }
-  else if (route.path === '/preparation/setting') {
-    router.push('/preparation/myInterest');
-    showPrevious.value = true;
-    nextPage.value = '我方议题';
-    previousPage.value = '谈判设定';
-  }
-  else if (route.path === '/preparation/myInterest') {
-    router.push('/preparation/myIssue');
-    showPrevious.value = true;
-    nextPage.value = '对方兴趣';
-    previousPage.value = '我方兴趣';
-  }
-  else if (route.path === '/preparation/myIssue') {
-    router.push('/preparation/opponentInterest');
-    showPrevious.value = true;
-    nextPage.value = '对方议题';
-    previousPage.value = '我方议题';
-  }
-  else if (route.path === '/preparation/opponentInterest') {
-    router.push('/preparation/opponentIssue');
-    showPrevious.value = true;
-    nextPage.value = '数据确认';
-    previousPage.value = '对方兴趣';
-  }
-  else if (route.path === '/preparation/opponentIssue') {
-    router.push('/preparation/confirmation');
-    showPrevious.value = true;
-    nextPage.value = '开始谈判';
-    previousPage.value = '对方议题';
-  }
-  else if (route.path === '/preparation/confirmation') {
     router.push('/negotiation');
     showPrevious.value = true;
     nextPage.value = '查看结果';
@@ -82,42 +46,6 @@ const goToPrevious = () => {
     nextPage.value = '谈判准备';
     previousPage.value = '';
   }
-  else if (route.path === '/preparation/setting') {
-    router.push('/preparation');
-    showPrevious.value = true;
-    nextPage.value = '谈判设定';
-    previousPage.value = '欢迎页面';
-  }
-  else if (route.path === '/preparation/myInterest') {
-    router.push('/preparation/setting');
-    showPrevious.value = true;
-    nextPage.value = '我方兴趣';
-    previousPage.value = '谈判准备';
-  }
-  else if (route.path === '/preparation/myIssue') {
-    router.push('/preparation/myInterest');
-    showPrevious.value = true;
-    nextPage.value = '我方议题';
-    previousPage.value = '谈判设定';
-  }
-  else if (route.path === '/preparation/opponentInterest') {
-    router.push('/preparation/myIssue');
-    showPrevious.value = true;
-    nextPage.value = '对方兴趣';
-    previousPage.value = '我方兴趣';
-  }
-  else if (route.path === '/preparation/opponentIssue') {
-    router.push('/preparation/opponentInterest');
-    showPrevious.value = true;
-    nextPage.value = '对方议题';
-    previousPage.value = '我方议题';
-  }
-  else if (route.path === '/preparation/confirmation') {
-    router.push('/preparation/opponentIssue');
-    showPrevious.value = true;
-    nextPage.value = '数据确认';
-    previousPage.value = '对方兴趣';
-  }
   else if (route.path === '/negotiation') {
     router.push('/preparation');
     showPrevious.value = true;
@@ -126,42 +54,37 @@ const goToPrevious = () => {
   }
 };
 
-// 获取 Vuex store 实例
-const store = useStore();
+// // 获取 Vuex store 实例
+// const store = useStore();
 
-// 获取 Vuex 数据
-const nego_settings_data = store.state.nego_settings_data;
-const my_interests_data = store.state.my_interests_data;
-const my_issues_data = store.state.my_issues_data;
-const op_interests_data = store.state.op_interests_data;
-const op_issues_data = store.state.op_issues_data;
+// // 获取 Vuex 数据
+// const nego_settings_data = store.state.nego_settings_data;
+// const my_interests_data = store.state.my_interests_data;
+// const my_issues_data = store.state.my_issues_data;
+// const op_interests_data = store.state.op_interests_data;
+// const op_issues_data = store.state.op_issues_data;
 
-// 监听 Vuex 数据变化
-watch(
-  [
-    () => store.state.nego_settings_data,
-    () => store.state.my_interests_data,
-    () => store.state.my_issues_data,
-    () => store.state.op_interests_data,
-    () => store.state.op_issues_data
-  ],
-  () => {
-    // 打印所有相关的数据
-    console.log('App.vue中, Nego Settings:', store.state.nego_settings_data);
-    console.log('App.vue中, My Interests:', store.state.my_interests_data);
-    console.log('App.vue中, My Issues:', store.state.my_issues_data);
-    console.log('App.vue中, Op Interests:', store.state.op_interests_data);
-    console.log('App.vue中, Op Issues:', store.state.op_issues_data);
-  },
-  { deep: true }
-);
+// // 监听 Vuex 数据变化
+// watch(
+//   [
+//     () => store.state.nego_settings_data,
+//     () => store.state.my_interests_data,
+//     () => store.state.my_issues_data,
+//     () => store.state.op_interests_data,
+//     () => store.state.op_issues_data
+//   ],
+//   () => {
+//     // 打印所有相关的数据
+//     console.log('App.vue中, Nego Settings:', store.state.nego_settings_data);
+//     console.log('App.vue中, My Interests:', store.state.my_interests_data);
+//     console.log('App.vue中, My Issues:', store.state.my_issues_data);
+//     console.log('App.vue中, Op Interests:', store.state.op_interests_data);
+//     console.log('App.vue中, Op Issues:', store.state.op_issues_data);
+//   },
+//   { deep: true }
+// );
 
 </script>
-
-
-
-
-
 
 <template>
   <div id="app">
@@ -225,7 +148,7 @@ watch(
 }
 
 .body {
-  display: flex;
+  /* display: flex; */
   width: 100%;
   height: 100%;
   overflow: scroll;
