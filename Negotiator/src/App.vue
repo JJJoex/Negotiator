@@ -7,24 +7,60 @@ import { useRouter, useRoute, RouterView } from 'vue-router';
 import { useStore } from 'vuex';
 
 
-const nextPage = ref('准备阶段');
+const nextPage = ref('谈判准备');
 const previousPage = ref('查看结果');
 const showPrevious = ref(false);
-
+const showFooter = ref(true);
 const router = useRouter();
 const route = useRoute();
 const goToNext = () => {
   if (route.path === '/description') {
     router.push('/preparation');
     showPrevious.value = true;
-    nextPage.value = '谈判阶段';
+    nextPage.value = '谈判设定';
     previousPage.value = '欢迎页面';
   }
   else if (route.path === '/preparation') {
+    router.push('/preparation/setting');
+    showPrevious.value = true;
+    nextPage.value = '我方兴趣';
+    previousPage.value = '谈判准备';
+  }
+  else if (route.path === '/preparation/setting') {
+    router.push('/preparation/myInterest');
+    showPrevious.value = true;
+    nextPage.value = '我方议题';
+    previousPage.value = '谈判设定';
+  }
+  else if (route.path === '/preparation/myInterest') {
+    router.push('/preparation/myIssue');
+    showPrevious.value = true;
+    nextPage.value = '对方兴趣';
+    previousPage.value = '我方兴趣';
+  }
+  else if (route.path === '/preparation/myIssue') {
+    router.push('/preparation/opponentInterest');
+    showPrevious.value = true;
+    nextPage.value = '对方议题';
+    previousPage.value = '我方议题';
+  }
+  else if (route.path === '/preparation/opponentInterest') {
+    router.push('/preparation/opponentIssue');
+    showPrevious.value = true;
+    nextPage.value = '数据确认';
+    previousPage.value = '对方兴趣';
+  }
+  else if (route.path === '/preparation/opponentIssue') {
+    router.push('/preparation/confirmation');
+    showPrevious.value = true;
+    nextPage.value = '开始谈判';
+    previousPage.value = '对方议题';
+  }
+  else if (route.path === '/preparation/confirmation') {
     router.push('/negotiation');
     showPrevious.value = true;
     nextPage.value = '查看结果';
-    previousPage.value = '准备阶段';
+    previousPage.value = '谈判准备';
   }
   else if (route.path === '/negotiation') {
     router.push('/finish');
@@ -35,7 +71,7 @@ const goToNext = () => {
   else if (route.path === '/finish') {
     router.push('/description');
     showPrevious.value = false;
-    nextPage.value = '准备阶段';
+    nextPage.value = '谈判准备';
     previousPage.value = '';
   }
 }
@@ -43,13 +79,49 @@ const goToPrevious = () => {
   if (route.path === '/preparation') {
     router.push('/description');
     showPrevious.value = false;
-    nextPage.value = '准备阶段';
+    nextPage.value = '谈判准备';
     previousPage.value = '';
+  }
+  else if (route.path === '/preparation/setting') {
+    router.push('/preparation');
+    showPrevious.value = true;
+    nextPage.value = '谈判设定';
+    previousPage.value = '欢迎页面';
+  }
+  else if (route.path === '/preparation/myInterest') {
+    router.push('/preparation/setting');
+    showPrevious.value = true;
+    nextPage.value = '我方兴趣';
+    previousPage.value = '谈判准备';
+  }
+  else if (route.path === '/preparation/myIssue') {
+    router.push('/preparation/myInterest');
+    showPrevious.value = true;
+    nextPage.value = '我方议题';
+    previousPage.value = '谈判设定';
+  }
+  else if (route.path === '/preparation/opponentInterest') {
+    router.push('/preparation/myIssue');
+    showPrevious.value = true;
+    nextPage.value = '对方兴趣';
+    previousPage.value = '我方兴趣';
+  }
+  else if (route.path === '/preparation/opponentIssue') {
+    router.push('/preparation/opponentInterest');
+    showPrevious.value = true;
+    nextPage.value = '对方议题';
+    previousPage.value = '我方议题';
+  }
+  else if (route.path === '/preparation/confirmation') {
+    router.push('/preparation/opponentIssue');
+    showPrevious.value = true;
+    nextPage.value = '数据确认';
+    previousPage.value = '对方兴趣';
   }
   else if (route.path === '/negotiation') {
     router.push('/preparation');
     showPrevious.value = true;
-    nextPage.value = '谈判阶段';
+    nextPage.value = '谈判设定';
     previousPage.value = '欢迎页面';
   }
 };
@@ -101,10 +173,8 @@ watch(
     </div>
     <div class="body">
       <RouterView style="width: 100%;"/>
-
-
     </div>
-    <div class="footer">
+    <div class="footer" v-if="showFooter">
       <div id="previous" @click="goToPrevious" v-if="showPrevious">
         <div style="font-size: 5px; text-align: right;">
           <ArrowLeftBold style="width: 5em; height: 5em; margin: 20px;" />
@@ -155,9 +225,12 @@ watch(
 }
 
 .body {
+  display: flex;
   width: 100%;
-  height: 80%;
+  height: 100%;
   overflow: scroll;
+  align-items: center;
+  justify-content: space-between
 }
 
 .footer {
