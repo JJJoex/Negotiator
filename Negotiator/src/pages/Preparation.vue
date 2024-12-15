@@ -1,5 +1,5 @@
 <script setup lang="js">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import backendData from './specific_contents/backend.json';
 
 
@@ -17,6 +17,23 @@ const prepare = ref({
   opponent_issue: []
 });
 
+watch(
+  () => prepare.value.domain,
+  (newVal, oldVal) => {
+    if (newVal) {
+      const issue = backendData[newVal].issue;
+      const keys = Object.keys(issue);
+      const values = Object.values(issue);
+
+      prepare.value.my_interest = keys.map(() => 0);
+      prepare.value.opponent_interest = keys.map(() => 0);
+      prepare.value.my_issue = values.flat().map(() => 0);
+      prepare.value.opponent_issue = values.flat().map(() => 0);
+      // prepare.value.opponent_issue = values.map((value) => Array(value.length).fill(0));
+    }
+  },
+  { immediate: true }
+);
 const marks = {
   '-2': '非常不同意',
   '-1': '',
@@ -133,6 +150,7 @@ const marks = {
       <div class="interest-chart" id="my-interest" style="width: 50%; height: 300px;"></div>
     </div>
     <div class="my-issue">
+      <h2>我的议题</h2>
       <template v-for="(item, domain_idx) in Object.keys(backendData[prepare.domain].issue)">
         <div class="slider">
           <h3>{{ item }}</h3>
@@ -148,6 +166,7 @@ const marks = {
     </div>
     <div class="opponent-interest">
       <div class="slider">
+        <h2>对手兴趣</h2>
         <el-form :model="prepare">
           <el-form-item :label="item" v-for="(item, idx) in Object.keys(backendData[prepare.domain].issue)">
             <el-slider v-model="prepare.opponent_interest[idx]"></el-slider>
@@ -157,6 +176,7 @@ const marks = {
       <div class="interest-chart" id="opponent-interest" style="width: 50%; height: 300px;"></div>
     </div>
     <div class="opponent-issue">
+      <h2>对手议题</h2>
       <template v-for="(item, domain_idx) in Object.keys(backendData[prepare.domain].issue)">
         <div class="slider">
           <h3>{{ item }}</h3>
@@ -173,7 +193,7 @@ const marks = {
     <div class="confirmation">
       <el-descriptions title="谈判确认" :column="2" border>
         <el-descriptions-item label="谈判域">{{ prepare.domain }}</el-descriptions-item>
-        <el-descriptions-item label="谈判角色">{{ prepare.role }}</el-descriptions-item>
+        <el-descriptions-item label="谈判角色">{{ prepare.role === 0 ? backendData[prepare.domain].role[0] :backendData[prepare.domain].role[1]  }}</el-descriptions-item>
         <el-descriptions-item label="谈判先后">{{ prepare.first === 0 ? '先手' : '后手' }}</el-descriptions-item>
         <el-descriptions-item label="谈判轮数">{{ prepare.round }}轮</el-descriptions-item>
         <el-descriptions-item label="谈判时间">{{ prepare.time }}分钟</el-descriptions-item>
