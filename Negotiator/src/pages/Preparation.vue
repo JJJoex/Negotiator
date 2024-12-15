@@ -170,8 +170,21 @@ const marks = {
         <div class="interest-chart" :id="'opponent-issue-' + item" style="width: 50%; height: 300px;"></div>
       </template>
     </div>
-  </div>
-  <div class="confirmation">
+    <div class="confirmation">
+      <el-descriptions title="谈判确认" :column="2" border>
+        <el-descriptions-item label="谈判域">{{ prepare.domain }}</el-descriptions-item>
+        <el-descriptions-item label="谈判角色">{{ prepare.role }}</el-descriptions-item>
+        <el-descriptions-item label="谈判先后">{{ prepare.first === 0 ? '先手' : '后手' }}</el-descriptions-item>
+        <el-descriptions-item label="谈判轮数">{{ prepare.round }}轮</el-descriptions-item>
+        <el-descriptions-item label="谈判时间">{{ prepare.time }}分钟</el-descriptions-item>
+        <el-descriptions-item label="我的特质">{{ prepare.my_profile }}</el-descriptions-item>
+        <el-descriptions-item label="对手特质">{{ prepare.opponent_profile }}</el-descriptions-item>
+        <el-descriptions-item label="我的兴趣">{{ prepare.my_interest }}</el-descriptions-item>
+        <el-descriptions-item label="我的议题">{{ prepare.my_issue }}</el-descriptions-item>
+        <el-descriptions-item label="对手兴趣">{{ prepare.opponent_interest }}</el-descriptions-item>
+        <el-descriptions-item label="对手议题">{{ prepare.opponent_issue }}</el-descriptions-item>
+      </el-descriptions>
+    </div>
   </div>
 </template>
 
