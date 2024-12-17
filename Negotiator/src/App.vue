@@ -26,7 +26,8 @@ const getPrecision = (num) => {
 
 
 
-
+// 获取 Vuex store 实例
+const store = useStore();
 
 
 const goToNext = () => {
@@ -108,8 +109,22 @@ const goToNext = () => {
     }
 
     console.log('App.vue中, data_to_send:', data_to_send);
-    return_data=sendJson(1,data_to_send);
-    console.log(return_data);
+
+    // const return_data=sendJson(1,data_to_send);
+    // console.log("App.vue中, 后端返回的data：",return_data);
+
+    // // 把后端python的一些初始返回值存到state里面
+    // // const store = useStore();
+    // store.commit('setNegoInitialData', return_data.value);
+
+    sendJson(1, data_to_send).then((return_data) => {
+      console.log("App.vue中, 后端返回的data：", return_data);
+
+      // 把后端返回值存到state里面
+      store.commit('setNegoInitialData', return_data);
+    }).catch((error) => {
+      console.error("App.vue中, 处理后端返回值时出错：", error);
+    });
 
   }
   else if (route.path === '/negotiation') {
@@ -140,8 +155,7 @@ const goToPrevious = () => {
   }
 };
 
-// 获取 Vuex store 实例
-const store = useStore();
+
 
 // 获取 Vuex 数据
 const nego_settings_data = store.state.nego_settings_data;

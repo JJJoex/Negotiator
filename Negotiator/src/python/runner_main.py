@@ -33,14 +33,15 @@ PREFIX_PATH=Path(r"D:\\Negotiator\\Negotiator\\src\\python")
 DEFINED_PROFILES_PATH=PREFIX_PATH / "defined_profiles"
 OUTPUT_DIR=PREFIX_PATH / "output_dir"
 
-# 选什么模型
-NEGO_SUFFIX="mOlD"
+# 选什么模型?
+# NEGO_SUFFIX="mOlD"
+NEGO_SUFFIX="hOhD"
 
 DICTIONARY_CN_EN={
     "杂货店":"Supermarket_domain_",
     "买车":"adg_",
     "旅行":"travel_domain_",
-    "找工作":"Supermarket_domain_",
+    "找工作":"thompson_employment_",
     "买卖自行车零件":"ItexvsCypress_domain_"
 }
 
@@ -53,7 +54,7 @@ ROLES_DICTIONARY_FUNCTION={
 }
 
 def translation(domain,my):
-    # 中文名称：谈判域 我方角色 对手角色
+    # 中文名称：谈判域 我方角色 对手角色 转换成英文
     domain_EN=DICTIONARY_CN_EN[domain]
     domain_EN=domain_EN+NEGO_SUFFIX
     
@@ -70,11 +71,105 @@ def translation(domain,my):
     
     return domain_EN,my_EN,op_EN
 
+def load_domain(domain_path):
+    with open(os.path.join(DEFINED_PROFILES_PATH,domain_path,domain_path+".json"),"r") as jf:
+        data=json.load(jf)['issuesValues']
+    
+    return data
+
+def trans_recommend_to_arr(recommend):
+    # python中的推荐报价->向量
+    if domain_dict == None:
+        raise ValueError("domain的字典还没建立！")
+    
+    item_to_indices = {}
+    for domain_index, (domain_name, domain_data) in enumerate(domain_dict.items()):
+        for position_index, value in enumerate(domain_data["values"]):
+            item_to_indices[value] = (domain_index, position_index)
+
+    # Map each recommended item to its position index within its domain, or -1 if not found
+    result = [item_to_indices.get(item, (-1, -1))[1] for item in recommend]
+    
+    logger.info(f"python中推荐报价:{recommend} 转化为向量:{result}")
+
+    return result
+
+def trans_arr_to_recommand(recommend):
+    # vue中的向量->推荐报价
+    if domain_dict == None:
+        raise ValueError("domain的字典还没建立！")
+    index_to_item = []
+    for domain_name, domain_data in domain_dict.items():
+        index_to_item.append(domain_data["values"])
+
+    # 通过向量中的索引找到对应的物品
+    result = []
+    for domain_index, position_index in enumerate(recommend):
+        if domain_index < len(index_to_item) and position_index < len(index_to_item[domain_index]):
+            result.append(index_to_item[domain_index][position_index])
+        else:
+            raise ValueError(f"Invalid index in vector: domain_index={domain_index}, position_index={position_index}")
+    
+    result=tuple(result)
+    
+    logger.info(f"vue中向量:{recommend} 转化为英文推荐报价元组:{result}")
+
+    return result
+    
+    
+
+
+
+
+def turn_to_json(signal:int,obj):
+    if signal==3:
+        # {'response': SAOResponse(response=<ResponseType.REJECT_OFFER: 1>, outcome=('10%', 'Division D', '100%', '100%', '$38,000')), 'history': []}
+        
+        to_return={
+            "response":-1,
+            "recommend":[]
+        }
+        print(obj)
+        print(obj['response'])
+        print(obj['response'].response)
+
+            
+        
+        if obj['response'].response==0:
+            # 谈判达成协议
+            to_return["response"]=0
+        elif obj['response'].response==1:
+            # 要有一个新的outcome
+            to_return["response"]=1
+            to_return["recommend"]=trans_recommend_to_arr(obj['response'].outcome)
+        elif obj['response'].response==2:
+            # 谈判破裂
+            to_return["response"]=2
+        else:
+            raise ValueError(f"Response not in [0,1,2]. It is {obj['response'].response}.")
+            
+        
+        return to_return
+        
+        
+    else:
+        pass
+
+
+
+def get_my_recommendation():
+    return turn_to_json(3,runner.handle_signal(3))
+    
+
+
+
+
 
 
 
 # Global runner instance
 runner = None
+domain_dict=None
 
 
 
@@ -84,6 +179,7 @@ CORS(app)
 @app.route('/api/negotiation', methods=['POST'])
 def negotiation_handler():
     global runner
+    global domain_dict
 
     # Get the JSON payload from the request
     # data = request.get_json()
@@ -135,6 +231,8 @@ def negotiation_handler():
             my_issues_arr=payload['MyIssues']
             op_issues_arr=payload['OpIssues']
             
+            logger.info(f"domain_name: {domain_name}")
+            
             
             
             domain_name,our_name,opp_name=translation(domain_name,our_name)
@@ -155,8 +253,6 @@ def negotiation_handler():
             logger.info(f"op_issues_arr: {op_issues_arr}")
             
 
-            
-            
 
             runner = NegotiationRunner(
                 base_path=base_path,
@@ -166,32 +262,72 @@ def negotiation_handler():
                 our_agent=our_agent,
                 opp_agent=opp_agent,
                 output_folder=output_folder,
-                time_limit=time_limit,
+                time_limit=time_limit*60,
                 n_steps=n_steps
             )
 
-            runner.initialize_session()
+            # runner.initialize_session()
+            runner.handle_signal(1,profile_a=our_agent_profile_values,
+                                  profile_b=opp_agent_profile_values,
+                                  weight_a=my_interest_arr,
+                                  weight_b=op_interest_arr)
+            
+            # runner.handle_signal(10)
+            
+            domain_dict=load_domain(domain_name)
+            
+            # print(runner.handle_signal(3))
+            # assert False
+            # nego_obj=
+            nego_obj=get_my_recommendation()
             response={
-                "message":"成功初始化谈判！"
+                "message":"成功初始化谈判！",
+                "negotiation_obj":nego_obj
             }
+            
+            
+            
 
         elif signal in range(3, 11):
+            
             if not runner:
                 return jsonify({"error": "Runner not initialized. Please send signal 1 first."}), 400
 
             if signal == 4:
                 # Handle user offer submission (signal 4)
                 user_offer = payload.get('user_offer')
-                if not user_offer:
-                    return jsonify({"error": "'user_offer' is required for signal 4."}), 400
                 
+                if not user_offer:
+                    raise ValueError("signal 4 中无法找到我方的出价！")
+                    
+                
+                
+                logger.info(f"用户出价向量：{user_offer}")
+                user_offer=trans_arr_to_recommand(user_offer)
+                
+                logger.info(f"用户出价英文（作为最终提交）：{user_offer}")
                 result = runner.handle_signal(signal, session=runner.session, user_offer=user_offer)
-                return jsonify(result)
+                
+                
+                my_next_recommend=get_my_recommendation()
+                
+                # logger.info(f"signal 4 Negotiation Result: {result}")
+                # logger.info(f"signal 4 my_next_recommend: {my_next_recommend}")
+                
+                # 对手的出价，推荐出价
+                response={
+                    "op_next_offer": trans_recommend_to_arr(result["next_offer"]),
+                    "recommend": my_next_recommend
+                }
+                
+                logger.info(f"signal 4 对手的出价，与下一步推荐出价: {response}")
+            
+                
 
             else:
                 # Handle other signals
                 result = runner.handle_signal(signal)
-                return jsonify(result)
+                # return jsonify(result)
 
         
         
@@ -201,7 +337,7 @@ def negotiation_handler():
         else:
             return jsonify({"error": f"Unknown signal: {signal}"}), 400
         
-        
+        print("Python 返回的数据：",response)
         return jsonify(response)
 
     except Exception as e:

@@ -4,6 +4,13 @@ import { ElMessage } from 'element-plus';  // 引入 ElMessage 用于 Toast 提�
 
 import issuesData from './specific_contents/interests_issues.json';
 
+import { useRoute } from 'vue-router';
+
+import { useStore } from 'vuex'; 
+import { sendJson } from './SendMessage';
+
+
+
 // 初始倒计时
 const countdown = ref(null);
 const remainingRounds=ref(null);
@@ -17,46 +24,16 @@ const subPages = ref([
 ]);
 
 // 商品分类数据
-// const groceryStore = reactive({
-//     "面包类": ["法棍", "饼干", "羊角面包", "普通面包"],
-//     "水果类": ["苹果", "香蕉", "樱桃", "葡萄", "梨", "瓜", "草莓"],
-//     "零食类": ["巧克力棒", "甜甜圈", "玉米片", "爆米花", "薯片", "糖果", "饼干"],
-//     "酱料类": ["奶酪", "果酱", "花生酱", "三明治酱", "巧克力酱", "火腿", "萨拉米香肠", "蛋沙拉"],
-//     "蔬菜类": ["豆子", "西兰花", "韭菜", "土豆", "菠菜", "胡萝卜", "西红柿"],
-//     "饮料类": ["能量饮料", "牛奶", "茶", "咖啡", "果汁", "可乐", "芬达", "啤酒", "葡萄酒"]
-// });
 const groceryStore = reactive({});
 
 // 出价历史数据，包含轮次、出价方和出价内容（索引数组）
-const bidHistory = ref([
-    { round: 1, bidder: "我方", bidContent: [0, 1, 3, 0, 4, 5] },
-    { round: 2, bidder: "对方", bidContent: [2, 3, 1, 0, 5, 2] },
-    { round: 3, bidder: "我方", bidContent: [0, 1, 3, 0, 4, 5] },
-    { round: 4, bidder: "对方", bidContent: [2, 3, 1, 0, 5, 2] },
-    { round: 5, bidder: "我方", bidContent: [0, 1, 3, 0, 4, 5] },
-    { round: 6, bidder: "对方", bidContent: [2, 3, 1, 0, 5, 2] },
-    { round: 7, bidder: "我方", bidContent: [0, 1, 3, 0, 4, 5] },
-    { round: 8, bidder: "对方", bidContent: [2, 3, 1, 0, 5, 2] },
-    { round: 9, bidder: "我方", bidContent: [0, 1, 3, 0, 4, 5] },
-    { round: 10, bidder: "对方", bidContent: [2, 3, 1, 0, 5, 2] },
-    { round: 11, bidder: "我方", bidContent: [3, 0, 2, 1, 3, 4] }
-]);
+const bidHistory = ref([]);
 
 // 假设 agent 提供了一个出价建议
-// const agentSuggestion = reactive({
-//     "面包类": "饼干",  // agent 提供的建议
-//     "水果类": "苹果",
-//     "零食类": "巧克力棒",
-//     "酱料类": "奶酪",
-//     "蔬菜类": "西兰花",
-//     "饮料类": "能量饮料"
-// });
 const agentSuggestion=reactive({});
 
 
-import { useRoute } from 'vue-router';
 
-import { useStore } from 'vuex'; 
 
 // 获取 Vuex store 实例
 const store = useStore();
@@ -79,11 +56,11 @@ onMounted(() => {
   opIssuesData.value = store.state.op_issues_data;
 
   // 打印加载的 Vuex 数据
-  console.log('加载的 Nego Settings:', negoSettingsData.value);
-  console.log('加载的 My Interests:', myInterestsData.value);
-  console.log('加载的 My Issues:', myIssuesData.value);
-  console.log('加载的 Op Interests:', opInterestsData.value);
-  console.log('加载的 Op Issues:', opIssuesData.value);
+//   console.log('加载的 Nego Settings:', negoSettingsData.value);
+//   console.log('加载的 My Interests:', myInterestsData.value);
+//   console.log('加载的 My Issues:', myIssuesData.value);
+//   console.log('加载的 Op Interests:', opInterestsData.value);
+//   console.log('加载的 Op Issues:', opIssuesData.value);
 
     countdown.value=negoSettingsData.value["BiddingTime"]*60;
     remainingRounds.value=negoSettingsData.value["BiddingRounds"];
@@ -93,7 +70,7 @@ onMounted(() => {
     
     domain_data_content.value=issuesData[domain];
 
-    console.log("aaa",issuesData[domain],domain_data_content.value);
+    // console.log("aaa",issuesData[domain],domain_data_content.value);
 
 
     Object.keys(domain_data_content.value).forEach(key => {
@@ -112,8 +89,35 @@ onMounted(() => {
 });
 
 
+// 初始化谈判的
+watch(
+  [
+    () => store.state.nego_initial_data
+  ],
+  () => {
+    console.log('谈判中，store.state.nego_initial_data：', store.state.nego_initial_data);
+    const  recommend=store.state.nego_initial_data.negotiation_obj.recommend;
+
+    console.log(recommend);
+    
+
+    Object.keys(agentSuggestion).forEach((key, index) => {
+        if (index < recommend.length) {
+            agentSuggestion[key] = recommend[index];
+        }
+    });
+
+    console.log(agentSuggestion);
+    ElMessage({
+        message: `已更新我方Agent给出的建议！`,
+        type: 'info',  // 提示类型
+    });
 
 
+
+  },
+  { deep: true }
+);
 
 
 
@@ -124,7 +128,9 @@ let timerId = null;
 
 // 倒计时结束的逻辑
 const onCountdownEnd = () => {
-    alert('倒计时结束！触发逻辑。');
+    // alert('倒计时结束！触发逻辑。');
+    // 超时 结束
+    sendJson(7,{});
 };
 
 const stopCountdown = () => {
@@ -200,23 +206,73 @@ const userSelections = reactive(
 );
 
 
-const handleTest = () =>{
-    // 测试，加入一组随机
-    ElMessage({
-        message: `这是一个测试按钮，模拟向history中增加信息`,
-        type: 'info',  // 提示类型
-    });
-
+const addBidHistory = (user, bid)=>{
     const lastRound = bidHistory.value.at(-1)?.round || 0; // 获取最后一轮的 round 值
     const newEntry = {
         round: lastRound + 1,
-        bidder: Math.random() > 0.5 ? "我方" : "对方", // 随机选择 bidder
-        bidContent: [0,1,2,0,3,1] // 随机生成出价内容
+        bidder: user, 
+        bidContent: bid
     };
+
+    // bid是向量
 
     // 添加新数据到 bidHistory
     bidHistory.value.push(newEntry);
 };
+
+
+const do_bidding = (my_bid)=>{
+    const to_send={
+        user_offer: my_bid
+    }
+
+    addBidHistory("我方",my_bid);
+
+    // 我方给出报价
+    sendJson(4,to_send).then((return_data) => {
+        addBidHistory("对方",return_data.op_next_offer);
+        Object.keys(agentSuggestion).forEach((key, index) => {
+            if (index < return_data.recommend.recommend.length) {
+                agentSuggestion[key] = return_data.recommend.recommend[index];
+            }
+        });
+        remainingRounds.value--;
+
+        // 检查剩余回合数是否为 0
+        if (remainingRounds.value === 0) {
+            handleFinalRoundEnd(); 
+        }
+
+    }).catch((error) => {
+      console.error("Error ", error);
+    });
+};
+
+const handleFinalRoundEnd = () => {
+    ElMessage({
+        message: `谈判轮次已用完！`,
+        type: 'info',  // 提示类型
+    });
+
+};
+
+// const handleTest = () =>{
+//     // 测试，加入一组随机
+//     ElMessage({
+//         message: `这是一个测试按钮，模拟向history中增加信息`,
+//         type: 'info',  // 提示类型
+//     });
+
+//     const lastRound = bidHistory.value.at(-1)?.round || 0; // 获取最后一轮的 round 值
+//     const newEntry = {
+//         round: lastRound + 1,
+//         bidder: Math.random() > 0.5 ? "我方" : "对方", // 随机选择 bidder
+//         bidContent: [0,1,2,0,3,1] // 随机生成出价内容
+//     };
+
+//     // 添加新数据到 bidHistory
+//     bidHistory.value.push(newEntry);
+// };
 
 // 处理出价按钮点击事件
 const handleBidClick = () => {
@@ -227,28 +283,69 @@ const handleBidClick = () => {
         return index; // 返回该类别选项的索引
     });
 
-    // 使用 ElMessage 显示用户选择的索引数组
-    ElMessage({
-        message: `选择的选项索引: [${selectionIndices.join(', ')}]`,
-        type: 'info',  // 提示类型
-    });
-    remainingRounds.value--;
+
+
+
+    do_bidding(selectionIndices);
+
+    
 
 };
 
 const handleBidSuggestionClick = () => {
-    remainingRounds.value--;
+
+    
+    const selectionIndices = Object.values(agentSuggestion);
+
+
+
+    do_bidding(selectionIndices);
+
+
+
+    
+
+
+    
 
 };
 
 const handleAcceptClick = () => {
 
+    // 我方同意
+    sendJson(5,{});
+
 };
 
 const handleRejectClick = () => {
 
+    // 我方终止
+    sendJson(6,{});
+
+};
+
+
+
+
+
+</script>
+
+
+<script lang="js">
+export default {
+    methods: {
+        setRowClass(row) {
+            
+
+
+            const x = row.row.bidder === '我方' ? 'white-row' : 'gray-row';
+            console.log("eeeee",row,  row.row.bidder,x);
+            return x;
+        }
+    }
 };
 </script>
+
 
 <template>
     <div v-bind="$attrs" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; border: 1px solid black; position: relative;">
@@ -308,12 +405,12 @@ const handleRejectClick = () => {
 
 
 
-            <div v-if="index === 2" class="scrollable-table">
+            <!-- <div v-if="index === 2" class="scrollable-table">
                 <el-table :data="reversedBidHistory" style="width: 100%">
                 <el-table-column label="轮次" prop="round"></el-table-column>
                 <el-table-column label="出价方" prop="bidder"></el-table-column>
 
-                <!-- 遍历 groceryStore 中的所有商品类别 -->
+                
                 <template v-for="(items, category) in groceryStore" :key="category">
                     <el-table-column :label="category">
                     <template #default="{ row }">
@@ -322,7 +419,30 @@ const handleRejectClick = () => {
                     </el-table-column>
                 </template>
                 </el-table>
+            </div> -->
+
+            <div v-if="index === 2" class="scrollable-table">
+                <el-table 
+                    :data="reversedBidHistory" 
+                    style="width: 100%" 
+                    :row-class-name="setRowClass"
+                    
+                >
+                    <el-table-column label="轮次" prop="round"></el-table-column>
+                    <el-table-column label="出价方" prop="bidder"></el-table-column>
+
+                    <!-- 遍历 groceryStore 中的所有商品类别 -->
+                    <template v-for="(items, category) in groceryStore" :key="category" >
+                        <el-table-column :label="category">
+                            <template #default="{ row }">
+                                <span>{{ getBidItemsByCategory(row.bidContent)[Object.keys(groceryStore).indexOf(category)] }}</span>
+                            </template>
+                        </el-table-column>
+                    </template>
+                </el-table>
             </div>
+
+
 
             <div v-if="index === 3" class="image-display">
                 <img src="@/assets/3.png" alt="展示图片" style="max-width: 100%; height: auto;">
@@ -334,7 +454,7 @@ const handleRejectClick = () => {
 
     <!-- 底部按钮 -->
     <div class="button-container-bidding" style="margin-top: 20px; text-align: center;">
-        <el-button type="primary" @click="handleTest">测试</el-button>
+        <!--<el-button type="primary" @click="handleTest">测试</el-button> -->
         <el-button type="primary" @click="handleBidClick">出价</el-button>
         <el-button type="primary" @click="handleBidSuggestionClick">按照代理建议出价</el-button>
         <el-button type="success" @click="handleAcceptClick">接受</el-button>
@@ -427,4 +547,20 @@ div {
     gap: 10px; /* 每个类别之间的间隔 */
 }
 
+
+/* .white-row {
+    background-color: #ffffff; 
+}
+.gray-row {
+    background-color: #949494; 
+} */
+
+
+::v-deep(.white-row) tr {
+    background-color: #ffffff !important;
+}
+
+::v-deep(.gray-row) tr {
+    background-color: #f5f5f5 !important;
+}
 </style>

@@ -20,7 +20,13 @@ export async function sendJson(CODE, obj) {
   try {
     // const response = await axios.post('http://localhost:5000/api/negotiation', payload);
     const response = await axios.post('http://127.0.0.1:5000/api/negotiation', payload);
+
+
+    
     // console.log("ffffffffff",response);
+
+
+
     return response.data; // 返回后端响应数据
   } catch (error) {
     console.error('请求失败:', error);
