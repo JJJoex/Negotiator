@@ -1,0 +1,472 @@
+{
+  "size": 188160,
+  "opposition": 0.4159132170629407,
+  "distribution": 0.21578050183623493,
+  "social_welfare": {
+    "bid": {
+      "Atmosphere": "Cultural heritage",
+      "Amusement": "Excursion",
+      "Culinary": "Lunch facilities",
+      "Shopping": "Streets",
+      "Culture": "Theater",
+      "Sport": "Hiking",
+      "Environment": "Palace"
+    },
+    "utility": [
+      0.7909569632,
+      0.6776566125
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Atmosphere": "Cultural heritage",
+      "Amusement": "Excursion",
+      "Culinary": "Lunch facilities",
+      "Shopping": "Streets",
+      "Culture": "Theater",
+      "Sport": "Hiking",
+      "Environment": "Palace"
+    },
+    "utility": [
+      0.7909569632,
+      0.6776566125
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Atmosphere": "Cultural heritage",
+      "Amusement": "Zoo",
+      "Culinary": "Local cuisine",
+      "Shopping": "Streets",
+      "Culture": "Theater",
+      "Sport": "Hiking",
+      "Environment": "Palace"
+    },
+    "utility": [
+      0.7214625977,
+      0.6911299308
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Square"
+      },
+      "utility": [
+        0.2102586892,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Square"
+      },
+      "utility": [
+        0.2355186892,
+        0.9976061767
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Zoo",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Square"
+      },
+      "utility": [
+        0.2544930547,
+        0.9889205050000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Square"
+      },
+      "utility": [
+        0.2797530547,
+        0.9865266817
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Zoo",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Square"
+      },
+      "utility": [
+        0.2954660875,
+        0.891807874
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Square"
+      },
+      "utility": [
+        0.3207260875,
+        0.8894140506999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.3305460749,
+        0.8781864881999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Zoo",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.3462591077,
+        0.7834676805
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.37151910769999996,
+        0.7810738572
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Landscape and nature"
+      },
+      "utility": [
+        0.5638136680999999,
+        0.7404134727999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Landscape and nature"
+      },
+      "utility": [
+        0.5890736681,
+        0.7380196494999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Zoo",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Landscape and nature"
+      },
+      "utility": [
+        0.6080480336,
+        0.7293339778
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Landscape and nature"
+      },
+      "utility": [
+        0.6333080336,
+        0.7269401544999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7214625977,
+        0.6911299308
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7467225976999999,
+        0.6887361074999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Zoo",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7656969631999999,
+        0.6800504358
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7909569632,
+        0.6776566125
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Zoo",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8066699959999999,
+        0.5829378048
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.831929996,
+        0.5805439815
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8411690921999999,
+        0.5206534377
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Zoo",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8568821249999999,
+        0.42593463
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.882142125,
+        0.4235408067
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Zoo",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Indoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8895326016999999,
+        0.4024999308
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Indoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9147926017,
+        0.4001061075
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Zoo",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Indoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9337669672,
+        0.39142043579999997
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Indoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9590269672,
+        0.38902661250000004
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Zoo",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Theater",
+        "Sport": "Indoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.9747399999999999,
+        0.2943078048
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Excursion",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Markets",
+        "Culture": "Theater",
+        "Sport": "Indoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        1.0,
+        0.2919139815
+      ]
+    }
+  ]
+}

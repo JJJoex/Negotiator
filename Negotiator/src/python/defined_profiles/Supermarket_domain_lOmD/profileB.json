@@ -1,0 +1,164 @@
+{
+  "LinearAdditiveUtilitySpace": {
+    "issueUtilities": {
+      "Bread type": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Baguette": 0.98535,
+            "Crackers": 0.60073,
+            "Croissants": 1.0,
+            "Plain bread": 0.0
+          }
+        }
+      },
+      "Fruit": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Apples": 0.43797,
+            "Bananas": 0.44096,
+            "Cherries": 1.0,
+            "Grapes": 0.0,
+            "Pears": 0.90135,
+            "Melons": 0.81764,
+            "Strawberries": 0.76383
+          }
+        }
+      },
+      "Snacks": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Chocolate bars": 0.83299,
+            "Doughnuts": 0.8166,
+            "Nachos": 0.64037,
+            "Popcorn": 1.0,
+            "Potato Chips": 0.34836,
+            "Candy": 0.0,
+            "Cookies": 0.61066
+          }
+        }
+      },
+      "Spreads": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Cheese": 0.9489,
+            "Jam": 0.49033,
+            "Peanut butter": 1.0,
+            "Sandwichspread": 0.22376,
+            "Chocolate": 0.32044,
+            "Ham": 0.0,
+            "Salami": 0.99862,
+            "Egg Salad": 0.39503
+          }
+        }
+      },
+      "Vegetables": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Beans": 1.0,
+            "Broccoli": 1.0,
+            "Leek": 0.62861,
+            "Potatoes": 0.8526,
+            "Spinach": 0.23121,
+            "Carrots": 0.0,
+            "Tomatos": 0.85549
+          }
+        }
+      },
+      "Drinks": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Energy Drinks": 0.59273,
+            "Milk": 0.12428,
+            "Tea": 0.35755,
+            "Coffee": 0.95602,
+            "Juice": 0.96558,
+            "Coca Cola": 0.0,
+            "Fanta": 0.00382,
+            "Beer": 1.0,
+            "Wine": 0.97323
+          }
+        }
+      }
+    },
+    "issueWeights": {
+      "Bread type": 0.02777,
+      "Fruit": 0.27571,
+      "Snacks": 0.30251,
+      "Spreads": 0.12596,
+      "Vegetables": 0.21238,
+      "Drinks": 0.05567
+    },
+    "domain": {
+      "name": "Supermarket_domain_lOmD",
+      "issuesValues": {
+        "Bread type": {
+          "values": [
+            "Baguette",
+            "Crackers",
+            "Croissants",
+            "Plain bread"
+          ]
+        },
+        "Fruit": {
+          "values": [
+            "Apples",
+            "Bananas",
+            "Cherries",
+            "Grapes",
+            "Pears",
+            "Melons",
+            "Strawberries"
+          ]
+        },
+        "Snacks": {
+          "values": [
+            "Chocolate bars",
+            "Doughnuts",
+            "Nachos",
+            "Popcorn",
+            "Potato Chips",
+            "Candy",
+            "Cookies"
+          ]
+        },
+        "Spreads": {
+          "values": [
+            "Cheese",
+            "Jam",
+            "Peanut butter",
+            "Sandwichspread",
+            "Chocolate",
+            "Ham",
+            "Salami",
+            "Egg Salad"
+          ]
+        },
+        "Vegetables": {
+          "values": [
+            "Beans",
+            "Broccoli",
+            "Leek",
+            "Potatoes",
+            "Spinach",
+            "Carrots",
+            "Tomatos"
+          ]
+        },
+        "Drinks": {
+          "values": [
+            "Energy Drinks",
+            "Milk",
+            "Tea",
+            "Coffee",
+            "Juice",
+            "Coca Cola",
+            "Fanta",
+            "Beer",
+            "Wine"
+          ]
+        }
+      }
+    },
+    "name": "profileB"
+  }
+}

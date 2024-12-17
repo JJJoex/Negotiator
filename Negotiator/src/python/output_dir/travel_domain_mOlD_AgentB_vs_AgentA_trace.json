@@ -1,0 +1,242 @@
+[
+    [
+        "AgentB-fd82c955-a658-47ab-9e29-84f6c94fd29f",
+        [
+            "Turistic activities",
+            "Excursion",
+            "Lunch facilities",
+            "Small boutiques",
+            "Museum",
+            "Bike tours",
+            "See, river, etc."
+        ]
+    ],
+    [
+        "AgentA-d88854cb-f847-45b2-b787-fb4a3524fdff",
+        [
+            "Political stability",
+            "Nightlife and entertainment",
+            "Lunch facilities",
+            "Shopping malls",
+            "Museum",
+            "Bike tours",
+            "Palace"
+        ]
+    ],
+    [
+        "AgentB-fd82c955-a658-47ab-9e29-84f6c94fd29f",
+        [
+            "Political stability",
+            "Casinos",
+            "Lunch facilities",
+            "Small boutiques",
+            "Museum",
+            "Bike tours",
+            "See, river, etc."
+        ]
+    ],
+    [
+        "AgentA-d88854cb-f847-45b2-b787-fb4a3524fdff",
+        [
+            "Political stability",
+            "Nightlife and entertainment",
+            "Lunch facilities",
+            "Streets",
+            "Museum",
+            "Bike tours",
+            "Palace"
+        ]
+    ],
+    [
+        "AgentB-fd82c955-a658-47ab-9e29-84f6c94fd29f",
+        [
+            "Turistic activities",
+            "Excursion",
+            "Lunch facilities",
+            "Small boutiques",
+            "Museum",
+            "Bike tours",
+            "Parks and Gardens"
+        ]
+    ],
+    [
+        "AgentA-d88854cb-f847-45b2-b787-fb4a3524fdff",
+        [
+            "Political stability",
+            "Nightlife and entertainment",
+            "Lunch facilities",
+            "Markets",
+            "Museum",
+            "Bike tours",
+            "Palace"
+        ]
+    ],
+    [
+        "AgentB-fd82c955-a658-47ab-9e29-84f6c94fd29f",
+        [
+            "Hospitality",
+            "Excursion",
+            "Lunch facilities",
+            "Small boutiques",
+            "Museum",
+            "Bike tours",
+            "See, river, etc."
+        ]
+    ],
+    [
+        "AgentA-d88854cb-f847-45b2-b787-fb4a3524fdff",
+        [
+            "Political stability",
+            "Nightlife and entertainment",
+            "Lunch facilities",
+            "Small boutiques",
+            "Museum",
+            "Bike tours",
+            "Palace"
+        ]
+    ],
+    [
+        "AgentB-fd82c955-a658-47ab-9e29-84f6c94fd29f",
+        [
+            "Hospitality",
+            "Excursion",
+            "Lunch facilities",
+            "Small boutiques",
+            "Museum",
+            "Bike tours",
+            "Parks and Gardens"
+        ]
+    ],
+    [
+        "AgentA-d88854cb-f847-45b2-b787-fb4a3524fdff",
+        [
+            "Political stability",
+            "Nightlife and entertainment",
+            "Lunch facilities",
+            "Shopping malls",
+            "Museum",
+            "Bike tours",
+            "Square"
+        ]
+    ],
+    [
+        "AgentB-fd82c955-a658-47ab-9e29-84f6c94fd29f",
+        [
+            "Turistic activities",
+            "Casinos",
+            "Lunch facilities",
+            "Small boutiques",
+            "Museum",
+            "Bike tours",
+            "See, river, etc."
+        ]
+    ],
+    [
+        "AgentA-d88854cb-f847-45b2-b787-fb4a3524fdff",
+        [
+            "Political stability",
+            "Nightlife and entertainment",
+            "Lunch facilities",
+            "Small boutiques",
+            "Museum",
+            "Bike tours",
+            "Square"
+        ]
+    ],
+    [
+        "AgentB-fd82c955-a658-47ab-9e29-84f6c94fd29f",
+        [
+            "Security (personal)",
+            "Excursion",
+            "Lunch facilities",
+            "Small boutiques",
+            "Museum",
+            "Bike tours",
+            "See, river, etc."
+        ]
+    ],
+    [
+        "AgentA-d88854cb-f847-45b2-b787-fb4a3524fdff",
+        [
+            "Political stability",
+            "Nightlife and entertainment",
+            "Lunch facilities",
+            "Markets",
+            "Museum",
+            "Bike tours",
+            "Square"
+        ]
+    ],
+    [
+        "AgentB-fd82c955-a658-47ab-9e29-84f6c94fd29f",
+        [
+            "Security (personal)",
+            "Casinos",
+            "Lunch facilities",
+            "Small boutiques",
+            "Museum",
+            "Bike tours",
+            "See, river, etc."
+        ]
+    ],
+    [
+        "AgentA-d88854cb-f847-45b2-b787-fb4a3524fdff",
+        [
+            "Political stability",
+            "Nightlife and entertainment",
+            "Lunch facilities",
+            "Streets",
+            "Museum",
+            "Bike tours",
+            "Square"
+        ]
+    ],
+    [
+        "AgentB-fd82c955-a658-47ab-9e29-84f6c94fd29f",
+        [
+            "Political stability",
+            "Excursion",
+            "Lunch facilities",
+            "Small boutiques",
+            "Museum",
+            "Bike tours",
+            "See, river, etc."
+        ]
+    ],
+    [
+        "AgentA-d88854cb-f847-45b2-b787-fb4a3524fdff",
+        [
+            "Turistic activities",
+            "Nightlife and entertainment",
+            "Lunch facilities",
+            "Streets",
+            "Museum",
+            "Bike tours",
+            "Palace"
+        ]
+    ],
+    [
+        "AgentB-fd82c955-a658-47ab-9e29-84f6c94fd29f",
+        [
+            "Political stability",
+            "Casinos",
+            "Lunch facilities",
+            "Small boutiques",
+            "Museum",
+            "Bike tours",
+            "See, river, etc."
+        ]
+    ],
+    [
+        "AgentA-d88854cb-f847-45b2-b787-fb4a3524fdff",
+        [
+            "Turistic activities",
+            "Nightlife and entertainment",
+            "Lunch facilities",
+            "Markets",
+            "Museum",
+            "Bike tours",
+            "Palace"
+        ]
+    ]
+]

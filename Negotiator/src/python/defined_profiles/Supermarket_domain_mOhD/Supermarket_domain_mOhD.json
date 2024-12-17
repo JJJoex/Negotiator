@@ -1,0 +1,71 @@
+{
+  "name": "Supermarket_domain_mOhD",
+  "issuesValues": {
+    "Bread type": {
+      "values": [
+        "Baguette",
+        "Crackers",
+        "Croissants",
+        "Plain bread"
+      ]
+    },
+    "Fruit": {
+      "values": [
+        "Apples",
+        "Bananas",
+        "Cherries",
+        "Grapes",
+        "Pears",
+        "Melons",
+        "Strawberries"
+      ]
+    },
+    "Snacks": {
+      "values": [
+        "Chocolate bars",
+        "Doughnuts",
+        "Nachos",
+        "Popcorn",
+        "Potato Chips",
+        "Candy",
+        "Cookies"
+      ]
+    },
+    "Spreads": {
+      "values": [
+        "Cheese",
+        "Jam",
+        "Peanut butter",
+        "Sandwichspread",
+        "Chocolate",
+        "Ham",
+        "Salami",
+        "Egg Salad"
+      ]
+    },
+    "Vegetables": {
+      "values": [
+        "Beans",
+        "Broccoli",
+        "Leek",
+        "Potatoes",
+        "Spinach",
+        "Carrots",
+        "Tomatos"
+      ]
+    },
+    "Drinks": {
+      "values": [
+        "Energy Drinks",
+        "Milk",
+        "Tea",
+        "Coffee",
+        "Juice",
+        "Coca Cola",
+        "Fanta",
+        "Beer",
+        "Wine"
+      ]
+    }
+  }
+}

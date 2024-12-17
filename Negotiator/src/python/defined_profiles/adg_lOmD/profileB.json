@@ -1,0 +1,140 @@
+{
+  "LinearAdditiveUtilitySpace": {
+    "issueUtilities": {
+      "CD player": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "good": 0.0,
+            "fairly good": 0.18085,
+            "standard": 1.0,
+            "meager": 0.20851,
+            "none": 0.21277
+          }
+        }
+      },
+      "Extra speakers": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "good": 0.0,
+            "fairly good": 1.0,
+            "standard": 0.17844,
+            "meager": 0.17286,
+            "none": 0.18587
+          }
+        }
+      },
+      "Airconditioning": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "good": 0.0,
+            "fairly good": 1.0,
+            "standard": 0.66423,
+            "meager": 0.72263,
+            "none": 0.72993
+          }
+        }
+      },
+      "Tow hedge": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "good": 0.0,
+            "fairly good": 0.42781,
+            "standard": 0.48128,
+            "meager": 0.52406,
+            "none": 1.0
+          }
+        }
+      },
+      "Tow hedge2": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "good": 0.0,
+            "fairly good": 0.84211,
+            "standard": 0.94737,
+            "meager": 1.0,
+            "none": 0.94737
+          }
+        }
+      },
+      "Tow hedge3": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "good": 1.0,
+            "fairly good": 0.0,
+            "standard": 0.01832,
+            "meager": 0.02747,
+            "none": 0.03663
+          }
+        }
+      }
+    },
+    "issueWeights": {
+      "CD player": 0.10525,
+      "Extra speakers": 0.26357,
+      "Airconditioning": 0.36959,
+      "Tow hedge": 0.14004,
+      "Tow hedge2": 0.0,
+      "Tow hedge3": 0.12155
+    },
+    "domain": {
+      "name": "adg_lOmD",
+      "issuesValues": {
+        "CD player": {
+          "values": [
+            "good",
+            "fairly good",
+            "standard",
+            "meager",
+            "none"
+          ]
+        },
+        "Extra speakers": {
+          "values": [
+            "good",
+            "fairly good",
+            "standard",
+            "meager",
+            "none"
+          ]
+        },
+        "Airconditioning": {
+          "values": [
+            "good",
+            "fairly good",
+            "standard",
+            "meager",
+            "none"
+          ]
+        },
+        "Tow hedge": {
+          "values": [
+            "good",
+            "fairly good",
+            "standard",
+            "meager",
+            "none"
+          ]
+        },
+        "Tow hedge2": {
+          "values": [
+            "good",
+            "fairly good",
+            "standard",
+            "meager",
+            "none"
+          ]
+        },
+        "Tow hedge3": {
+          "values": [
+            "good",
+            "fairly good",
+            "standard",
+            "meager",
+            "none"
+          ]
+        }
+      }
+    },
+    "name": "profileB"
+  }
+}

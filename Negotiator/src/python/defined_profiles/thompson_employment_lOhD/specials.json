@@ -1,0 +1,176 @@
+{
+  "size": 3125,
+  "opposition": 0.17919189479583883,
+  "distribution": 0.4425412018840477,
+  "social_welfare": {
+    "bid": {
+      "Signing bonus": "10%",
+      "Job assignment": "Division E",
+      "Moving expense coverage": "90%",
+      "Insurance coverage": "80%",
+      "Salary": "$40,000"
+    },
+    "utility": [
+      0.915,
+      0.8636021740000001
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Signing bonus": "10%",
+      "Job assignment": "Division E",
+      "Moving expense coverage": "90%",
+      "Insurance coverage": "80%",
+      "Salary": "$40,000"
+    },
+    "utility": [
+      0.915,
+      0.8636021740000001
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Signing bonus": "10%",
+      "Job assignment": "Division E",
+      "Moving expense coverage": "90%",
+      "Insurance coverage": "80%",
+      "Salary": "$38,000"
+    },
+    "utility": [
+      0.8725,
+      0.8740893763
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Signing bonus": "4%",
+        "Job assignment": "Division E",
+        "Moving expense coverage": "90%",
+        "Insurance coverage": "80%",
+        "Salary": "$34,000"
+      },
+      "utility": [
+        0.48,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Signing bonus": "10%",
+        "Job assignment": "Division E",
+        "Moving expense coverage": "90%",
+        "Insurance coverage": "80%",
+        "Salary": "$34,000"
+      },
+      "utility": [
+        0.7875,
+        0.9890321740000001
+      ]
+    },
+    {
+      "bid": {
+        "Signing bonus": "10%",
+        "Job assignment": "Division E",
+        "Moving expense coverage": "90%",
+        "Insurance coverage": "100%",
+        "Salary": "$34,000"
+      },
+      "utility": [
+        0.8025,
+        0.9079021740000001
+      ]
+    },
+    {
+      "bid": {
+        "Signing bonus": "10%",
+        "Job assignment": "Division E",
+        "Moving expense coverage": "90%",
+        "Insurance coverage": "80%",
+        "Salary": "$36,000"
+      },
+      "utility": [
+        0.83,
+        0.8845765786
+      ]
+    },
+    {
+      "bid": {
+        "Signing bonus": "10%",
+        "Job assignment": "Division E",
+        "Moving expense coverage": "90%",
+        "Insurance coverage": "80%",
+        "Salary": "$38,000"
+      },
+      "utility": [
+        0.8725,
+        0.8740893763
+      ]
+    },
+    {
+      "bid": {
+        "Signing bonus": "10%",
+        "Job assignment": "Division E",
+        "Moving expense coverage": "90%",
+        "Insurance coverage": "80%",
+        "Salary": "$40,000"
+      },
+      "utility": [
+        0.915,
+        0.8636021740000001
+      ]
+    },
+    {
+      "bid": {
+        "Signing bonus": "10%",
+        "Job assignment": "Division E",
+        "Moving expense coverage": "90%",
+        "Insurance coverage": "100%",
+        "Salary": "$40,000"
+      },
+      "utility": [
+        0.93,
+        0.782472174
+      ]
+    },
+    {
+      "bid": {
+        "Signing bonus": "10%",
+        "Job assignment": "Division E",
+        "Moving expense coverage": "100%",
+        "Insurance coverage": "80%",
+        "Salary": "$38,000"
+      },
+      "utility": [
+        0.9425000000000001,
+        0.4276293763
+      ]
+    },
+    {
+      "bid": {
+        "Signing bonus": "10%",
+        "Job assignment": "Division E",
+        "Moving expense coverage": "100%",
+        "Insurance coverage": "80%",
+        "Salary": "$40,000"
+      },
+      "utility": [
+        0.9850000000000001,
+        0.417142174
+      ]
+    },
+    {
+      "bid": {
+        "Signing bonus": "10%",
+        "Job assignment": "Division E",
+        "Moving expense coverage": "100%",
+        "Insurance coverage": "100%",
+        "Salary": "$40,000"
+      },
+      "utility": [
+        1.0,
+        0.336012174
+      ]
+    }
+  ]
+}

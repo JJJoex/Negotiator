@@ -1,0 +1,119 @@
+{
+  "LinearAdditiveUtilitySpace": {
+    "issueUtilities": {
+      "Signing bonus": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "10%": 0.09817,
+            "8%": 0.0,
+            "6%": 0.72831,
+            "4%": 0.07534,
+            "2%": 1.0
+          }
+        }
+      },
+      "Job assignment": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "Division A": 0.85763,
+            "Division B": 0.6039,
+            "Division C": 1.0,
+            "Division D": 0.0,
+            "Division E": 0.12514
+          }
+        }
+      },
+      "Moving expense coverage": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "100%": 0.10497,
+            "90%": 0.44015,
+            "80%": 0.0,
+            "70%": 0.90424,
+            "60%": 1.0
+          }
+        }
+      },
+      "Insurance coverage": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "100%": 0.0,
+            "80%": 0.79001,
+            "60%": 0.97357,
+            "20%": 1.0,
+            "0%": 0.56094
+          }
+        }
+      },
+      "Salary": {
+        "DiscreteValueSetUtilities": {
+          "valueUtilities": {
+            "$40,000": 0.7792,
+            "$38,000": 0.6288,
+            "$36,000": 0.0,
+            "$34,000": 0.2368,
+            "$32,000": 1.0
+          }
+        }
+      }
+    },
+    "issueWeights": {
+      "Signing bonus": 0.19904,
+      "Job assignment": 0.34758,
+      "Moving expense coverage": 0.0,
+      "Insurance coverage": 0.38108,
+      "Salary": 0.0723
+    },
+    "domain": {
+      "name": "thompson_employment_lOmD",
+      "issuesValues": {
+        "Signing bonus": {
+          "values": [
+            "10%",
+            "8%",
+            "6%",
+            "4%",
+            "2%"
+          ]
+        },
+        "Job assignment": {
+          "values": [
+            "Division A",
+            "Division B",
+            "Division C",
+            "Division D",
+            "Division E"
+          ]
+        },
+        "Moving expense coverage": {
+          "values": [
+            "100%",
+            "90%",
+            "80%",
+            "70%",
+            "60%"
+          ]
+        },
+        "Insurance coverage": {
+          "values": [
+            "100%",
+            "80%",
+            "60%",
+            "20%",
+            "0%"
+          ]
+        },
+        "Salary": {
+          "values": [
+            "$40,000",
+            "$38,000",
+            "$36,000",
+            "$34,000",
+            "$32,000"
+          ]
+        }
+      }
+    },
+    "name": "profileB"
+  }
+}

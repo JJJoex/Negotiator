@@ -1,0 +1,2 @@
+self_agent,opp_agent,agreement,self_ufun_agreement,opp_ufun_agreement,number_of_steps,total_social_welfare,pareto_distance,nash_distance
+AgentB,AgentA,,0,0,20,0,inf,inf

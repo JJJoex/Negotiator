@@ -1,0 +1,50 @@
+{
+  "name": "thompson_employment_hOhD",
+  "issuesValues": {
+    "Signing bonus": {
+      "values": [
+        "10%",
+        "8%",
+        "6%",
+        "4%",
+        "2%"
+      ]
+    },
+    "Job assignment": {
+      "values": [
+        "Division A",
+        "Division B",
+        "Division C",
+        "Division D",
+        "Division E"
+      ]
+    },
+    "Moving expense coverage": {
+      "values": [
+        "100%",
+        "90%",
+        "80%",
+        "70%",
+        "60%"
+      ]
+    },
+    "Insurance coverage": {
+      "values": [
+        "100%",
+        "80%",
+        "60%",
+        "20%",
+        "0%"
+      ]
+    },
+    "Salary": {
+      "values": [
+        "$40,000",
+        "$38,000",
+        "$36,000",
+        "$34,000",
+        "$32,000"
+      ]
+    }
+  }
+}

@@ -1,0 +1,922 @@
+{
+  "size": 188160,
+  "opposition": 0.3224782694347232,
+  "distribution": 0.29157846129653603,
+  "social_welfare": {
+    "bid": {
+      "Atmosphere": "Local traditions",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "Lunch facilities",
+      "Shopping": "Shopping malls",
+      "Culture": "Art gallery",
+      "Sport": "Bike tours",
+      "Environment": "Palace"
+    },
+    "utility": [
+      0.7217426884,
+      0.9415060775999999
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Atmosphere": "Local traditions",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "Lunch facilities",
+      "Shopping": "Shopping malls",
+      "Culture": "Art gallery",
+      "Sport": "Outdoor activities",
+      "Environment": "Palace"
+    },
+    "utility": [
+      0.7535941686000001,
+      0.9088667184
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Atmosphere": "Turistic activities",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "Lunch facilities",
+      "Shopping": "Small boutiques",
+      "Culture": "Art gallery",
+      "Sport": "Outdoor activities",
+      "Environment": "Palace"
+    },
+    "utility": [
+      0.7775374956000001,
+      0.7665419344
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Museum",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.5849840599,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Museum",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.5899385653,
+        0.9928756048
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.6477137087,
+        0.989466851
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.6526682141,
+        0.9823424558
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Local traditions",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.6607660181,
+        0.9778172494
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.6629237087,
+        0.974543451
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.6802693682000001,
+        0.97193632
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.6852238736,
+        0.9648119248
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Local traditions",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.6933216776,
+        0.9602867184
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.6954793682,
+        0.9570129199999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7086903790000001,
+        0.9531556792
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7136448844000001,
+        0.946031284
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Local traditions",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7217426884,
+        0.9415060775999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.723900379,
+        0.9382322792
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7405418592,
+        0.9205163199999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7454963646,
+        0.9133919248
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Local traditions",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7535941686000001,
+        0.9088667184
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7557518592,
+        0.9055929199999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7578365509,
+        0.8623566
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Local traditions",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Small boutiques",
+        "Culture": "Art gallery",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7587383248000001,
+        0.787531692
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Small boutiques",
+        "Culture": "Art gallery",
+        "Sport": "Bike tours",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7608960154,
+        0.7842578936
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Small boutiques",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7775374956000001,
+        0.7665419344
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Small boutiques",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.782492001,
+        0.7594175392
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Local traditions",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Small boutiques",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.790589805,
+        0.7548923328
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Small boutiques",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7927474956,
+        0.7516185343999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.7993891116,
+        0.72598632
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.804343617,
+        0.7188619248
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Local traditions",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8124414209999999,
+        0.7143367184
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8145991116,
+        0.71106292
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8166838033000001,
+        0.6678265999999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Adventure",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.8310299054000001,
+        0.5319246395
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Adventure",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.8359844108000001,
+        0.5248002443
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Local traditions",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Adventure",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.8440822148,
+        0.5202750379000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Cinema",
+        "Sport": "Adventure",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.8462399054,
+        0.5170012395
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.8635855649,
+        0.5143941085
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.8685400703,
+        0.5072697133
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Local traditions",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.8766378743000001,
+        0.5027445069
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.8787955649,
+        0.49947070849999997
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Bike tours",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.8920065757,
+        0.49561346770000003
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Bike tours",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.8969610811,
+        0.48848907249999995
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Local traditions",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Bike tours",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9050588851,
+        0.4839638661
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Bike tours",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9072165756999999,
+        0.4806900677
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9238580559,
+        0.4629741085
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9288125613,
+        0.4558497133
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Local traditions",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9369103652999999,
+        0.45132450690000003
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9390680559,
+        0.44805070849999995
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Shopping malls",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9411527476,
+        0.40481438849999996
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Local traditions",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Small boutiques",
+        "Culture": "Art gallery",
+        "Sport": "Bike tours",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9420545215,
+        0.3299894805
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Small boutiques",
+        "Culture": "Art gallery",
+        "Sport": "Bike tours",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9442122121000001,
+        0.3267156821
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Small boutiques",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9608536923,
+        0.3089997229
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Small boutiques",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9658081976999999,
+        0.3018753277
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Local traditions",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Small boutiques",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9739060017000001,
+        0.2973501213
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Small boutiques",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9760636922999999,
+        0.29407632289999996
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9827053082999999,
+        0.2684441085
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9876598136999999,
+        0.2613197133
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Local traditions",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9957576177,
+        0.2567945069
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Outdoor activities",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        0.9979153082999999,
+        0.25352070849999997
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Cultural heritage",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Congress center",
+        "Sport": "Outdoor activities",
+        "Environment": "Parks and Gardens"
+      },
+      "utility": [
+        1.0,
+        0.21028438849999997
+      ]
+    }
+  ]
+}

@@ -6,7 +6,8 @@ const store = createStore({
     my_interests_data: null,
     my_issues_data: null,
     op_interests_data: null,
-    op_issues_data: null
+    op_issues_data: null,
+    nego_initial_data: null
   },
   mutations: {
     setNegoSettingsData(state, data) {
@@ -23,7 +24,11 @@ const store = createStore({
     },
     setOpIssuesData(state, data) {
       state.op_issues_data = data;
+    },
+    setNegoInitialData(state, data) {
+      state.nego_initial_data = data;
     }
+
   }
 });
 

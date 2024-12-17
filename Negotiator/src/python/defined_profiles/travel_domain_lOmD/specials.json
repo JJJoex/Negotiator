@@ -1,0 +1,802 @@
+{
+  "size": 188160,
+  "opposition": 0.21458369530392835,
+  "distribution": 0.4527207217156194,
+  "social_welfare": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "Local cuisine",
+      "Shopping": "Streets",
+      "Culture": "Art gallery",
+      "Sport": "Hiking",
+      "Environment": "Palace"
+    },
+    "utility": [
+      0.8469345081999998,
+      0.8496101149999999
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "Local cuisine",
+      "Shopping": "Streets",
+      "Culture": "Art gallery",
+      "Sport": "Hiking",
+      "Environment": "Palace"
+    },
+    "utility": [
+      0.8469345081999998,
+      0.8496101149999999
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "Local cuisine",
+      "Shopping": "Streets",
+      "Culture": "Art gallery",
+      "Sport": "Hiking",
+      "Environment": "Palace"
+    },
+    "utility": [
+      0.8469345081999998,
+      0.8496101149999999
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightclubs",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.2358218421,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Amusement park",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.25881570810000004,
+        0.9979251492000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.2788718421,
+        0.9954513156
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Amusement park",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Hiking",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.2802055318,
+        0.9837841152
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Lunch facilities",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Hiking",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.3002616658,
+        0.9813102815999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightclubs",
+        "Culinary": "International cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.3711326241000001,
+        0.9706467727999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Amusement park",
+        "Culinary": "International cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.39412649010000006,
+        0.968571922
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.4141826241,
+        0.9660980883999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightclubs",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.44018852810000003,
+        0.9637126022
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.4631823941,
+        0.9616377514000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.48323852810000006,
+        0.9591639178
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Hiking",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.48457221780000004,
+        0.9474967174
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Hiking",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.5046283518,
+        0.9450228838000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Amusement park",
+        "Culinary": "International cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.5269128539000001,
+        0.9270088270000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightclubs",
+        "Culinary": "International cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.5437178701,
+        0.9260341936
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.5469689879,
+        0.9245349934
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "International cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.5667117360999999,
+        0.9239593427999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightclubs",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.5729748919000001,
+        0.9221495072000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.5867678700999999,
+        0.9214855092
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.5959687579,
+        0.9200746564
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightclubs",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.6127737740999999,
+        0.9191000229999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Political stability",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.6160248919000001,
+        0.9176008228000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.6357676401,
+        0.9170251722
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.6558237740999998,
+        0.9145513385999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Hiking",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.6571574638,
+        0.9028841381999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Hiking",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.6772135977999998,
+        0.9004103046
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "International cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.6994980999,
+        0.8823962478
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.7195542339,
+        0.8799224142
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightclubs",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.7455601379,
+        0.877536928
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.7685540039000001,
+        0.8754620771999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Special streets"
+      },
+      "utility": [
+        0.7886101378999999,
+        0.8729882436
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8054885505,
+        0.8662249825999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8255446844999998,
+        0.863751149
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Hiking",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8268783742,
+        0.8520839486
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Hiking",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8469345081999998,
+        0.8496101149999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Museum",
+        "Sport": "Adventure",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8573859677999999,
+        0.8093814189999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Museum",
+        "Sport": "Hiking",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8587196575,
+        0.7977142185999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Museum",
+        "Sport": "Hiking",
+        "Environment": "Palace"
+      },
+      "utility": [
+        0.8787757914999998,
+        0.795240385
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.8863910953,
+        0.6925870129999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Adventure",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9064472292999999,
+        0.6901131793999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Hiking",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.907780919,
+        0.6784459789999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Art gallery",
+        "Sport": "Hiking",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9278370529999999,
+        0.6759721454
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Museum",
+        "Sport": "Adventure",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9382885125999999,
+        0.6357434493999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Museum",
+        "Sport": "Hiking",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9396222023,
+        0.6240762489999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Museum",
+        "Sport": "Hiking",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9596783362999999,
+        0.6216024153999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Hiking",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9739421242999999,
+        0.5153604124
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Streets",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9748470529999999,
+        0.47241250539999996
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9848312833,
+        0.4015514464
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Theater",
+        "Sport": "Hiking",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9891108409999999,
+        0.3661705024
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        1.0,
+        0.2523615364
+      ]
+    }
+  ]
+}

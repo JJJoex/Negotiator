@@ -1,0 +1,511 @@
+{
+  "size": 98784,
+  "opposition": 0.35621658480338314,
+  "distribution": 0.22631122151710176,
+  "social_welfare": {
+    "bid": {
+      "Bread type": "Crackers",
+      "Fruit": "Strawberries",
+      "Snacks": "Potato Chips",
+      "Spreads": "Sandwichspread",
+      "Vegetables": "Potatoes",
+      "Drinks": "Wine"
+    },
+    "utility": [
+      0.9137817929,
+      0.6516505235000001
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Bread type": "Crackers",
+      "Fruit": "Strawberries",
+      "Snacks": "Potato Chips",
+      "Spreads": "Sandwichspread",
+      "Vegetables": "Potatoes",
+      "Drinks": "Wine"
+    },
+    "utility": [
+      0.9137817929,
+      0.6516505235000001
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Bread type": "Crackers",
+      "Fruit": "Grapes",
+      "Snacks": "Potato Chips",
+      "Spreads": "Egg Salad",
+      "Vegetables": "Potatoes",
+      "Drinks": "Wine"
+    },
+    "utility": [
+      0.7502583002,
+      0.7459934279
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Grapes",
+        "Snacks": "Potato Chips",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Potatoes",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.168936333,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Grapes",
+        "Snacks": "Potato Chips",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Potatoes",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.172937079,
+        0.9895776436000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Grapes",
+        "Snacks": "Potato Chips",
+        "Spreads": "Chocolate",
+        "Vegetables": "Potatoes",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.175223237,
+        0.9649665964
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Grapes",
+        "Snacks": "Potato Chips",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Potatoes",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.175992569,
+        0.9328282918
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Strawberries",
+        "Snacks": "Potato Chips",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Potatoes",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.3364605717,
+        0.8952347392000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Strawberries",
+        "Snacks": "Potato Chips",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Potatoes",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.3404613177,
+        0.8848123828000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Strawberries",
+        "Snacks": "Potato Chips",
+        "Spreads": "Chocolate",
+        "Vegetables": "Potatoes",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.34274747569999997,
+        0.8602013356
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Strawberries",
+        "Snacks": "Potato Chips",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Potatoes",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.3435168077,
+        0.8280630310000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Melons",
+        "Snacks": "Potato Chips",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Potatoes",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.35942999999999997,
+        0.8100020224
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Melons",
+        "Snacks": "Potato Chips",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Potatoes",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.36343074599999997,
+        0.7995796660000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Melons",
+        "Snacks": "Potato Chips",
+        "Spreads": "Chocolate",
+        "Vegetables": "Potatoes",
+        "Drinks": "Fanta"
+      },
+      "utility": [
+        0.36571690399999995,
+        0.7749686188
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Grapes",
+        "Snacks": "Potato Chips",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Potatoes",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.7462575542,
+        0.7564157843000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Grapes",
+        "Snacks": "Potato Chips",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Potatoes",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.7502583002,
+        0.7459934279
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Grapes",
+        "Snacks": "Potato Chips",
+        "Spreads": "Chocolate",
+        "Vegetables": "Potatoes",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.7525444581999999,
+        0.7213823807000002
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Grapes",
+        "Snacks": "Potato Chips",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Potatoes",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.7533137902,
+        0.6892440761
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Strawberries",
+        "Snacks": "Potato Chips",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Potatoes",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.9137817929,
+        0.6516505235000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Strawberries",
+        "Snacks": "Potato Chips",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Potatoes",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.9177825389,
+        0.6412281671000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Strawberries",
+        "Snacks": "Potato Chips",
+        "Spreads": "Chocolate",
+        "Vegetables": "Potatoes",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.9200686968999999,
+        0.6166171199000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Strawberries",
+        "Snacks": "Potato Chips",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Potatoes",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.9208380289,
+        0.5844788153
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Melons",
+        "Snacks": "Potato Chips",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Potatoes",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.9367512212,
+        0.5664178067000001
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Melons",
+        "Snacks": "Potato Chips",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Potatoes",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.9407519672,
+        0.5559954503
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Melons",
+        "Snacks": "Potato Chips",
+        "Spreads": "Chocolate",
+        "Vegetables": "Potatoes",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.9430381252,
+        0.5313844031
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Melons",
+        "Snacks": "Potato Chips",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Potatoes",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.9438074571999999,
+        0.4992460985
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Melons",
+        "Snacks": "Potato Chips",
+        "Spreads": "Ham",
+        "Vegetables": "Potatoes",
+        "Drinks": "Wine"
+      },
+      "utility": [
+        0.9489512212,
+        0.44278715850000006
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Strawberries",
+        "Snacks": "Potato Chips",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Potatoes",
+        "Drinks": "Beer"
+      },
+      "utility": [
+        0.9648305717,
+        0.40568208680000006
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Strawberries",
+        "Snacks": "Potato Chips",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Potatoes",
+        "Drinks": "Beer"
+      },
+      "utility": [
+        0.9688313177,
+        0.39525973040000006
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Strawberries",
+        "Snacks": "Potato Chips",
+        "Spreads": "Chocolate",
+        "Vegetables": "Potatoes",
+        "Drinks": "Beer"
+      },
+      "utility": [
+        0.9711174757,
+        0.37064868320000005
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Strawberries",
+        "Snacks": "Potato Chips",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Potatoes",
+        "Drinks": "Beer"
+      },
+      "utility": [
+        0.9718868077,
+        0.33851037860000005
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Melons",
+        "Snacks": "Potato Chips",
+        "Spreads": "Sandwichspread",
+        "Vegetables": "Potatoes",
+        "Drinks": "Beer"
+      },
+      "utility": [
+        0.9878,
+        0.32044937
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Melons",
+        "Snacks": "Potato Chips",
+        "Spreads": "Egg Salad",
+        "Vegetables": "Potatoes",
+        "Drinks": "Beer"
+      },
+      "utility": [
+        0.991800746,
+        0.3100270136
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Melons",
+        "Snacks": "Potato Chips",
+        "Spreads": "Chocolate",
+        "Vegetables": "Potatoes",
+        "Drinks": "Beer"
+      },
+      "utility": [
+        0.994086904,
+        0.2854159664
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Melons",
+        "Snacks": "Potato Chips",
+        "Spreads": "Peanut butter",
+        "Vegetables": "Potatoes",
+        "Drinks": "Beer"
+      },
+      "utility": [
+        0.994856236,
+        0.2532776618
+      ]
+    },
+    {
+      "bid": {
+        "Bread type": "Crackers",
+        "Fruit": "Melons",
+        "Snacks": "Potato Chips",
+        "Spreads": "Ham",
+        "Vegetables": "Potatoes",
+        "Drinks": "Beer"
+      },
+      "utility": [
+        1.0,
+        0.1968187218
+      ]
+    }
+  ]
+}

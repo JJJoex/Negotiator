@@ -1,0 +1,187 @@
+{
+  "size": 180,
+  "opposition": 0.37904472441690407,
+  "distribution": 0.33148719123444526,
+  "social_welfare": {
+    "bid": {
+      "Price": "$3.71",
+      "Delivery": "60 days",
+      "Payment": "30 days after delivery",
+      "Returns": "5% spoilage allowed"
+    },
+    "utility": [
+      0.5217969657,
+      1.0
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Price": "$3.71",
+      "Delivery": "60 days",
+      "Payment": "30 days after delivery",
+      "Returns": "Full price"
+    },
+    "utility": [
+      0.679596318,
+      0.80701
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Price": "$3.71",
+      "Delivery": "45 days",
+      "Payment": "30 days after delivery",
+      "Returns": "Full price"
+    },
+    "utility": [
+      0.7253763179999999,
+      0.7387400980000001
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Price": "$3.71",
+        "Delivery": "60 days",
+        "Payment": "30 days after delivery",
+        "Returns": "5% spoilage allowed"
+      },
+      "utility": [
+        0.5217969657,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.71",
+        "Delivery": "45 days",
+        "Payment": "30 days after delivery",
+        "Returns": "5% spoilage allowed"
+      },
+      "utility": [
+        0.5675769656999999,
+        0.9317300980000001
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.71",
+        "Delivery": "60 days",
+        "Payment": "Upon delivery",
+        "Returns": "5% spoilage allowed"
+      },
+      "utility": [
+        0.6357567579,
+        0.83277
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.71",
+        "Delivery": "60 days",
+        "Payment": "30 days after delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        0.679596318,
+        0.80701
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.71",
+        "Delivery": "45 days",
+        "Payment": "Upon delivery",
+        "Returns": "5% spoilage allowed"
+      },
+      "utility": [
+        0.6815367579,
+        0.7645000980000001
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.71",
+        "Delivery": "45 days",
+        "Payment": "30 days after delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        0.7253763179999999,
+        0.7387400980000001
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.71",
+        "Delivery": "60 days",
+        "Payment": "Upon delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        0.7935561101999999,
+        0.63978
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.71",
+        "Delivery": "20 days",
+        "Payment": "30 days after delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        0.8016763179999999,
+        0.575141746
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.71",
+        "Delivery": "45 days",
+        "Payment": "Upon delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        0.8393361102,
+        0.5715100980000001
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.71",
+        "Delivery": "20 days",
+        "Payment": "Upon delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        0.9156361102,
+        0.407911746
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.47",
+        "Delivery": "45 days",
+        "Payment": "Upon delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        0.9237000000000001,
+        0.274330098
+      ]
+    },
+    {
+      "bid": {
+        "Price": "$3.47",
+        "Delivery": "20 days",
+        "Payment": "Upon delivery",
+        "Returns": "Full price"
+      },
+      "utility": [
+        1.0,
+        0.110731746
+      ]
+    }
+  ]
+}

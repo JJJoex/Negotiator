@@ -1,0 +1,442 @@
+{
+  "size": 188160,
+  "opposition": 0.3005305322465096,
+  "distribution": 0.45514383507239653,
+  "social_welfare": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "Local cuisine",
+      "Shopping": "Small boutiques",
+      "Culture": "Museum",
+      "Sport": "Bike tours",
+      "Environment": "Monuments"
+    },
+    "utility": [
+      0.9848312833,
+      0.7093151668
+    ]
+  },
+  "nash": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "Local cuisine",
+      "Shopping": "Small boutiques",
+      "Culture": "Museum",
+      "Sport": "Indoor activities",
+      "Environment": "Monuments"
+    },
+    "utility": [
+      0.9515412833,
+      0.7405237035999999
+    ]
+  },
+  "kalai": {
+    "bid": {
+      "Atmosphere": "Hospitality",
+      "Amusement": "Nightlife and entertainment",
+      "Culinary": "Cooking workshops",
+      "Shopping": "Small boutiques",
+      "Culture": "Museum",
+      "Sport": "Bike tours",
+      "Environment": "Monuments"
+    },
+    "utility": [
+      0.7767312833000001,
+      0.7988292244
+    ]
+  },
+  "pareto_front": [
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightclubs",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.08371506960000001,
+        1.0
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Amusement park",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.10670893560000001,
+        0.9930405771999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.1267650696,
+        0.9792468742
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Amusement park",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.13999893560000004,
+        0.9618320404
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.1600550696,
+        0.9480383374
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Nightclubs",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.33433852480000004,
+        0.931738663
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Turistic activities",
+        "Amusement": "Amusement park",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.3573323908,
+        0.9247792401999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightclubs",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.44976782810000004,
+        0.9190522240000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.4727616941000001,
+        0.9120928012
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.4928178281,
+        0.8982990982000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.5060516941000001,
+        0.8808842644
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Historical places"
+      },
+      "utility": [
+        0.5261078281,
+        0.8670905614000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightclubs",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.7003912833000001,
+        0.850790887
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.7233851493000001,
+        0.8438314642
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.7434412833,
+        0.8300377612000001
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.7566751493000001,
+        0.8126229274
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Cooking workshops",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.7767312833000001,
+        0.7988292244
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightclubs",
+        "Culinary": "International cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.8394353793000001,
+        0.7822375846
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "International cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.8624292453000001,
+        0.7752781618
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "International cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.8824853793,
+        0.7614844588
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightclubs",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9084912833000001,
+        0.7612768293999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9314851493000001,
+        0.7543174066
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Indoor activities",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9515412833,
+        0.7405237035999999
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Amusement park",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9647751493000002,
+        0.7231088698
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Museum",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        0.9848312833,
+        0.7093151668
+      ]
+    },
+    {
+      "bid": {
+        "Atmosphere": "Hospitality",
+        "Amusement": "Nightlife and entertainment",
+        "Culinary": "Local cuisine",
+        "Shopping": "Small boutiques",
+        "Culture": "Theater",
+        "Sport": "Bike tours",
+        "Environment": "Monuments"
+      },
+      "utility": [
+        1.0,
+        0.5388135124
+      ]
+    }
+  ]
+}

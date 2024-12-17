@@ -1,0 +1,2 @@
+self_agent,opp_agent,agreement,self_ufun_agreement,opp_ufun_agreement,number_of_steps,total_social_welfare,pareto_distance,nash_distance
+AgentA,AgentB,"('4%', 'Division B', '60%', '80%', '$40,000')",0.45,0.958356,12,1.408356,0.15567344903996963,0.35170921998719346
