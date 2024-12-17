@@ -1,0 +1,8 @@
+[
+
+    ["Atlas3", "agents.anac.y2015.Atlas3.Atlas3"],
+    ["Caduceus", "agents.anac.y2016.caduceus.Caduceus"],
+    ["PonPokoAgent", "agents.anac.y2017.ponpokoagent.PonPokoAgent"],
+    ["AgreeableAgent2018", "agents.anac.y2018.agreeableagent2018.AgreeableAgent2018"],
+    ["KakeSoba", "agents.anac.y2019.kakesoba.KakeSoba"] 
+]
