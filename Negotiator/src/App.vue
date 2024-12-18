@@ -7,6 +7,7 @@ import { useRouter, useRoute, RouterView } from 'vue-router';
 import { useStore } from 'vuex';
 
 import {sendJson} from './pages/SendMessage';
+import { ElMessage } from 'element-plus';
 
 
 const nextPage = ref('准备阶段');
@@ -180,6 +181,26 @@ watch(
     // console.log('App.vue中, My Issues:', store.state.my_issues_data);
     // console.log('App.vue中, Op Interests:', store.state.op_interests_data);
     // console.log('App.vue中, Op Issues:', store.state.op_issues_data);
+  },
+  { deep: true }
+);
+
+
+// 监听 Vuex 数据变化
+watch(
+  [
+    () => store.state.curr_nego_state
+  ],
+  () => {
+    if (route.path === '/negotiation' && store.state.curr_nego_state!=="negotiating"){
+      console.log("App.vue之路由检测到谈判状态改变，准备进入结算阶段...");
+      ElMessage({
+          message: `App.vue之路由检测到谈判状态改变，准备进入结算阶段...`,
+          type: 'info',  
+      });
+      goToNext();
+    }
+
   },
   { deep: true }
 );

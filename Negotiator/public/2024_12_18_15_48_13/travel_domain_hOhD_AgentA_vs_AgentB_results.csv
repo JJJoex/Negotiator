@@ -1,0 +1,2 @@
+self_agent,opp_agent,agreement,self_ufun_agreement,opp_ufun_agreement,number_of_steps,total_social_welfare,pareto_distance,nash_distance
+AgentA,AgentB,"('Political stability', 'Amusement park', 'Lunch facilities', 'Shopping malls', 'Theater', 'Indoor activities', 'Historical places')",0.30048857142857144,0.9999999999999998,2,1.3004885714285712,0.09288857142857143,0.46796718666799614

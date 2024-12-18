@@ -45,10 +45,13 @@ from negmas import Outcome, ResponseType
 
 import multiprocessing
 
+import matplotlib
+
+matplotlib.use('agg')
 
 
 class NegotiationRunner:
-    def __init__(self, base_path, domain_name, our_name, opp_name, our_agent, opp_agent, output_folder, time_limit=10, n_steps=1000):
+    def __init__(self, base_path, domain_name, our_name, opp_name, our_agent, opp_agent, output_folder,  n_steps):
         self.base_path = base_path
         self.domain_name = domain_name
         self.output_folder = output_folder
@@ -56,7 +59,7 @@ class NegotiationRunner:
         self.opp_name = opp_name
         self.our_agent = our_agent
         self.opp_agent = opp_agent
-        self.time_limit = time_limit
+        # self.time_limit = time_limit
         self.n_steps = n_steps
         self.session = None
         self.ufun_a = None
@@ -453,20 +456,41 @@ class NegotiationRunner:
     #     }
 
     def handle_offer_submission(self, session, user_offer, **kwargs):
+        #     """
+    #     Signal 4: 用户提交新的提议，触发对手的响应
+    #     输入:
+    #     - session: 当前谈判的 session 对象
+    #     - user_offer: 用户提出的具体提议，格式与 response.outcome 相同
+    #     返回:
+    #     - response: 对手的反馈（如 accept/reject/counter）
+    #     - next_offer: 对手的反提议（如有）
+    #     - session_state: 当前谈判的状态，包括当前提议和轮次
+    #     - full_trace: 更新后的完整历史
+    #     """
         if not isinstance(session, negmas.SAOMechanism):
             raise ValueError("[ERROR] session 必须是 SAOMechanism 的实例")
 
         # 将用户提议作为当前的 action 提交
         action = {
-            self.our_name: negmas.SAOResponse(
+            session.negotiator_ids[0]: negmas.SAOResponse(
                 response=ResponseType.REJECT_OFFER,
                 outcome=user_offer
             )
         }
 
+        print("---session.negotiator_ids---",session.negotiator_ids)
+
         # 调用 session.step() 执行当前轮次
+        print("用户出价",user_offer)
         print("[DEBUG] 提交用户提议...")
+        print("出价前的state",session.state)
         step_result = session.step(action)
+        print("出价后的state",session.state)
+
+        if session.state.relative_time >= 1.0:
+            print("[INFO] 检测到谈判超时，触发信号7处理...")
+            return self.handle_timeout()
+        
 
         # 获取当前的谈判状态
         current_state = session.state
@@ -475,19 +499,78 @@ class NegotiationRunner:
         # 提取对手的最新提议
         next_offer = current_state.current_offer
 
+        print("对手出价",next_offer)
+
         # 判断对手的响应状态
         if current_state.broken:
             response_type = ResponseType.END_NEGOTIATION
             print("[INFO] 对手选择终止谈判。")
+            agreement = None
+            self_ufun_agreement = 0
+            opp_ufun_agreement = 0
+
+            result = {
+                'self_agent': self.our_name,
+                'opp_agent': self.opp_name,
+                'agreement': agreement,
+                'self_ufun_agreement': self_ufun_agreement,
+                'opp_ufun_agreement': opp_ufun_agreement,
+                'number_of_steps': len(self.session.trace),
+            }
+
+            # 保存结果
+            return self.save_results_to_csv(self.session, result)
         elif current_state.timedout:
             response_type = ResponseType.NO_RESPONSE
             print("[INFO] 谈判超时。")
+            agreement = current_offer
+            self_ufun_agreement = 0
+            opp_ufun_agreement = 0
+
+            result = {
+                'self_agent': self.our_name,
+                'opp_agent': self.opp_name,
+                'agreement': agreement,
+                'self_ufun_agreement': self_ufun_agreement,
+                'opp_ufun_agreement': opp_ufun_agreement,
+                'number_of_steps': len(self.session.trace),
+            }
+
+            # 保存结果
+            return self.save_results_to_csv(self.session, result)
         elif current_state.agreement:
             response_type = ResponseType.ACCEPT_OFFER
             print("[INFO] 双方达成一致，谈判结束。")
+            agreement = self.session.state.current_offer
+            self.session.state.running = False  # 结束谈判
+            session.state.agreement = agreement
+            self_ufun_agreement = self.ufun_a(agreement) if agreement else 0
+            opp_ufun_agreement = self.ufun_b(agreement) if agreement else 0
+
+            pareto_distance, nash_distance = self.calculate_distances(
+                self.session, agreement, self.ufun_a, self.ufun_b
+            )
+
+            result = {
+                'self_agent': self.our_name,
+                'opp_agent': self.opp_name,
+                'agreement': agreement,
+                'self_ufun_agreement': self_ufun_agreement,
+                'opp_ufun_agreement': opp_ufun_agreement,
+                'number_of_steps': len(self.session.trace),
+                'total_social_welfare': self_ufun_agreement + opp_ufun_agreement,
+                'pareto_distance': pareto_distance,
+                'nash_distance': nash_distance,
+            }
+
+            # 保存结果、谈判历史和图表
+            return self.save_results_to_csv(self.session, result)
         else:
             response_type = ResponseType.REJECT_OFFER
             print("[INFO] 对手拒绝了提议，并提出新提议。", next_offer)
+        if session.state.relative_time >= 1.0:
+            print("[INFO] 检测到谈判超时，触发信号7处理...")
+            return self.handle_timeout()
 
         # 返回完整结果
         return {
@@ -559,7 +642,45 @@ class NegotiationRunner:
 
     def handle_timeout(self):
         """处理信号7：超时结束。"""
-        return {'status': 'timeout', 'final_offer': self.session.state.current_offer}
+        print("[DEBUG] 检查谈判是否超时...")
+
+        # 检查是否已超时
+        if self.session.state.relative_time < 1.0:
+            raise ValueError("[ERROR] 当前谈判尚未超时。请在超时后调用该信号处理。")
+        
+        print("[INFO] 谈判已超时。生成最终结果...")
+        
+        # 准备超时状态结果
+        agreement = self.session.state.agreement  # 获取当前协议（可能为 None）
+        print(agreement)
+        # input()
+        self_ufun_agreement = self.ufun_a(agreement) if agreement else 0
+        opp_ufun_agreement = self.ufun_b(agreement) if agreement else 0
+
+        # 如果没有协议，使用默认效用值 (0,0)
+        agreement_utility = [self_ufun_agreement, opp_ufun_agreement] if agreement else [0, 0]
+        pareto_frontier = self.session.pareto_frontier(max_cardinality=float("inf"), sort_by_welfare=True)[0]
+        nash_point = self.session.nash_points(max_cardinality=float("inf"))[0]
+
+        pareto_distance = self.calculate_pareto_distance(agreement_utility, pareto_frontier)
+        nash_distance = self.calculate_nash_distance(agreement_utility, nash_point)
+
+        # 准备结果数据
+        result = {
+            "self_agent": self.our_name,
+            "opp_agent": self.opp_name,
+            "agreement": agreement,
+            "self_ufun_agreement": self.ufun_a(agreement) if agreement else 0,
+            "opp_ufun_agreement": self.ufun_b(agreement) if agreement else 0,
+            "number_of_steps": len(self.session.trace),
+            "total_social_welfare": self_ufun_agreement + opp_ufun_agreement,
+            "pareto_distance": pareto_distance,
+            "nash_distance": nash_distance,
+        }
+
+        # 保存结果到 CSV 和生成图片
+        return self.save_results_to_csv(self.session, result)
+
 
     import csv
 
@@ -665,20 +786,19 @@ class NegotiationRunner:
 
 
 if __name__ == "__main__":
-    base_path = "/root/AANegotiator/Abstraction/scenarios/scenarios/specials"
+    base_path = "D:/Negotiator/Negotiator/src/python/defined_profiles"
     domain_name = "travel_domain_hOhD"
-    output_folder = "/root/AANegotiator/Abstraction/Results1213_test"
+    output_folder = "D:/Negotiator/Negotiator/public"
     our_name = "AgentA"
     opp_name = "AgentB"
-    time_limit = 180
-    n_steps = 1000
+    n_steps = 10
     profile_a = [1, 0, 1, -1, 0]
-    profile_b = [-1,2,-2,-2,-2]
+    profile_b = [2,2,1,2,1]
     weight_a = [0.1, 0.1, 0.1, 0.1,0.2,0.2,0.2]
     weight_b = [0.1, 0.1, 0.1, 0.1,0.2,0.2,0.2]
 
     # 实例化 NegotiationRunner
-    runner = NegotiationRunner(base_path, domain_name, our_name, opp_name, "AANegotiatior", "MiCRO", output_folder, time_limit, n_steps)
+    runner = NegotiationRunner(base_path, domain_name, our_name, opp_name, "AANegotiatior", "MiCRO", output_folder,  n_steps)
 
     # 初始化会话
     runner.handle_signal(1, profile_a=profile_a, profile_b=profile_b, weight_a=weight_a, weight_b=weight_b)
@@ -688,7 +808,33 @@ if __name__ == "__main__":
     # runner.handle_signal(4, user_offer=('10%', 'Division D', '100%', '100%', '$38,000'))
 
     runner.handle_signal(4, user_offer=('Political stability', 'Nightlife and entertainment', 'International cuisine', 'Shopping malls', 'Theater', 'Bike tours', 'Palace'))
-
+    input()
+    runner.handle_signal(4, user_offer=('Political stability', 'Nightlife and entertainment', 'International cuisine', 'Shopping malls', 'Theater', 'Bike tours', 'Palace'))
+    input()
+    runner.handle_signal(4, user_offer=('Political stability', 'Nightlife and entertainment', 'International cuisine', 'Shopping malls', 'Theater', 'Bike tours', 'Palace'))
+    input()
+    runner.handle_signal(4, user_offer=('Political stability', 'Nightlife and entertainment', 'International cuisine', 'Shopping malls', 'Theater', 'Bike tours', 'Palace'))
+    input()
+    runner.handle_signal(4, user_offer=('Political stability', 'Nightlife and entertainment', 'International cuisine', 'Shopping malls', 'Theater', 'Bike tours', 'Palace'))
+    input()
+    runner.handle_signal(4, user_offer=('Political stability', 'Nightlife and entertainment', 'International cuisine', 'Shopping malls', 'Theater', 'Bike tours', 'Palace'))
+    input()
+    runner.handle_signal(4, user_offer=('Political stability', 'Nightlife and entertainment', 'International cuisine', 'Shopping malls', 'Theater', 'Bike tours', 'Palace'))
+    input()
+    runner.handle_signal(4, user_offer=('Political stability', 'Nightlife and entertainment', 'International cuisine', 'Shopping malls', 'Theater', 'Bike tours', 'Palace'))
+    input()
+    runner.handle_signal(4, user_offer=('Political stability', 'Nightlife and entertainment', 'International cuisine', 'Shopping malls', 'Theater', 'Bike tours', 'Palace'))
+    input()
+    runner.handle_signal(4, user_offer=('Political stability', 'Nightlife and entertainment', 'International cuisine', 'Shopping malls', 'Theater', 'Bike tours', 'Palace'))
+    input()
+    runner.handle_signal(4, user_offer=('Political stability', 'Nightlife and entertainment', 'International cuisine', 'Shopping malls', 'Theater', 'Bike tours', 'Palace'))
+    input()
+    runner.handle_signal(4, user_offer=('Political stability', 'Nightlife and entertainment', 'International cuisine', 'Shopping malls', 'Theater', 'Bike tours', 'Palace'))
+    input()
     # runner.handle_signal(5)
-    runner.handle_signal(6)
+    # runner.handle_signal(6)
 
+
+
+
+    

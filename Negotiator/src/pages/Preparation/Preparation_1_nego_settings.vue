@@ -197,8 +197,8 @@ const marks_5 = {
     </div>
 
     <div class="slider-demo-block">
-      <span class="slider-label">谈判时间(分钟)</span>
-      <el-slider v-model="timeLimit" :min="10" :max="45" show-input />
+      <span class="slider-label">我方每轮出价限时（秒）</span>
+      <el-slider v-model="timeLimit" :min="60" :max="300" show-input />
     </div>
 
     <!-- Option Group -->

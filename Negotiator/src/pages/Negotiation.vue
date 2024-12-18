@@ -20,7 +20,7 @@ const subPages = ref([
     { title: '我的出价', content: '' },
     { title: '我方Agent建议出价', content: '' },
     { title: '出价历史', content: '' },
-    { title: '实时图片', content: '边界' },
+    // { title: '实时图片', content: '边界' },
 ]);
 
 // 商品分类数据
@@ -62,7 +62,8 @@ onMounted(() => {
 //   console.log('加载的 Op Interests:', opInterestsData.value);
 //   console.log('加载的 Op Issues:', opIssuesData.value);
 
-    countdown.value=negoSettingsData.value["BiddingTime"]*60;
+    countdown.value=negoSettingsData.value["BiddingTime"];
+    // countdown.value=negoSettingsData.value["BiddingTime"]*60;
     remainingRounds.value=negoSettingsData.value["BiddingRounds"];
     
     const domain= negoSettingsData.value["Domain"];
@@ -79,6 +80,8 @@ onMounted(() => {
         userSelections[key] = groceryStore[key][0];
     });
 
+    // console.log("ffffffffff",groceryStore);
+
     // 初始化agentSuggestion，每个都选第一个，测试用
     Object.keys(domain_data_content.value).forEach(key => {
         // agentSuggestion[key] = domain_data_content.value[key][0] || [];
@@ -87,6 +90,11 @@ onMounted(() => {
     
 
 });
+
+const ChangeNegoState = (state_str) => {
+    store.commit('setCurrNegoState', state_str);
+
+};
 
 
 // 初始化谈判的
@@ -119,18 +127,47 @@ watch(
   { deep: true }
 );
 
+const load_csv_and_png=(csv_path,png_path)=>{
+    store.commit("setFigurePath",png_path);
+    store.commit("setCsvPath",csv_path);
 
+};
 
 
 
 // 定义计时器 ID，确保唯一性
 let timerId = null;
 
+
+const getRandomIndexVector=() => {
+    const indexVector = [];
+
+    // 遍历 groceryStore 对象
+    for (const category in groceryStore) {
+        // 获取当前类别的项
+        const items = groceryStore[category];
+
+        // 随机选择一个元素的索引
+        const randomIndex = Math.floor(Math.random() * items.length);
+        
+        // 将选中的索引添加到向量中
+        indexVector.push(randomIndex);
+    }
+
+    return indexVector;
+}
+
+
 // 倒计时结束的逻辑
 const onCountdownEnd = () => {
     // alert('倒计时结束！触发逻辑。');
     // 超时 结束
-    sendJson(7,{});
+    ElMessage({
+        message: `您已超时！已为您随机挑选一个出价...`,
+        type: 'warning',  // 提示类型
+    });
+    // getRandomIndexVector();
+    do_bidding( getRandomIndexVector());
 };
 
 const stopCountdown = () => {
@@ -222,39 +259,118 @@ const addBidHistory = (user, bid)=>{
 
 
 const do_bidding = (my_bid)=>{
+    // 重置时间
+    countdown.value=negoSettingsData.value["BiddingTime"];
+    startCountdown();
+
     const to_send={
         user_offer: my_bid
     }
 
     addBidHistory("我方",my_bid);
+    remainingRounds.value --;
 
     // 我方给出报价
     sendJson(4,to_send).then((return_data) => {
-        addBidHistory("对方",return_data.op_next_offer);
-        Object.keys(agentSuggestion).forEach((key, index) => {
-            if (index < return_data.recommend.recommend.length) {
-                agentSuggestion[key] = return_data.recommend.recommend[index];
-            }
-        });
-        remainingRounds.value--;
+        if (return_data.type === 1 && remainingRounds.value!==0){
+            // 继续谈判
+            addBidHistory("对方",return_data.op_next_offer);
+            Object.keys(agentSuggestion).forEach((key, index) => {
+                if (index < return_data.recommend.recommend.length) {
+                    agentSuggestion[key] = return_data.recommend.recommend[index];
+                }
+            });
+            
 
-        // 检查剩余回合数是否为 0
-        if (remainingRounds.value === 0) {
-            handleFinalRoundEnd(); 
+            ElMessage({
+                message: `对手已做出回应，并更新我方Agent给出的建议！`,
+                type: 'info',  // 提示类型
+            });
         }
+        else if (return_data.type === 1 && remainingRounds.value===0){
+            // 谈判轮数用光
+            addBidHistory("对方",return_data.op_next_offer);
+            Object.keys(agentSuggestion).forEach((key, index) => {
+                if (index < return_data.recommend.recommend.length) {
+                    agentSuggestion[key] = return_data.recommend.recommend[index];
+                }
+            });
+
+            load_csv_and_png(
+                return_data.final_results.csv,
+                return_data.final_results.png
+            );            
+
+            ElMessage({
+                message: `谈判轮数用完！未达成协议，即将跳转至“查看结果”阶段...`,
+                type: 'error',  // 提示类型
+            });
+            setTimeout(() => {
+                
+                ChangeNegoState("roundmax");
+            }, 3000); 
+
+        }
+        else if(return_data.type === 0){
+            // 达成协议
+            load_csv_and_png(
+                return_data.final_results.csv,
+                return_data.final_results.png
+            );   
+            ElMessage({
+                message: `对手同意我方的提议！即将跳转至“查看结果”阶段...`,
+                type: 'success',  // 提示类型
+            });
+            setTimeout(() => {
+                
+                ChangeNegoState("succeed");
+            }, 3000); 
+
+        }
+        else if(return_data.type === 2){
+            // 对方拒绝
+            load_csv_and_png(
+                return_data.final_results.csv,
+                return_data.final_results.png
+            );   
+            ElMessage({
+                message: `对手拒绝我方的提议！即将跳转至“查看结果”阶段...`,
+                type: 'error',  // 提示类型
+            });
+            setTimeout(() => {
+                
+                ChangeNegoState("op_fail");
+            }, 3000); 
+
+        }
+        else if(return_data.type === -1){
+            // 超时
+            load_csv_and_png(
+                return_data.final_results.csv,
+                return_data.final_results.png
+            );   
+            ElMessage({
+                message: `已达到谈判轮次上限！即将跳转至“查看结果”阶段...`,
+                type: 'error',  // 提示类型
+            });
+            setTimeout(() => {
+                
+                ChangeNegoState("roundmax");
+            }, 3000); 
+
+
+        }
+        else{
+
+        }
+
+
 
     }).catch((error) => {
       console.error("Error ", error);
     });
 };
 
-const handleFinalRoundEnd = () => {
-    ElMessage({
-        message: `谈判轮次已用完！`,
-        type: 'info',  // 提示类型
-    });
-
-};
 
 // const handleTest = () =>{
 //     // 测试，加入一组随机
@@ -283,44 +399,48 @@ const handleBidClick = () => {
         return index; // 返回该类别选项的索引
     });
 
-
-
-
     do_bidding(selectionIndices);
-
-    
-
 };
 
 const handleBidSuggestionClick = () => {
-
-    
     const selectionIndices = Object.values(agentSuggestion);
-
-
-
     do_bidding(selectionIndices);
-
-
-
-    
-
-
-    
-
 };
 
 const handleAcceptClick = () => {
-
     // 我方同意
-    sendJson(5,{});
-
+    sendJson(5,{}).then((return_data)=>{
+        load_csv_and_png(
+                return_data.final_results.csv,
+                return_data.final_results.png
+            );   
+        ElMessage({
+            message: `我方同意对手的提议！即将跳转至“查看结果”阶段...`,
+            type: 'success',  // 提示类型
+        });
+        setTimeout(() => {
+            
+            ChangeNegoState("succeed");
+        }, 3000); 
+    });
 };
 
 const handleRejectClick = () => {
-
-    // 我方终止
-    sendJson(6,{});
+    // 我方拒绝
+    sendJson(6,{}).then((return_data)=>{
+        load_csv_and_png(
+                return_data.final_results.csv,
+                return_data.final_results.png
+            );   
+        ElMessage({
+            message: `我方拒绝对手的提议！即将跳转至“查看结果”阶段...`,
+            type: 'error',  // 提示类型
+        });
+        setTimeout(() => {
+            
+            ChangeNegoState("my_fail");
+        }, 3000); 
+    });
 
 };
 
@@ -444,9 +564,9 @@ export default {
 
 
 
-            <div v-if="index === 3" class="image-display">
+            <!-- <div v-if="index === 3" class="image-display">
                 <img src="@/assets/3.png" alt="展示图片" style="max-width: 100%; height: auto;">
-            </div>
+            </div> -->
 
 
         </div>

@@ -5,6 +5,9 @@ from runner_step import NegotiationRunner
 
 from flask_cors import CORS
 
+import my_utils
+import ast
+
 import traceback
 import logging
 logger = logging.getLogger("my_logger")
@@ -28,10 +31,13 @@ from pathlib import Path
 
 
 
-# 相对路径
+# 路径
 PREFIX_PATH=Path(r"D:\\Negotiator\\Negotiator\\src\\python")
+PREFIX_PATH_PUBLIC=Path(r"D:\\Negotiator\\Negotiator\\public")
 DEFINED_PROFILES_PATH=PREFIX_PATH / "defined_profiles"
-OUTPUT_DIR=PREFIX_PATH / "output_dir"
+# OUTPUT_DIR=PREFIX_PATH / "output_dir"
+OUTPUT_DIR=PREFIX_PATH_PUBLIC
+# OUTPUT_DIR_PUBLIC=PREFIX_PATH_PUBLIC
 
 # 选什么模型?
 # NEGO_SUFFIX="mOlD"
@@ -170,6 +176,7 @@ def get_my_recommendation():
 # Global runner instance
 runner = None
 domain_dict=None
+output_folder=None
 
 
 
@@ -180,6 +187,7 @@ CORS(app)
 def negotiation_handler():
     global runner
     global domain_dict
+    global output_folder
 
     # Get the JSON payload from the request
     # data = request.get_json()
@@ -221,7 +229,9 @@ def negotiation_handler():
             time_limit=payload.get('Times')
             n_steps=payload.get('Rounds')
             
-            output_folder = OUTPUT_DIR
+            output_folder = OUTPUT_DIR / my_utils.get_formatted_time_with_seconds()
+            
+            os.mkdir(output_folder)
 
             # interests，一维数组
             my_interest_arr=payload['MyInterests']
@@ -262,7 +272,7 @@ def negotiation_handler():
                 our_agent=our_agent,
                 opp_agent=opp_agent,
                 output_folder=output_folder,
-                time_limit=time_limit*60,
+                # time_limit=time_limit*60,
                 n_steps=n_steps
             )
 
@@ -288,12 +298,13 @@ def negotiation_handler():
             
             
 
-        elif signal in range(3, 11):
+        elif signal in range(3, 11) or signal==99:
             
             if not runner:
                 return jsonify({"error": "Runner not initialized. Please send signal 1 first."}), 400
 
             if signal == 4:
+                # 我们出价
                 # Handle user offer submission (signal 4)
                 user_offer = payload.get('user_offer')
                 
@@ -311,22 +322,98 @@ def negotiation_handler():
                 
                 my_next_recommend=get_my_recommendation()
                 
-                # logger.info(f"signal 4 Negotiation Result: {result}")
+                logger.info(f"signal 4 Negotiation Result (raw): {result}")
                 # logger.info(f"signal 4 my_next_recommend: {my_next_recommend}")
                 
-                # 对手的出价，推荐出价
+                if "next_offer" in result:
+                    # 说明对手驳回我们，还要继续谈判
+                    # 对手的出价，推荐出价
+                    logger.info("谈判继续")
+                    response={
+                        "type":1,
+                        "op_next_offer": trans_recommend_to_arr(result["next_offer"]),
+                        "recommend": my_next_recommend
+                    }
+                    logger.info(f"signal 4 对手的出价，与下一步推荐出价: {response}")
+                elif "agreement" in result and result['agreement']!=None :
+                    # 说明达成协议
+                    logger.info("对手同意我方的提议！")
+                    response={
+                        "type":0,
+                        "agreement": trans_recommend_to_arr(result["agreement"]),
+                        "final_results": my_utils.get_csv_and_png_paths(output_folder)
+                    }
+                    logger.info(f"signal 4 最终协议: {response}")
+                elif "agreement" in result and result['agreement']==None :
+                    # 超时
+                    logger.info("超时！")
+                    response={
+                        "type":-1,
+                        "agreement": None,
+                        "final_results": my_utils.get_csv_and_png_paths(output_folder)
+                    }
+                    logger.info(f"signal 4 最终协议: {response}")
+                else:
+                    logger.info(f"????????????????????????????????????????????????????????????: {result}")
+                
+                
+            elif signal == 5:
+                # 我方同意
+                result = runner.handle_signal(signal)
+                logger.info(f"signal={signal}, result:{result}")
+                # "final_results": my_utils.get_csv_and_png_paths(output_folder)
+                logger.info("我方同意对手的提议！")
                 response={
-                    "op_next_offer": trans_recommend_to_arr(result["next_offer"]),
-                    "recommend": my_next_recommend
+                    "type":0,
+                    "agreement": trans_recommend_to_arr(result["agreement"]),
+                    "final_results": my_utils.get_csv_and_png_paths(output_folder)
                 }
                 
-                logger.info(f"signal 4 对手的出价，与下一步推荐出价: {response}")
-            
+                
+            elif signal == 6:
+                # 我方拒绝
+                result = runner.handle_signal(signal)
+                logger.info(f"signal={signal}, result:{result}")
+                # "final_results": my_utils.get_csv_and_png_paths(output_folder)
+                logger.info("我方拒绝对手的提议！")
+                response={
+                    "type":2,
+                    "final_results": my_utils.get_csv_and_png_paths(output_folder)
+                }
+                
+            elif signal == 7:
+                # 我方超时
+                result = runner.handle_signal(signal)
+                logger.info(f"signal={signal}, result:{result}")
+                
+            elif signal == 99:
+                agreement_str =payload.get("to_translate")
+                print(agreement_str)
+                try:
+                    # 将字符串解析为元组
+                    
+                    agreement_tuple = ast.literal_eval(agreement_str)
+                    
+                    # 转换为列表
+                    agreement_list = list(agreement_tuple)
+                    print("转换后的列表:", agreement_list)
+                    
+                    agreement_list=trans_recommend_to_arr(agreement_list)
+                    print("向量:", agreement_list)
+                    response = {
+                        "arr":agreement_list
+                    }
+                    
+                    
+                except (ValueError, SyntaxError) as e:
+                    print("转换失败:", e)
+                        
+                
                 
 
             else:
                 # Handle other signals
-                result = runner.handle_signal(signal)
+                response = runner.handle_signal(signal)
                 # return jsonify(result)
 
         
@@ -341,7 +428,7 @@ def negotiation_handler():
         return jsonify(response)
 
     except Exception as e:
-        print(e.with_traceback())
+        print(e.with_traceback(traceback.extract_stack()))
         # print(e.with_traceback(e.__traceback__))
         return jsonify({"error": str(e)}), 500
 
