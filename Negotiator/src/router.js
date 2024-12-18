@@ -1,19 +1,20 @@
-import { createMemoryHistory, createRouter ,createWebHistory } from "vue-router"
+import { createRouter ,createWebHistory } from "vue-router"
 import Introduction from "./pages/Introduction.vue"
+import Preparation from "./pages/Preparation.vue"
+import Ensurement from "./pages/Ensurement.vue"
 import Negotiation from "./pages/Negotiation.vue"
 import Finish from "./pages/Finish.vue"
-import Preparation from "./pages/Preparation.vue"
 
 const routes = [
-    {path: '/description', component: Introduction},
+    {path: '/introduction', component: Introduction},
     {path: '/preparation', component: Preparation},
+    {path: '/ensurement', component: Ensurement},
     {path: '/negotiation', component: Negotiation},
     {path: '/finish', component: Finish},
-    { path: '/', redirect: '/description' }, 
+    {path: '/', redirect: '/introduction' }, 
 ]
 
 const router = createRouter({
-    // history: createMemoryHistory(),
     history : createWebHistory(),
     routes,
 })

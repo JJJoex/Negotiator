@@ -3,7 +3,40 @@ import { ref, watch, onMounted, nextTick } from 'vue';
 import issuesData from '../specific_contents/interests_issues.json';
 import * as echarts from 'echarts';
 import { ElMessage } from 'element-plus';
+import footerComp from '../../components/footer.vue';
+const nextTitle = ref('下一页')
+const nextDetail = ref('准备确认')
+const previousTitle = ref('上一页')
+const previousDetail = ref('对方兴趣')
+const showPrevious = ref(true)
+const showNext = ref(true)
 
+const goToNextPage = () => {
+    // 创建一个新的对象来存储归一化后的数据
+    const normalizedData = {};
+
+    // 遍历 sliders 中的每个类别
+    for (const category in sliders.value) {
+      const categoryData = sliders.value[category];
+      
+      // 计算该类别所有值的总和
+      const total = Object.values(categoryData).reduce((sum, value) => sum + value, 0);
+
+      // 对该类别中的每个项进行归一化
+      normalizedData[category] = {};
+      for (const item in categoryData) {
+        // 归一化每个项的值
+        normalizedData[category][item] = total > 0 ? categoryData[item] / total : 0; 
+      }
+    }
+
+
+    // 使用 $emit 发送归一化后的数据给父组件
+    emit('nextPage', normalizedData);
+}
+const goToPreviousPage = () => {
+    emit('previousPage')
+}
 const props = defineProps({
   my_interests_data: Object,
   nego_settings_data: Object
@@ -195,12 +228,9 @@ const handleSubmit = () => {
             </div>
         </div>
       </div>
-
-      <div class="button-container">
-          <el-button class="button preset" @click="presetClick">预设</el-button>
-          <el-button class="button random" @click="randomClick">随机！</el-button>
-          <el-button class="button next-step" @click="handleSubmit">下一步</el-button>
-      </div>
+      <footerComp :next="nextTitle" :nextDetail="nextDetail" :previous="previousTitle"
+            :previousDetail="previousDetail" :showPrevious="showPrevious" :showNext="showNext" @next-page="goToNextPage"
+            @previous-page="goToPreviousPage" />
     </div>
   </template>
   

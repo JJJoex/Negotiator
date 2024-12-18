@@ -1,35 +1,42 @@
 <template>
-  <el-steps :active="activeStep" align-center finish-status="success">
-    <el-step title="欢迎页面"/>
-    <el-step title="准备阶段"/>
-    <el-step title="谈判阶段"/>
-    <el-step title="查看结果"/>
+  <el-steps :active="activeStep" align-center finish-status="success" class="steps-container">
+    <el-step title="首页" />
+    <el-step title="谈判准备" />
+    <el-step title="准备确认" />
+    <el-step title="开始谈判" />
+    <el-step title="结果详情" />
   </el-steps>
 </template>
 
-<script>
-export default {
-  name: 'Steps',
-  computed: {
-    // 根据当前路径动态计算激活的步骤
-    activeStep() {
-      const stepMap = {
-        '/description': 0,
-        '/preparation': 1,
-        '/negotiation': 2,
-        '/finish': 4,
-      };
-      return stepMap[this.$route.path] || 0;
-    },
-  },
-};
+<script setup>
+import { computed } from "vue";
+import { useRoute } from "vue-router";
+
+// 动态获取路由
+const route = useRoute();
+
+// 计算激活步骤
+const activeStep = computed(() => {
+  const stepMap = {
+    "/description": 0,
+    "/preparation": 1,
+    "/ensurement": 2,
+    "/negotiation": 3,
+    "/finish": 4,
+  };
+  return stepMap[route.path] || 0;
+});
 </script>
 
 <style scoped>
-el-steps {
-  width: 100%;
+.steps-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
+  width: 100%;
 }
+
 el-step {
   font-weight: bold;
 }

@@ -1,19 +1,97 @@
+<template>
+    <div class="container" v-bind="$attrs">
+        <!-- 左侧部分 -->
+        <div class="left-panel">
+            <div class='status-bar'>我的出价</div>
+            <el-form>
+                <el-form-item v-for="(items, category) in groceryStore" :label="category" :key="category">
+                    <el-select v-model="userSelections[category]">
+                        <el-option v-for="item in items" :key="item" :value="item" :label="item"></el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item>
+                    <el-button type="primary" @click="handleBidClick">出价</el-button>
+                    <el-button type="success" @click="handleAcceptClick">接受</el-button>
+                    <el-button type="danger" @click="handleRejectClick">结束</el-button>
+                    <el-button @click="handleShowSuggestions">
+                        {{ showHints ? '隐藏AI推荐' : '查看AI推荐' }}
+                    </el-button>
+                </el-form-item>
+                <el-form-item v-show="showHints">
+                    <el-table :data="[agentSuggestion]" class="suggestion-table"
+                        :header-cell-style="{ background: '#eef1f6', color: '#000000' }">
+                        <el-table-column label="AI推荐出价">
+                            <el-table-column v-for="(category, idx) in Object.keys(agentSuggestion)" :key="idx"
+                                :label="category" :prop="category">
+                                <template #default>
+                                    <span>{{ showHints ? domain_data_content[category][agentSuggestion[category]] : "?"
+                                        }}</span>
+                                </template>
+                            </el-table-column>
+                        </el-table-column>
+                    </el-table>
+                </el-form-item>
+                <el-form-item v-show="showHints">
+                    <el-button type="primary" @click="handleBidSuggestionClick">导入推荐出价</el-button>
+                </el-form-item>
+            </el-form>
+        </div>
+
+        <!-- 右侧部分 -->
+        <div class="right-panel">
+            <div class="status-bar">
+                <div>剩余轮数：{{ remainingRounds }}</div>
+                <div>剩余时间：{{ formattedCountdown }}</div>
+            </div>
+            <div class="table-container">
+                <el-table :data="reversedBidHistory" class="history-table" :row-class-name="setRowClass">
+                    <el-table-column label="轮次" prop="round"></el-table-column>
+                    <el-table-column label="出价方" prop="bidder"></el-table-column>
+                    <template v-for="(items, category) in groceryStore" :key="category">
+                        <el-table-column :label="category">
+                            <template #default="{ row }">
+                                <span>{{
+                                    getBidItemsByCategory(row.bidContent)[Object.keys(groceryStore).indexOf(category)]
+                                }}</span>
+                            </template>
+                        </el-table-column>
+                    </template>
+                </el-table>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <footerComp :next="nextTitle" :nextDetail="nextDetail" :previous="previousTitle"
+            :previousDetail="previousDetail" :showPrevious="showPrevious" :showNext="showNext" @next-page="goToNextPage"
+            @previous-page="goToPreviousPage" class="footer" />
+    </div>
+</template>
+
 <script setup lang="js">
-import { ref, reactive, onMounted , computed, watch,onBeforeUnmount  } from 'vue';
+import { ref, reactive, onMounted, computed, watch, onBeforeUnmount } from 'vue';
 import { ElMessage } from 'element-plus';  // 引入 ElMessage 用于 Toast 提示
 
 import issuesData from './specific_contents/interests_issues.json';
 
-import { useRoute } from 'vue-router';
-
-import { useStore } from 'vuex'; 
+import { useRouter, useRoute } from 'vue-router';
 import { sendJson } from './SendMessage';
+import footerComp from "../components/footer.vue";
 
-
+import { useStore } from 'vuex';
+const previousTitle = ref("上一步");
+const previousDetail = ref("谈判准备")
+const showPrevious = ref(true);
+const showNext = ref(false)
+const router = useRouter();
+const goToPreviousPage = () => {
+    router.push("/preparation")
+}
 
 // 初始倒计时
 const countdown = ref(null);
-const remainingRounds=ref(null);
+const remainingRounds = ref(null);
+
+const showSuggestions = ref('查看AI出价')
 
 // 子页面数据定义
 const subPages = ref([
@@ -30,7 +108,7 @@ const groceryStore = reactive({});
 const bidHistory = ref([]);
 
 // 假设 agent 提供了一个出价建议
-const agentSuggestion=reactive({});
+const agentSuggestion = reactive({});
 
 
 
@@ -45,30 +123,23 @@ const myIssuesData = ref(null);
 const opInterestsData = ref(null);
 const opIssuesData = ref(null);
 
-const domain_data_content=ref(null);
+const domain_data_content = ref(null);
 
 // 在组件挂载时从 Vuex 获取数据
 onMounted(() => {
-  negoSettingsData.value = store.state.nego_settings_data;
-  myInterestsData.value = store.state.my_interests_data;
-  myIssuesData.value = store.state.my_issues_data;
-  opInterestsData.value = store.state.op_interests_data;
-  opIssuesData.value = store.state.op_issues_data;
+    negoSettingsData.value = store.state.nego_settings_data;
+    myInterestsData.value = store.state.my_interests_data;
+    myIssuesData.value = store.state.my_issues_data;
+    opInterestsData.value = store.state.op_interests_data;
+    opIssuesData.value = store.state.op_issues_data;
 
-  // 打印加载的 Vuex 数据
-//   console.log('加载的 Nego Settings:', negoSettingsData.value);
-//   console.log('加载的 My Interests:', myInterestsData.value);
-//   console.log('加载的 My Issues:', myIssuesData.value);
-//   console.log('加载的 Op Interests:', opInterestsData.value);
-//   console.log('加载的 Op Issues:', opIssuesData.value);
+       countdown.value = negoSettingsData.value["BiddingTime"] * 60;
+    remainingRounds.value = negoSettingsData.value["BiddingRounds"];
 
-    countdown.value=negoSettingsData.value["BiddingTime"]*60;
-    remainingRounds.value=negoSettingsData.value["BiddingRounds"];
-    
-    const domain= negoSettingsData.value["Domain"];
+    const domain = negoSettingsData.value["Domain"];
 
-    
-    domain_data_content.value=issuesData[domain];
+
+    domain_data_content.value = issuesData[domain];
 
     // console.log("aaa",issuesData[domain],domain_data_content.value);
 
@@ -84,39 +155,39 @@ onMounted(() => {
         // agentSuggestion[key] = domain_data_content.value[key][0] || [];
         agentSuggestion[key] = 0;
     });
-    
+
 
 });
 
 
 // 初始化谈判的
 watch(
-  [
-    () => store.state.nego_initial_data
-  ],
-  () => {
-    console.log('谈判中，store.state.nego_initial_data：', store.state.nego_initial_data);
-    const  recommend=store.state.nego_initial_data.negotiation_obj.recommend;
+    [
+        () => store.state.nego_initial_data
+    ],
+    () => {
+        console.log('谈判中，store.state.nego_initial_data：', store.state.nego_initial_data);
+        const recommend = store.state.nego_initial_data.negotiation_obj.recommend;
 
-    console.log(recommend);
-    
-
-    Object.keys(agentSuggestion).forEach((key, index) => {
-        if (index < recommend.length) {
-            agentSuggestion[key] = recommend[index];
-        }
-    });
-
-    console.log(agentSuggestion);
-    ElMessage({
-        message: `已更新我方Agent给出的建议！`,
-        type: 'info',  // 提示类型
-    });
+        console.log(recommend);
 
 
+        Object.keys(agentSuggestion).forEach((key, index) => {
+            if (index < recommend.length) {
+                agentSuggestion[key] = recommend[index];
+            }
+        });
 
-  },
-  { deep: true }
+        console.log(agentSuggestion);
+        ElMessage({
+            message: `已更新我方Agent给出的建议！`,
+            type: 'info',  // 提示类型
+        });
+
+
+
+    },
+    { deep: true }
 );
 
 
@@ -130,7 +201,7 @@ let timerId = null;
 const onCountdownEnd = () => {
     // alert('倒计时结束！触发逻辑。');
     // 超时 结束
-    sendJson(7,{});
+    sendJson(7, {});
 };
 
 const stopCountdown = () => {
@@ -155,9 +226,9 @@ const startCountdown = () => {
 
 // 格式化倒计时为 "xxx分xxx秒" 格式
 const formattedCountdown = computed(() => {
-  const minutes = Math.floor(countdown.value / 60); // 计算分钟
-  const seconds = countdown.value % 60; // 计算剩余秒数
-  return `${minutes}分${seconds}秒`; // 返回格式化后的字符串
+    const minutes = Math.floor(countdown.value / 60); // 计算分钟
+    const seconds = countdown.value % 60; // 计算剩余秒数
+    return `${minutes}分${seconds}秒`; // 返回格式化后的字符串
 });
 
 // 在组件销毁前停止计时器
@@ -184,7 +255,7 @@ watch(
 
 // 计算属性：倒序排列出价历史
 const reversedBidHistory = computed(() => {
-  return [...bidHistory.value].reverse(); // 使用 reverse 返回倒序数组
+    return [...bidHistory.value].reverse(); // 使用 reverse 返回倒序数组
 });
 
 
@@ -206,11 +277,11 @@ const userSelections = reactive(
 );
 
 
-const addBidHistory = (user, bid)=>{
+const addBidHistory = (user, bid) => {
     const lastRound = bidHistory.value.at(-1)?.round || 0; // 获取最后一轮的 round 值
     const newEntry = {
         round: lastRound + 1,
-        bidder: user, 
+        bidder: user,
         bidContent: bid
     };
 
@@ -221,16 +292,16 @@ const addBidHistory = (user, bid)=>{
 };
 
 
-const do_bidding = (my_bid)=>{
-    const to_send={
+const do_bidding = (my_bid) => {
+    const to_send = {
         user_offer: my_bid
     }
 
-    addBidHistory("我方",my_bid);
+    addBidHistory("我方", my_bid);
 
     // 我方给出报价
-    sendJson(4,to_send).then((return_data) => {
-        addBidHistory("对方",return_data.op_next_offer);
+    sendJson(4, to_send).then((return_data) => {
+        addBidHistory("对方", return_data.op_next_offer);
         Object.keys(agentSuggestion).forEach((key, index) => {
             if (index < return_data.recommend.recommend.length) {
                 agentSuggestion[key] = return_data.recommend.recommend[index];
@@ -240,11 +311,11 @@ const do_bidding = (my_bid)=>{
 
         // 检查剩余回合数是否为 0
         if (remainingRounds.value === 0) {
-            handleFinalRoundEnd(); 
+            handleFinalRoundEnd();
         }
 
     }).catch((error) => {
-      console.error("Error ", error);
+        console.error("Error ", error);
     });
 };
 
@@ -256,24 +327,6 @@ const handleFinalRoundEnd = () => {
 
 };
 
-// const handleTest = () =>{
-//     // 测试，加入一组随机
-//     ElMessage({
-//         message: `这是一个测试按钮，模拟向history中增加信息`,
-//         type: 'info',  // 提示类型
-//     });
-
-//     const lastRound = bidHistory.value.at(-1)?.round || 0; // 获取最后一轮的 round 值
-//     const newEntry = {
-//         round: lastRound + 1,
-//         bidder: Math.random() > 0.5 ? "我方" : "对方", // 随机选择 bidder
-//         bidContent: [0,1,2,0,3,1] // 随机生成出价内容
-//     };
-
-//     // 添加新数据到 bidHistory
-//     bidHistory.value.push(newEntry);
-// };
-
 // 处理出价按钮点击事件
 const handleBidClick = () => {
     const selectionIndices = Object.keys(userSelections).map(category => {
@@ -282,285 +335,94 @@ const handleBidClick = () => {
         const index = items.indexOf(selectedItem); // 获取每个选项在列表中的索引
         return index; // 返回该类别选项的索引
     });
-
-
-
-
     do_bidding(selectionIndices);
-
-    
 
 };
 
 const handleBidSuggestionClick = () => {
-
-    
     const selectionIndices = Object.values(agentSuggestion);
-
-
-
     do_bidding(selectionIndices);
-
-
-
-    
-
-
-    
-
 };
 
 const handleAcceptClick = () => {
 
     // 我方同意
-    sendJson(5,{});
+    sendJson(5, {});
 
 };
 
 const handleRejectClick = () => {
 
     // 我方终止
-    sendJson(6,{});
+    sendJson(6, {});
 
 };
 
+const handleShowSuggestions = () => {
+    showHints.value = !showHints.value
 
-
-
+}
 
 </script>
 
 
-<script lang="js">
-export default {
-    methods: {
-        setRowClass(row) {
-            
 
+<style scoped>
+body {
+    margin: 0;
+    overflow: hidden;
+    /* 禁止页面滚动 */
+}
 
-            const x = row.row.bidder === '我方' ? 'white-row' : 'gray-row';
-            console.log("eeeee",row,  row.row.bidder,x);
-            return x;
-        }
-    }
-};
-</script>
-
-
-<template>
-    <div v-bind="$attrs" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; border: 1px solid black; position: relative;">
-        
-        <!-- 剩余轮数显示 (左上角) -->
-        <div class="remaining-rounds" style="position: absolute; top: 10px; left: 10px; font-size: 16px; font-weight: bold;">
-            剩余轮数: {{ remainingRounds }} 轮
-        </div>
-        <!-- 倒计时显示 -->
-        <div class="countdown-timer">
-            倒计时: {{ formattedCountdown }}
-        </div>
-
-        <!-- 四个子页面 -->
-        <div v-for="(page, index) in subPages" :key="index" class="subpage">
-            <h3>{{ page.title }}</h3>
-            <p>{{ page.content }}</p>
-            <!-- 仅在第一个子页面显示横向排列的下拉菜单 -->
-            <div v-if="index === 0" class="horizontal-options">
-                <div v-for="(items, category) in groceryStore" :key="category" class="option-group">
-                    <label :for="category">{{ category }}</label>
-                    <select :id="category" v-model="userSelections[category]">
-                        <option v-for="item in items" :key="item" :value="item">{{ item }}</option>
-                    </select>
-                </div>
-            </div>
-
-            <div v-if="index === 1" class="agent-suggestion">
-                <!-- 查看提示复选框 -->
-                <div style="margin-bottom: 10px;">
-                <label>
-                    <input type="checkbox" v-model="showHints" />
-                    查看提示
-                </label>
-                </div>
-
-                <!-- 提示表格 -->
-                <el-table :data="[agentSuggestion]" style="width: 100%">
-                <el-table-column
-                    v-for="(category, index) in Object.keys(agentSuggestion)"
-                    :key="index"
-                    :label="category"
-                    :prop="category"
-                >
-                    <template #default>
-                    <span>
-                        <!-- {{ showHints ? agentSuggestion[category] : "?" }} -->
-                        {{ showHints ? domain_data_content[category][agentSuggestion[category]] : "?" }}
-                        <!-- {{ showHints ? index : "?" }} -->
-                        
-                    </span>
-                    </template>
-                </el-table-column>
-                </el-table>
-            </div>
-
-
-
-
-            <!-- <div v-if="index === 2" class="scrollable-table">
-                <el-table :data="reversedBidHistory" style="width: 100%">
-                <el-table-column label="轮次" prop="round"></el-table-column>
-                <el-table-column label="出价方" prop="bidder"></el-table-column>
-
-                
-                <template v-for="(items, category) in groceryStore" :key="category">
-                    <el-table-column :label="category">
-                    <template #default="{ row }">
-                        <span>{{ getBidItemsByCategory(row.bidContent)[Object.keys(groceryStore).indexOf(category)] }}</span>
-                    </template>
-                    </el-table-column>
-                </template>
-                </el-table>
-            </div> -->
-
-            <div v-if="index === 2" class="scrollable-table">
-                <el-table 
-                    :data="reversedBidHistory" 
-                    style="width: 100%" 
-                    :row-class-name="setRowClass"
-                    
-                >
-                    <el-table-column label="轮次" prop="round"></el-table-column>
-                    <el-table-column label="出价方" prop="bidder"></el-table-column>
-
-                    <!-- 遍历 groceryStore 中的所有商品类别 -->
-                    <template v-for="(items, category) in groceryStore" :key="category" >
-                        <el-table-column :label="category">
-                            <template #default="{ row }">
-                                <span>{{ getBidItemsByCategory(row.bidContent)[Object.keys(groceryStore).indexOf(category)] }}</span>
-                            </template>
-                        </el-table-column>
-                    </template>
-                </el-table>
-            </div>
-
-
-
-            <div v-if="index === 3" class="image-display">
-                <img src="@/assets/3.png" alt="展示图片" style="max-width: 100%; height: auto;">
-            </div>
-
-
-        </div>
-    </div>
-
-    <!-- 底部按钮 -->
-    <div class="button-container-bidding" style="margin-top: 20px; text-align: center;">
-        <!--<el-button type="primary" @click="handleTest">测试</el-button> -->
-        <el-button type="primary" @click="handleBidClick">出价</el-button>
-        <el-button type="primary" @click="handleBidSuggestionClick">按照代理建议出价</el-button>
-        <el-button type="success" @click="handleAcceptClick">接受</el-button>
-        <el-button type="danger" @click="handleRejectClick">拒绝</el-button>
-    </div>
-</template>
-
-<style>
-/* 样式调整 */
-div {
+.container {
+    display: flex;
+    height: 85vh;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
-/* 倒计时组件的独立样式 */
-.countdown-timer {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333; /* 默认字体颜色 */
-    margin-bottom: 20px; /* 增加与子页面的间距 */
+.left-panel {
+    flex: 0 0 40%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #f5f5f5;
 }
 
-/* 子页面样式 */
-.subpage {
-    border: 1px solid gray;
-    padding: 10px;
+.right-panel {
+    flex: 0 0 60%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-/* 横向排列样式 */
-.horizontal-options {
+.status-bar {
     display: flex;
-    gap: 20px; /* 控制类别之间的水平间隔 */
-    flex-wrap: wrap; /* 自动换行 */
-}
-
-.option-group {
-    display: flex;
-    flex-direction: column; /* 让类别和选项垂直排列 */
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    width: 150px; /* 设置固定宽度 */
-    box-sizing: border-box; /* 确保宽度包含内边距和边框 */
-}
-
-.option-group label {
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    font-size: 20px;
     font-weight: bold;
 }
 
-.button-container-bidding {
-  position: fixed; /* 固定位置 */
-  bottom: 100px; /* 距离底部 100px */
-  left: 50%; 
-  transform: translateX(-50%); /* 使容器居中 */
-  z-index: 1000; /* 确保按钮在其他元素之上 */
-  display: flex; /* 使用 flexbox 布局 */
-  gap: 10px; /* 按钮之间的间距 */
+.table-container {
+    height: 90%;
+    /* 留出顶部状态栏的空间 */
+    overflow-y: auto;
 }
 
-.scrollable-table {
-  width: 100%;
-  max-height: 400px;  /* 设置最大宽度为1000px */
-  overflow-x: auto;   /* 使表格内容可以水平滚动 */
-  margin: 20px 0;     /* 增加表格和其他内容之间的间距 */
+.history-table {
+    width: 100%;
 }
 
-
-
-/* 出价历史样式 */
-.bid-history-item {
-    margin-top: 10px;
+.suggestion-table {
+    margin: 0 0;
+    width: 100%;
 }
 
-.bid-history-item ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.bid-history-item li {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-
-.agent-suggestion {
-    display: flex;
-    flex-direction: column; /* 设置竖直排列 */
-    gap: 10px; /* 每个类别之间的间隔 */
-}
-
-
-/* .white-row {
-    background-color: #ffffff; 
-}
-.gray-row {
-    background-color: #949494; 
-} */
-
-
-::v-deep(.white-row) tr {
-    background-color: #ffffff !important;
-}
-
-::v-deep(.gray-row) tr {
-    background-color: #f5f5f5 !important;
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 </style>

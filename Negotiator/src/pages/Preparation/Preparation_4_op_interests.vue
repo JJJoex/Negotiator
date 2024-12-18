@@ -3,7 +3,29 @@ import { ref, watch, onMounted, nextTick } from 'vue';
 import issuesData from '../specific_contents/interests_issues.json';
 import * as echarts from 'echarts';
 import { ElMessage } from 'element-plus';
+import footerComp from '../../components/footer.vue'
+const nextTitle = ref('下一页')
+const nextDetail = ref('我方议题')
+const previousTitle = ref('上一页')
+const previousDetail = ref('谈判设置')
+const showPrevious = ref(true)
+const showNext = ref(true)
+const goToNextPage = () => {
+    const dataToSend = {};
+  const total=Object.values(sliders.value).reduce((sum, value) => sum + value, 0);
 
+
+  for (const [key, value] of Object.entries(sliders.value)) {
+    dataToSend[key] = total > 0 ? value / total : 0; 
+  }
+
+
+  // 使用 $emit 发送数据给父组件
+  emit('nextPage', dataToSend);
+}
+const goToPreviousPage = () => {
+    emit('previousPage')
+}
 const { nego_settings_data } = defineProps({
     nego_settings_data: Object,
 });
@@ -189,11 +211,9 @@ const handleSubmit = () => {
       </div>
 
 
-      <div class="button-container">
-          <el-button class="button preset" @click="presetClick">预设</el-button>
-          <el-button class="button random" @click="randomClick">随机！</el-button>
-          <el-button class="button next-step" @click="handleSubmit">下一步</el-button>
-      </div>
+      <footerComp :next="nextTitle" :nextDetail="nextDetail" :previous="previousTitle"
+            :previousDetail="previousDetail" :showPrevious="showPrevious" :showNext="showNext" @next-page="goToNextPage"
+            @previous-page="goToPreviousPage" />
   </div>
 </template>
 
@@ -362,26 +382,7 @@ gap: 10px; /* 按钮之间的间距 */
 }
 
 
-/* 按钮样式 */
-.button {
-    margin: 0 15px; /* 每个按钮之间的间距 */
-    font-size: 18px; /* 按钮字体大小 */
-}
-
-
-/* 预设按钮样式 - 浅绿色 */
-.preset {
-    background-color: #cceccc; /* 浅绿色 */
-}
-
-/* 随机按钮样式 - 浅红色 */
-.random {
-    background-color: #ffcccb; /* 浅红色 */
-}
-
-/* 下一步按钮样式 - 天蓝色 */
-.next-step {
-    background-color: #49b9ff; /* 天蓝色 */
-    -webkit-text-fill-color: #ffffff;
+footerComp {
+    width: 100%;
 }
 </style>

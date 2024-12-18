@@ -1,17 +1,11 @@
 <script setup lang="js">
-import { ref ,reactive,watch} from 'vue';
+import { ref, reactive, watch } from 'vue';
 import steps from './components/steps.vue'
-import { ArrowRightBold, ArrowLeftBold } from '@element-plus/icons-vue';
 import { useRouter, useRoute, RouterView } from 'vue-router';
 
 import { useStore } from 'vuex';
 
-import {sendJson} from './pages/SendMessage';
-
-
-const nextPage = ref('准备阶段');
-const previousPage = ref('查看结果');
-const showPrevious = ref(false);
+import { sendJson } from './pages/SendMessage';
 
 const router = useRouter();
 const route = useRoute();
@@ -51,8 +45,8 @@ const goToNext = () => {
     console.log('App.vue中, Op Issues:', store.state.op_issues_data);
     // console.log(store.state.nego_settings_data['whoFirst'],store.state.nego_settings_data['whoFirst']==="1");
 
-    
-    
+
+
     const my_intr = Object.values(store.state.my_interests_data).map(value => {
       const precision = getPrecision(value);
       return parseFloat(value.toFixed(precision)); // 保留原始精度
@@ -63,33 +57,33 @@ const goToNext = () => {
       return parseFloat(value.toFixed(precision)); // 保留原始精度
     });
 
-    console.log(my_intr,op_intr);
+    console.log(my_intr, op_intr);
 
 
     const my_issues = Object.values(store.state.my_issues_data).map(category => Object.values(category));
     const op_issues = Object.values(store.state.op_issues_data).map(category => Object.values(category));
 
-    console.log(my_issues,op_issues);
+    console.log(my_issues, op_issues);
 
 
 
 
 
 
-    const data_to_send={
+    const data_to_send = {
       Domain: store.state.nego_settings_data["Domain"],
       Rounds: store.state.nego_settings_data["BiddingRounds"],
       Times: store.state.nego_settings_data["BiddingTime"],
-      First: store.state.nego_settings_data['whoFirst']==="1"?true:false,
+      First: store.state.nego_settings_data['whoFirst'] === "1" ? true : false,
       Profile: {
-        my:[
+        my: [
           store.state.nego_settings_data['settingValues']['my']["value1"],
           store.state.nego_settings_data['settingValues']['my']["value2"],
           store.state.nego_settings_data['settingValues']['my']["value3"],
           store.state.nego_settings_data['settingValues']['my']["value4"],
           store.state.nego_settings_data['settingValues']['my']["value5"]
         ],
-        op:[
+        op: [
           store.state.nego_settings_data['settingValues']['op']["value1"],
           store.state.nego_settings_data['settingValues']['op']["value2"],
           store.state.nego_settings_data['settingValues']['op']["value3"],
@@ -97,12 +91,12 @@ const goToNext = () => {
           store.state.nego_settings_data['settingValues']['op']["value5"]
         ]
       },
-      Role:store.state.nego_settings_data['roles']['my'],
+      Role: store.state.nego_settings_data['roles']['my'],
 
-      MyInterests:my_intr,
-      MyIssues:my_issues,
-      OpInterests:op_intr,
-      OpIssues:op_issues
+      MyInterests: my_intr,
+      MyIssues: my_issues,
+      OpInterests: op_intr,
+      OpIssues: op_issues
 
 
 
@@ -186,134 +180,90 @@ watch(
 
 </script>
 
-
-
-
-
-
 <template>
   <div id="app">
+    <!-- 固定标题 -->
     <div class="header">
-      <div id="title">自动谈判平台</div>
-      <div id="steps">
+      <div id="title" class="header-title">自动谈判平台</div>
+      <div id="steps" class="steps-navigator">
         <steps />
       </div>
     </div>
+
+    <!-- 主体内容 -->
     <div class="body">
-      <RouterView style="width: 100%;"/>
-
-
-    </div>
-    <div class="footer">
-      <div id="previous" @click="goToPrevious" v-if="showPrevious">
-        <div style="font-size: 5px; text-align: right;">
-          <ArrowLeftBold style="width: 5em; height: 5em; margin: 20px;" />
-        </div>
-        <div style="text-align: left;">
-          <p>上一步</p>
-          <p style="font-size: 25px; font-weight: bolder;">{{ previousPage }}</p>
-        </div>
-      </div>
-      <div id="next" @click="goToNext">
-        <div style="text-align: right;">
-          <p>下一步</p>
-          <p style="font-size: 25px; font-weight: bolder;">{{ nextPage }}</p>
-        </div>
-        <div style="font-size: 5px; text-align: left;">
-          <ArrowRightBold style="width: 5em; height: 5em; margin: 20px;" />
-        </div>
-      </div>
+      <RouterView style="width: 100%;" />
     </div>
   </div>
 </template>
 
-<style>
-*{ 
- -webkit-touch-callout:none; 
- -webkit-user-select:none; 
- -khtml-user-select:none; 
- -moz-user-select:none;
- -ms-user-select:none; 
- user-select:none; 
-} 
+<style scoped>
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 #app {
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: 100vh;
-  font-family: "Times New Roman", "宋体";
-}
-
-.header {
-  font-weight: bold;
-  align-items: center;
-  display: flex;
   width: 100%;
-  height: 10%;
-  background-color: #8fcedac8;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  /* 浅灰背景提升内容区域对比度 */
+  /* font-family: "Times New Roman", "宋体"; */
 }
 
 .body {
+  flex: 1;
+  overflow-y: auto;
+  box-sizing: border-box;
   width: 100%;
-  height: 80%;
-  overflow: scroll;
-}
-
-.footer {
-  display: flex;
-  width: 100%;
-  height: 10%;
-  background-color: #8fcedac8;
-  justify-content: right;
-}
-
-#title {
-  display: flex;
-  width: 30%;
   height: 100%;
+}
+.header {
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  /* 标题和导航条分别靠左和靠右 */
+  width: 100%;
+  height: 60px;
+  /* 固定高度，可根据需求调整 */
+  padding: 0 20px;
+  /* 内边距，保持内容与边界间距 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* 添加阴影效果 */
+  background-color: #ffffff;
+  /* 背景色，可根据需求调整 */
+  box-sizing: border-box;
+}
+
+.header-title {
   font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  /* 标题文字颜色 */
 }
 
-#steps {
-  width: 70%;
-  height: 80%;
-  padding: 10px 0 0;
-}
-
-#previous,
-#next {
+.steps-navigator {
   display: flex;
-  width: 50%;
-  height: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  /* 右对齐 */
+  flex: 1;
+  /* 占据剩余空间 */
 }
 
-#previous div,
-#next div {
-  width: 50%;
-  flex-direction: row;
-  align-items: center;
-}
-
-p {
-  margin: 0;
-}
-
-#previous:hover,
-#next:hover {
-  background-color: #77adb7;
-}
-
-::-webkit-scrollbar {
-  /* display: none; */
-  width: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #c5c5c5;
-  /* border-radius: 10px; */
+.steps-navigator>* {
+  max-width: 1500px;
+  /* 导航条最大宽度 */
+  min-width: 300px;
+  /* 导航条最小宽度 */
+  width: 100%;
+  /* 根据父元素适配 */
 }
 </style>
