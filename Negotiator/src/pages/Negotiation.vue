@@ -69,6 +69,7 @@
 
 <script setup lang="js">
 import { ref, reactive, onMounted, computed, watch, onBeforeUnmount } from 'vue';
+<<<<<<< HEAD
 import { ElMessage } from 'element-plus';  // 引入 ElMessage 用于 Toast 提示
 
 import issuesData from './specific_contents/interests_issues.json';
@@ -89,6 +90,7 @@ const goToPreviousPage = () => {
 
 // 初始倒计时
 const countdown = ref(null);
+<<<<<<< HEAD
 const remainingRounds = ref(null);
 
 const showSuggestions = ref('查看AI出价')
@@ -204,38 +206,13 @@ const onCountdownEnd = () => {
     sendJson(7, {});
 };
 
-const stopCountdown = () => {
-    if (timerId !== null) {
-        clearInterval(timerId);
-        timerId = null;
-    }
-};
+const formatBidHistory = formatHistory(bidHistory, groceryStore)
 
-// 修改 startCountdown 函数
-const startCountdown = () => {
-    stopCountdown(); // 确保之前的计时器被清除
-    timerId = setInterval(() => {
-        if (countdown.value > 0) {
-            countdown.value--;
-        } else {
-            stopCountdown();
-            onCountdownEnd();
-        }
-    }, 1000);
-};
-
-// 格式化倒计时为 "xxx分xxx秒" 格式
 const formattedCountdown = computed(() => {
     const minutes = Math.floor(countdown.value / 60); // 计算分钟
     const seconds = countdown.value % 60; // 计算剩余秒数
     return `${minutes}分${seconds}秒`; // 返回格式化后的字符串
 });
-
-// 在组件销毁前停止计时器
-onBeforeUnmount(() => stopCountdown());
-
-// 启动倒计时
-onMounted(() => startCountdown());
 
 const route = useRoute();
 
@@ -374,6 +351,7 @@ body {
     /* 禁止页面滚动 */
 }
 
+<<<<<<< HEAD
 .container {
     display: flex;
     height: 85vh;
@@ -424,5 +402,182 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
+=======
+            const x = row.row.bidder === '我方' ? 'white-row' : 'gray-row';
+            console.log("eeeee",row,  row.row.bidder,x);
+            return x;
+        }
+    }
+};
+</script>
+
+
+<template>
+    <div class="bidding-input">
+        <div class="ending">
+            <p>剩余轮数: {{ remainingRounds }} 轮</p>
+            <p>倒计时: {{ formattedCountdown }}</p>
+        </div>
+        <!-- 倒计时显示 -->
+        <div class="countdown-timer">
+            倒计时: {{ formattedCountdown }}
+        </div>
+
+        <!-- 四个子页面 -->
+        <div v-for="(page, index) in subPages" :key="index" class="subpage">
+            <h3>{{ page.title }}</h3>
+            <p>{{ page.content }}</p>
+            <!-- 仅在第一个子页面显示横向排列的下拉菜单 -->
+            <div v-if="index === 0" class="horizontal-options">
+                <div v-for="(items, category) in groceryStore" :key="category" class="option-group">
+                    <label :for="category">{{ category }}</label>
+                    <select :id="category" v-model="userSelections[category]">
+                        <option v-for="item in items" :key="item" :value="item">{{ item }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div v-if="index === 1" class="agent-suggestion">
+                <!-- 查看提示复选框 -->
+                <div style="margin-bottom: 10px;">
+                <label>
+                    <input type="checkbox" v-model="showHints" />
+                    查看提示
+                </label>
+                </div>
+
+                <!-- 提示表格 -->
+                <el-table :data="[agentSuggestion]" style="width: 100%">
+                <el-table-column
+                    v-for="(category, index) in Object.keys(agentSuggestion)"
+                    :key="index"
+                    :label="category"
+                    :prop="category"
+                >
+                    <template #default>
+                    <span>
+                        <!-- {{ showHints ? agentSuggestion[category] : "?" }} -->
+                        {{ showHints ? domain_data_content[category][agentSuggestion[category]] : "?" }}
+                        <!-- {{ showHints ? index : "?" }} -->
+                        
+                    </span>
+                    </template>
+                </el-table-column>
+                </el-table>
+            </div>
+
+
+
+
+            <!-- <div v-if="index === 2" class="scrollable-table">
+                <el-table :data="reversedBidHistory" style="width: 100%">
+                <el-table-column label="轮次" prop="round"></el-table-column>
+                <el-table-column label="出价方" prop="bidder"></el-table-column>
+
+                
+                <template v-for="(items, category) in groceryStore" :key="category">
+                    <el-table-column :label="category">
+                    <template #default="{ row }">
+                        <span>{{ getBidItemsByCategory(row.bidContent)[Object.keys(groceryStore).indexOf(category)] }}</span>
+                    </template>
+                    </el-table-column>
+                </el-table>
+            </div> -->
+
+            <div v-if="index === 2" class="scrollable-table">
+                <el-table 
+                    :data="reversedBidHistory" 
+                    style="width: 100%" 
+                    :row-class-name="setRowClass"
+                    
+                >
+                    <el-table-column label="轮次" prop="round"></el-table-column>
+                    <el-table-column label="出价方" prop="bidder"></el-table-column>
+
+                    <!-- 遍历 groceryStore 中的所有商品类别 -->
+                    <template v-for="(items, category) in groceryStore" :key="category" >
+                        <el-table-column :label="category">
+                            <template #default="{ row }">
+                                <span>{{ getBidItemsByCategory(row.bidContent)[Object.keys(groceryStore).indexOf(category)] }}</span>
+                            </template>
+                        </el-table-column>
+                    </template>
+                </el-table>
+            </div>
+
+
+
+            <div v-if="index === 3" class="image-display">
+                <img src="@/assets/3.png" alt="展示图片" style="max-width: 100%; height: auto;">
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- 底部按钮 -->
+    <div class="button-container-bidding" style="margin-top: 20px; text-align: center;">
+        <!--<el-button type="primary" @click="handleTest">测试</el-button> -->
+        <el-button type="primary" @click="handleBidClick">出价</el-button>
+        <el-button type="primary" @click="handleBidSuggestionClick">按照代理建议出价</el-button>
+        <el-button type="success" @click="handleAcceptClick">接受</el-button>
+        <el-button type="danger" @click="handleRejectClick">拒绝</el-button>
+    </div>
+</template>
+
+<style>
+.bidding-input {
+    width: 40%;
+    height: 100%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.bidding-input .el-select {
+    --el-select-width: 200px;
+}
+
+.bidding-input .el-form-item__label {
+    color:black;
+}
+.ending {
+    display: flex;
+    margin: 10px 0;
+    font-size: larger;
+    justify-content:space-between;
+    font-weight: bolder;
+}
+
+.display {
+    width: 60%;
+    height: 100%;
+    overflow: scroll;
+    text-align: right;
+}
+
+.display .el-table tr{
+    background-color: rgb(226, 240, 203);
+}
+
+.el-table tbody tr{
+    pointer-events: none;
+}
+
+
+/* .white-row {
+    background-color: #ffffff; 
+}
+.gray-row {
+    background-color: #949494; 
+} */
+
+
+::v-deep(.white-row) tr {
+    background-color: #ffffff !important;
+}
+
+::v-deep(.gray-row) tr {
+    background-color: #f5f5f5 !important;
+>>>>>>> main
 }
 </style>

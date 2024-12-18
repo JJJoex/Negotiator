@@ -28,7 +28,7 @@ const goToNext = () => {
   if (route.path === '/description') {
     router.push('/preparation');
     showPrevious.value = true;
-    nextPage.value = '谈判阶段';
+    nextPage.value = '开始谈判';
     previousPage.value = '欢迎页面';
   }
   else if (route.path === '/preparation') {
@@ -130,7 +130,7 @@ const goToNext = () => {
   else if (route.path === '/finish') {
     router.push('/description');
     showPrevious.value = false;
-    nextPage.value = '准备阶段';
+    nextPage.value = '谈判准备';
     previousPage.value = '';
   }
 }
@@ -138,17 +138,16 @@ const goToPrevious = () => {
   if (route.path === '/preparation') {
     router.push('/description');
     showPrevious.value = false;
-    nextPage.value = '准备阶段';
+    nextPage.value = '谈判准备';
     previousPage.value = '';
   }
   else if (route.path === '/negotiation') {
     router.push('/preparation');
     showPrevious.value = true;
-    nextPage.value = '谈判阶段';
+    nextPage.value = '谈判设定';
     previousPage.value = '欢迎页面';
   }
 };
-
 
 
 // 获取 Vuex 数据
