@@ -9,7 +9,7 @@
             </div>
             <div v-if="prepare.domain" class="domain-description">
                 <h3>谈判域：{{ prepare.domain }}</h3>
-                <!-- <p>{{ selectedOption.description }}</p> -->
+                <p>{{ backendData[prepare.domain].description }}</p>
             </div>
         </div>
         <div class="domain-settings">
@@ -17,8 +17,8 @@
             <el-form :inline="true" :column="2" label-width="120px">
                 <el-form-item label="我方角色">
                     <el-radio-group v-model="prepare.roles.my" size="large">
-                        <el-radio-button value="0" :label="roles[0]" />
-                        <el-radio-button value="1" :label="roles[1]" />
+                        <el-radio-button value="0" :label="backendData[prepare.domain].role[0]" />
+                        <el-radio-button value="1" :label="backendData[prepare.domain].role[1]" />
                     </el-radio-group>
                 </el-form-item>
                 <el-form-item label="谈判轮数(我方出价轮数)">
@@ -98,13 +98,13 @@
                 <h2>我方兴趣和议题偏好</h2>
                 <div class="interest-setting">
                     <div class="interest-issue-sliders">
-                        <template v-for="key in Object.keys(prepare.my_interests)">
+                        <template v-for="key in Object.keys(slider_value.my_interests)">
                             <span>{{ key }}</span>
-                            <el-slider v-model="prepare.my_interests[key]" :min="0" :max="10" :step="1" />
-                            <template v-if="prepare.my_interests[key]"
-                                v-for="issue in Object.keys(prepare.my_issues[key])">
+                            <el-slider v-model="slider_value.my_interests[key]" :min="1" :max="10" :step="1" />
+                            <template v-if="slider_value.my_interests[key]"
+                                v-for="issue, idx in Object.keys(slider_value.my_issues[key])">
                                 <span>{{ issue }}</span>
-                                <el-slider v-model="prepare.my_issues[key][issue]" :min="0" :max="10" :step="1" />
+                                <el-slider v-model="slider_value.my_issues[key][issue]" :min="1" :max="10" :step="1" />
                             </template>
                         </template>
                     </div>
@@ -115,13 +115,13 @@
                 <h2>对方兴趣和议题偏好</h2>
                 <div class="interest-setting">
                     <div class="interest-issue-sliders">
-                        <template v-for="key in Object.keys(prepare.opponent_interests)">
+                        <template v-for="key in Object.keys(slider_value.opponent_interests)">
                             <span>{{ key }}</span>
-                            <el-slider v-model="prepare.opponent_interests[key]" :min="0" :max="10" :step="1" />
-                            <template v-if="prepare.opponent_interests[key]"
-                                v-for="issue in Object.keys(prepare.opponent_issues[key])">
+                            <el-slider v-model="slider_value.opponent_interests[key]" :min="1" :max="10" :step="1" />
+                            <template v-if="slider_value.opponent_interests[key]"
+                                v-for="issue in Object.keys(slider_value.opponent_issues[key])">
                                 <span>{{ issue }}</span>
-                                <el-slider v-model="prepare.opponent_issues[key][issue]" :min="0" :max="10" :step="1" />
+                                <el-slider v-model="slider_value.opponent_issues[key][issue]" :min="1" :max="10" :step="1" />
                             </template>
                         </template>
                     </div>
@@ -129,108 +129,151 @@
                 </div>
             </div>
         </div>
-        <footerComp next="下一步" nextDetail="配置确认" previous="上一步" previousDetail="回到主页" showPrevious="showPrevious"
-            showNext="showNext" @next-page="goToNextPage" @previous-page="goToPreviousPage" />
+        <footerComp next="下一步" nextDetail="配置确认" previous="上一步" previousDetail="回到主页" :showPrevious=true :showNext=true
+            @next-page="goToNextPage" @previous-page="goToPreviousPage" />
     </div>
 </template>
 
 <script setup lang="js">
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, reactive, ref, watch } from 'vue';
 import footerComp from '../components/footer.vue';
 import { useRouter } from 'vue-router';
 const router = useRouter();
 const goToNextPage = () => {
+    updatePrepare(prepare);
     router.push('/ensurement');
 }
 const goToPreviousPage = () => {
     router.push('/introduction');
 }
-const domains = ref(['技术', '商务', '法律', '金融', '其他']);
-const roles = ['甲方', '乙方'];
 
-const prepare = ref({
-    domain: '技术',
+import { useStore } from 'vuex';
+const store = useStore();
+
+import backendData from './specific_contents/backend.json';
+const domains = Object.keys(backendData);
+const prepare = reactive({
+    domain: domains[0],
     roles: {
-        my: '',
-        opponent: ''
+        my: backendData[domains[0]].role[0],
+        opponent: backendData[domains[0]].role[1]
     },
     first: false,
     rounds: 10,
     time: 10,
     my_profile: [0, 0, 0, 0, 0],
     opponent_profile: [0, 0, 0, 0, 0],
-    my_interests: {
-        '技术': 3,
-        '商务': 4,
-        '法律': 5,
-        '金融': 6,
-        '其他': 2
-    },
-    my_issues: {
-        '技术': {
-            '技术1': 1,
-            '技术2': 2,
-            '技术3': 0
-        },
-        '商务': {
-            '商务1': 2,
-            '商务2': 1,
-            '商务3': 1
-        },
-        '法律': {
-            '法律1': 2,
-            '法律2': 1,
-            '法律3': 2
-        },
-        '金融': {
-            '金融1': 0,
-            '金融2': 0,
-            '金融3': 0
-        },
-        '其他': {
-            '其他1': 0,
-            '其他2': 0,
-            '其他3': 0
-        }
-    },
-    opponent_interests: {
-        '技术': 0,
-        '商务': 0,
-        '法律': 0,
-        '金融': 0,
-        '其他': 0
-    },
-    opponent_issues: {
-        '技术': {
-            '技术1': 0,
-            '技术2': 0,
-            '技术3': 0
-        },
-        '商务': {
-            '商务1': 0,
-            '商务2': 0,
-            '商务3': 0
-        },
-        '法律': {
-            '法律1': 0,
-            '法律2': 0,
-            '法律3': 0
-        },
-        '金融': {
-            '金融1': 0,
-            '金融2': 0,
-            '金融3': 0
-        },
-        '其他': {
-            '其他1': 0,
-            '其他2': 0,
-            '其他3': 0
-        }
-    }
+    my_interests: {},
+    my_issues: {},
+    opponent_interests: {},
+    opponent_issues: {}
 })
-watch(prepare.value.roles.my, () => {
-    prepare.value.roles.opponent = prepare.value.roles.my === '0' ? '1' : '0';
+
+const slider_value = reactive({
+    my_interests: {},
+    my_issues: {},
+    opponent_interests: {},
+    opponent_issues: {}
 })
+
+const initInterestIssues = (domain) => {
+    prepare.my_interests = {};
+    prepare.my_issues = {};
+    prepare.opponent_interests = {};
+    prepare.opponent_issues = {};
+
+    slider_value.my_interests = {};
+    slider_value.my_issues = {};
+    slider_value.opponent_interests = {};
+    slider_value.opponent_issues = {};
+    const interest_count = Object.keys(backendData[domain].issue).length;
+    Object.entries(backendData[domain].issue).forEach(([key, issues]) => {
+        console.log(key, issues);
+        prepare.my_interests[key] = 1 / interest_count;
+        prepare.my_issues[key] = {};
+        prepare.opponent_interests[key] = 1 / interest_count;
+        prepare.opponent_issues[key] = {};
+        slider_value.my_interests[key] = 5;
+        slider_value.my_issues[key] = {};
+        slider_value.opponent_interests[key] = 5;
+        slider_value.opponent_issues[key] = {};
+        const issueCount = issues.length;
+        issues.forEach(issue => {
+            console.log(prepare)
+            prepare.my_issues[key][issue] = 1 / issueCount * prepare.my_interests[key];
+            prepare.opponent_issues[key][issue] = 1 / issueCount * prepare.opponent_interests[key];
+            slider_value.my_issues[key][issue] = 5;
+            slider_value.opponent_issues[key][issue] = 5;
+        });
+    });
+}
+
+const updateInterestIssues = () => {
+    prepare.my_interests = {};
+    prepare.my_issues = {};
+    prepare.opponent_interests = {};
+    prepare.opponent_issues = {};
+    const totalMyInterest = {};
+    const totalOpponentInterest = {};
+    Object.entries(backendData[prepare.domain].issue).forEach(([key, issues]) => {
+        totalMyInterest[key] += slider_value.my_interests[key];
+        totalOpponentInterest[key] += slider_value.opponent_interests[key];
+        prepare.my_issues[key] = {};
+        prepare.opponent_issues[key] = {};
+        const totalMyIssue = {};
+        const totalOpponentIssue = {};
+        totalMyIssue[key] = 0;
+        totalOpponentIssue[key] = 0;
+        issues.forEach(issue => {
+            totalMyIssue[key] += slider_value.my_issues[key][issue];
+            totalOpponentIssue[key] += slider_value.opponent_issues[key][issue];
+        })
+        issues.forEach(issue => {
+            prepare.my_issues[key][issue] = slider_value.my_interests[key][issue] / totalMyIssue[key];
+            prepare.opponent_issues[key][issue] = slider_value.opponent_interests[key][issue] / totalOpponentIssue[key];
+        });
+
+    });
+    Object.entries(backendData[prepare.domain].issue).forEach(([key, issues]) => {
+        prepare.my_interests[key] = totalMyInterest[key] / Object.keys(totalMyInterest).length;
+        prepare.opponent_interests[key] = totalOpponentInterest[key] / Object.keys(totalOpponentInterest).length;
+        issues.forEach(issue => {
+            prepare.my_issues[key][issue] *= prepare.my_interests[key];
+            prepare.opponent_issues[key][issue] *= prepare.opponent_interests[key];
+        });
+    });
+}
+
+
+watch(() => prepare.domain, (newVal) => {
+    console.log('domain changed');
+    initInterestIssues(newVal);
+    initChart();
+})
+
+// watch(() => prepare.my_interests, (newVal) => {
+//     console.log('my_interests changed');
+//     updateInterestIssues();
+//     updateChart();
+// })
+
+// watch(() => prepare.opponent_interests, (newVal) => {
+//     console.log('opponent_interests changed');
+//     updateInterestIssues();
+//     updateChart();
+// })
+
+// watch(() => prepare.my_issues, (newVal) => {
+//     console.log('my_issues changed');
+//     updateInterestIssues();
+//     updateChart();
+// })
+
+// watch(() => prepare.opponent_issues, (newVal) => {
+//     console.log('opponent_issues changed');
+//     updateInterestIssues();
+//     updateChart();
+// })
 
 const marks_1 = {
     "-2": "完全不倾向竞争",
@@ -311,10 +354,14 @@ const handleOpponentData = (prepare) => {
     }
     return Data;
 }
-const MyData = handleMyData(prepare.value);
-const OpponentData = handleOpponentData(prepare.value);
-
 onMounted(() => {
+    initInterestIssues(domains[0]);
+    initChart();
+})
+
+const initChart = () => {
+    const MyData = handleMyData(prepare);
+    const OpponentData = handleOpponentData(prepare);
     const myChart = echarts.init(document.getElementById('myChart'));
     const opponentChart = echarts.init(document.getElementById('opponentChart'));
 
@@ -358,7 +405,58 @@ onMounted(() => {
 
     myChart.setOption(myOption);
     opponentChart.setOption(opponentOption);
-})
+}
+
+// const updateChart = () => {
+//     const MyData = handleMyData(prepare);
+//     const OpponentData = handleOpponentData(prepare);
+//     const myChart = echarts.init(document.getElementById('myChart'));
+//     const opponentChart = echarts.init(document.getElementById('opponentChart'));
+
+//     const myOption = {
+//         title: {
+//             text: '我方兴趣与议题',
+//             left: 'center'
+//         },
+//         tooltip: {
+//             trigger: 'item',
+//             formatter: '项：{b}<br/>值：{c}'
+//         },
+//         series: {
+//             type: 'sunburst',
+//             data: MyData,
+//             radius: [0, '80%'],
+//             label: {
+//                 rotate: 'radial'
+//             }
+//         }
+//     };
+
+//     const opponentOption = {
+//         title: {
+//             text: '对方兴趣与议题',
+//             left: 'center'
+//         },
+//         tooltip: {
+//             trigger: 'item',
+//             formatter: '项：{b}<br/>值：{c}'
+//         },
+//         series: {
+//             type: 'sunburst',
+//             data: OpponentData,
+//             radius: [0, '80%'],
+//             label: {
+//                 rotate: 'radial'
+//             }
+//         }
+//     };
+
+//     myChart.setOption(myOption);
+//     opponentChart.setOption(opponentOption);
+// }
+const updatePrepare = (prepare) => {
+    store.commit('updatePrepare', prepare);
+}
 
 </script>
 

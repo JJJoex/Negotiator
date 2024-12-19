@@ -3,9 +3,7 @@
         <div class="content">
             <h1>这是主页面内容</h1>
         </div>
-        <footerComp :next="nextTitle" :nextDetail="nextDetail" :previous="previousTitle"
-            :previousDetail="previousDetail" :showPrevious="showPrevious" :showNext="showNext" @next-page="goToNextPage"
-            @previous-page="goToPreviousPage" />
+        <footerComp next="下一页" nextDetail="谈判设置" :showPrevious=false :showNext=true @next-page="goToNextPage" />
     </div>
 </template>
 

@@ -2,33 +2,35 @@ import { createStore } from 'vuex';
 
 const store = createStore({
   state: {
-    nego_settings_data: null,
-    my_interests_data: null,
-    my_issues_data: null,
-    op_interests_data: null,
-    op_issues_data: null,
-    nego_initial_data: null
+    prepare: {
+      domain: '',
+      roles: {
+        my: '',
+        opponent: ''
+      },
+      first: false,
+      rounds: 10,
+      time: 10,
+      my_profile: [0, 0, 0, 0, 0],
+      opponent_profile: [0, 0, 0, 0, 0],
+      my_interests: {},
+      opponent_interests: {},
+      my_issues: {},
+      opponent_issues: {},
+    },
+    finish: {
+      result: '',
+      last_player: '',
+      last_bid: [],
+    }
   },
   mutations: {
-    setNegoSettingsData(state, data) {
-      state.nego_settings_data = data;
+    updatePrepare(state, data) {
+      state.prepare = data;
     },
-    setMyInterestsData(state, data) {
-      state.my_interests_data = data;
-    },
-    setMyIssuesData(state, data) {
-      state.my_issues_data = data;
-    },
-    setOpInterestsData(state, data) {
-      state.op_interests_data = data;
-    },
-    setOpIssuesData(state, data) {
-      state.op_issues_data = data;
-    },
-    setNegoInitialData(state, data) {
-      state.nego_initial_data = data;
+    setFinish(state, data) {
+      state.finish = data;
     }
-
   }
 });
 

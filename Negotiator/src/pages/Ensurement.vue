@@ -13,7 +13,7 @@
             <div id="opponent-interests" class="chart-item"></div>
         </div>
         <footerComp next="下一步" nextDetail="开始谈判" previous="上一步" previousDetail="谈判配置"
-            showPrevious="showPrevious" showNext="showNext" @next-page="goToNextPage" @previous-page="goToPreviousPage" />
+            :showPrevious=true :showNext=true @next-page="goToNextPage" @previous-page="goToPreviousPage" />
     </div>
 </template>
 
@@ -28,45 +28,12 @@ const goToPreviousPage = () => {
     router.push('/preparation');
 }
 
-import {ref, onMounted} from 'vue';
-const prepare = ref({
-    domain: '电子商务',
-    roles: {
-        my: '买家',
-        opponent: '卖家'
-    },
-    first: false,
-    rounds: 3,
-    time: 20,
-    my_interests: {
-        '电子产品': 100,
-        '服装': 200
-    },
-    my_issues: {
-        '电子产品': {
-            '价格': 50,
-            '质量': 50
-        },
-        '服装': {
-            '价格': 100,
-            '质量': 100
-        }
-    },
-    opponent_interests: {
-        '电子产品': 100,
-        '服装': 200
-    },
-    opponent_issues: {
-        '电子产品': {
-            '价格': 50,
-            '质量': 50
-        },
-        '服装': {
-            '价格': 300,
-            '质量': 100
-        }
-    }
-})
+import {ref, onMounted, computed} from 'vue';
+
+import { useStore } from 'vuex';
+
+const store = useStore();
+const prepare = computed(() => store.state.prepare);
 
 import * as echarts from 'echarts/core';
 import { SunburstChart } from 'echarts/charts';
@@ -113,8 +80,6 @@ const handleOpponentData = (prepare) => {
 }
 const MyData = handleMyData(prepare.value);
 const OpponentData = handleOpponentData(prepare.value);
-console.log(MyData, OpponentData);
-
 onMounted(() => {
     const myChart = echarts.init(document.getElementById('my-interests'));
     const opponentChart = echarts.init(document.getElementById('opponent-interests'));
