@@ -2,7 +2,6 @@ import { createStore } from 'vuex';
 
 const store = createStore({
   state: {
-<<<<<<< HEAD
     nego_settings_data: null,
     my_interests_data: null,
     my_issues_data: null,
@@ -11,8 +10,7 @@ const store = createStore({
     nego_initial_data: null,
     curr_nego_state:"negotiating",
     figure_path:null,
-    csv_path:null
-=======
+    csv_path:null,
     prepare: {
       domain: '',
       roles: {
@@ -34,13 +32,11 @@ const store = createStore({
       last_player: '',
       last_bid: [],
     }
->>>>>>> f7d0d8306821e864c930f9a6bd131998a8cecaac
   },
   mutations: {
     updatePrepare(state, data) {
       state.prepare = data;
     },
-<<<<<<< HEAD
     setMyInterestsData(state, data) {
       state.my_interests_data = data;
     },
@@ -68,11 +64,9 @@ const store = createStore({
       state.csv_path = path;
     },
 
-=======
     setFinish(state, data) {
       state.finish = data;
     }
->>>>>>> f7d0d8306821e864c930f9a6bd131998a8cecaac
   }
 });
 

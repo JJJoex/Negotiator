@@ -1,6 +1,7 @@
 <template>
     <div class="container">
-        <el-descriptions title="谈判信息确认" border>
+        <h2>谈判信息确认</h2>
+        <el-descriptions border>
             <el-descriptions-item label="谈判域">{{prepare.domain}}</el-descriptions-item>
             <el-descriptions-item label="谈判角色(我方)">{{prepare.roles.my}}</el-descriptions-item>
             <el-descriptions-item label="谈判角色(对方)">{{prepare.roles.opponent}}</el-descriptions-item>

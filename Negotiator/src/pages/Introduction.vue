@@ -9,13 +9,7 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
-import { ref } from "vue";
 import footerComp from "../components/footer.vue";
-
-const nextTitle = ref("下一阶段");
-const nextDetail = ref("谈判准备");
-const showPrevious = ref(false);
-const showNext = ref(true);
 
 const router = useRouter();
 const goToNextPage = () => {

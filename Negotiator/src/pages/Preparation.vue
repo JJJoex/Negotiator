@@ -96,36 +96,67 @@
         <div class="interest-issue-setting">
             <div>
                 <h2>我方兴趣和议题偏好</h2>
+                <!-- <pre>{{ prepare.my_issues }}</pre> -->
                 <div class="interest-setting">
                     <div class="interest-issue-sliders">
-                        <template v-for="key in Object.keys(slider_value.my_interests)">
-                            <span>{{ key }}</span>
-                            <el-slider v-model="slider_value.my_interests[key]" :min="1" :max="10" :step="1" />
-                            <template v-if="slider_value.my_interests[key]"
-                                v-for="issue, idx in Object.keys(slider_value.my_issues[key])">
-                                <span>{{ issue }}</span>
-                                <el-slider v-model="slider_value.my_issues[key][issue]" :min="1" :max="10" :step="1" />
+                        <el-collapse accordion>
+                            <template v-for="(key, idx) in Object.keys(my_interests)">
+                                <el-collapse-item :name="idx">
+                                    <template #title>
+                                        <div
+                                            style="display: flex; width: 80%; justify-content: space-between; align-items: center;">
+                                            <div style="width:100px">{{ key }}</div>
+                                            <el-slider v-model="my_interests[key]" :min="0" :max="100"
+                                                :step="1" @click.stop.native @input="() => updateInterestIssues()" />
+                                        </div>
+                                    </template>
+                                    <template v-if="my_interests[key]"
+                                        v-for="issue, idx in Object.keys(my_issues[key])"
+                                        style="display:flex; justify-content: space-between; align-items: center;">
+                                        <div
+                                            style="display: flex; width: 60%; justify-content: space-between; align-items: center; margin-left: 50px;">
+                                            <div style="width: 100px;">{{ issue }}</div>
+                                            <el-slider v-model="my_issues[key][issue]" :min="0" :max="100"
+                                                :step="1"  @input="() => updateInterestIssues()" />
+                                        </div>
+                                    </template>
+                                </el-collapse-item>
                             </template>
-                        </template>
+                        </el-collapse>
                     </div>
-                    <div id="myChart" class="interest-issue-chart" style="width: 50%; height: 500px;"></div>
+                    <div id="myChart" class="interest-issue-chart" style="width: 50%; height: 700px;"></div>
                 </div>
             </div>
             <div>
                 <h2>对方兴趣和议题偏好</h2>
                 <div class="interest-setting">
                     <div class="interest-issue-sliders">
-                        <template v-for="key in Object.keys(slider_value.opponent_interests)">
-                            <span>{{ key }}</span>
-                            <el-slider v-model="slider_value.opponent_interests[key]" :min="1" :max="10" :step="1" />
-                            <template v-if="slider_value.opponent_interests[key]"
-                                v-for="issue in Object.keys(slider_value.opponent_issues[key])">
-                                <span>{{ issue }}</span>
-                                <el-slider v-model="slider_value.opponent_issues[key][issue]" :min="1" :max="10" :step="1" />
+                        <el-collapse  accordion>
+                            <template v-for="(key, idx) in Object.keys(opponent_interests)">
+                                <el-collapse-item :name="idx">
+                                    <template #title>
+                                        <div
+                                            style="display: flex; width: 80%; justify-content: space-between; align-items: center;">
+                                            <div style="width:100px">{{ key }}</div>
+                                            <el-slider v-model="opponent_interests[key]" :min="0" :max="100"
+                                                :step="1" @click.stop.native @input="() => updateInterestIssues()"/>
+                                        </div>
+                                    </template>
+                                    <template v-if="opponent_interests[key]"
+                                        v-for="issue, idx in Object.keys(opponent_issues[key])"
+                                        style="display:flex; justify-content: space-between; align-items: center;">
+                                        <div
+                                            style="display: flex; width: 60%; justify-content: space-between; align-items: center; margin-left: 50px;">
+                                            <div style="width: 100px;">{{ issue }}</div>
+                                            <el-slider v-model="opponent_issues[key][issue]" :min="0" :max="100"
+                                                :step="1" @input="() => updateInterestIssues()" />
+                                        </div>
+                                    </template>
+                                </el-collapse-item>
                             </template>
-                        </template>
+                        </el-collapse>
                     </div>
-                    <div id="opponentChart" class="interest-issue-chart" style="width: 50%; height: 500px;"></div>
+                    <div id="opponentChart" class="interest-issue-chart" style="width: 50%; height: 700px;"></div>
                 </div>
             </div>
         </div>
@@ -134,13 +165,14 @@
     </div>
 </template>
 
+
 <script setup lang="js">
-import { onMounted, reactive, ref, watch } from 'vue';
+import { nextTick, onMounted, reactive, ref, watch } from 'vue';
 import footerComp from '../components/footer.vue';
 import { useRouter } from 'vue-router';
 const router = useRouter();
 const goToNextPage = () => {
-    updatePrepare(prepare);
+    updatePrepare(prepare.value);
     router.push('/ensurement');
 }
 const goToPreviousPage = () => {
@@ -152,7 +184,7 @@ const store = useStore();
 
 import backendData from './specific_contents/backend.json';
 const domains = Object.keys(backendData);
-const prepare = reactive({
+const prepare = ref({
     domain: domains[0],
     roles: {
         my: backendData[domains[0]].role[0],
@@ -169,111 +201,99 @@ const prepare = reactive({
     opponent_issues: {}
 })
 
-const slider_value = reactive({
-    my_interests: {},
-    my_issues: {},
-    opponent_interests: {},
-    opponent_issues: {}
-})
+const my_interests = ref({});
+const my_issues = ref({});
+const opponent_interests = ref({});
+const opponent_issues = ref({});
 
 const initInterestIssues = (domain) => {
-    prepare.my_interests = {};
-    prepare.my_issues = {};
-    prepare.opponent_interests = {};
-    prepare.opponent_issues = {};
+    prepare.value.my_interests = {};
+    prepare.value.my_issues = {};
+    prepare.value.opponent_interests = {};
+    prepare.value.opponent_issues = {};
 
-    slider_value.my_interests = {};
-    slider_value.my_issues = {};
-    slider_value.opponent_interests = {};
-    slider_value.opponent_issues = {};
+    my_interests.value = {};
+    my_issues.value = {};
+    opponent_interests.value = {};
+    opponent_issues.value = {};
+
     const interest_count = Object.keys(backendData[domain].issue).length;
     Object.entries(backendData[domain].issue).forEach(([key, issues]) => {
-        console.log(key, issues);
-        prepare.my_interests[key] = 1 / interest_count;
-        prepare.my_issues[key] = {};
-        prepare.opponent_interests[key] = 1 / interest_count;
-        prepare.opponent_issues[key] = {};
-        slider_value.my_interests[key] = 5;
-        slider_value.my_issues[key] = {};
-        slider_value.opponent_interests[key] = 5;
-        slider_value.opponent_issues[key] = {};
+        prepare.value.my_interests[key] = 1 / interest_count;
+        prepare.value.my_issues[key] = {};
+        prepare.value.opponent_interests[key] = 1 / interest_count;
+        prepare.value.opponent_issues[key] = {};
+
+        my_interests.value[key] = 50;
+        opponent_interests.value[key] = 50;
+        my_issues.value[key] = {};
+        opponent_issues.value[key] = {};
+
         const issueCount = issues.length;
+
         issues.forEach(issue => {
-            console.log(prepare)
-            prepare.my_issues[key][issue] = 1 / issueCount * prepare.my_interests[key];
-            prepare.opponent_issues[key][issue] = 1 / issueCount * prepare.opponent_interests[key];
-            slider_value.my_issues[key][issue] = 5;
-            slider_value.opponent_issues[key][issue] = 5;
+            prepare.value.my_issues[key][issue] = 1 / issueCount * prepare.value.my_interests[key];
+            prepare.value.opponent_issues[key][issue] = 1 / issueCount * prepare.value.opponent_interests[key];
+            
+            my_issues.value[key][issue] = 50;
+            opponent_issues.value[key][issue] = 50;
         });
     });
+    initChart();
 }
+
+
 
 const updateInterestIssues = () => {
-    prepare.my_interests = {};
-    prepare.my_issues = {};
-    prepare.opponent_interests = {};
-    prepare.opponent_issues = {};
-    const totalMyInterest = {};
-    const totalOpponentInterest = {};
-    Object.entries(backendData[prepare.domain].issue).forEach(([key, issues]) => {
-        totalMyInterest[key] += slider_value.my_interests[key];
-        totalOpponentInterest[key] += slider_value.opponent_interests[key];
-        prepare.my_issues[key] = {};
-        prepare.opponent_issues[key] = {};
-        const totalMyIssue = {};
-        const totalOpponentIssue = {};
-        totalMyIssue[key] = 0;
-        totalOpponentIssue[key] = 0;
-        issues.forEach(issue => {
-            totalMyIssue[key] += slider_value.my_issues[key][issue];
-            totalOpponentIssue[key] += slider_value.opponent_issues[key][issue];
-        })
-        issues.forEach(issue => {
-            prepare.my_issues[key][issue] = slider_value.my_interests[key][issue] / totalMyIssue[key];
-            prepare.opponent_issues[key][issue] = slider_value.opponent_interests[key][issue] / totalOpponentIssue[key];
-        });
+    const my_interest_normalized = {};
+    const opponent_interest_normalized = {};
 
-    });
-    Object.entries(backendData[prepare.domain].issue).forEach(([key, issues]) => {
-        prepare.my_interests[key] = totalMyInterest[key] / Object.keys(totalMyInterest).length;
-        prepare.opponent_interests[key] = totalOpponentInterest[key] / Object.keys(totalOpponentInterest).length;
-        issues.forEach(issue => {
-            prepare.my_issues[key][issue] *= prepare.my_interests[key];
-            prepare.opponent_issues[key][issue] *= prepare.opponent_interests[key];
-        });
-    });
+    let my_interest_sum = 0;
+    let opponent_interest_sum = 0;
+    const my_issues_sum = {};
+    const opponent_issues_sum = {};
+    for (let key in my_interests.value) {
+        my_interest_sum += my_interests.value[key];
+        prepare.value.my_issues[key] = {};
+        let issue_sum = 0;
+        for(let issue in my_issues.value[key]) {
+            issue_sum += my_issues.value[key][issue];
+        }
+        my_issues_sum[key] = issue_sum;
+    }
+    for (let key in opponent_interests.value) {
+        opponent_interest_sum += opponent_interests.value[key];
+        prepare.value.opponent_issues[key] = {};
+        let issue_sum = 0;
+        for(let issue in opponent_issues.value[key]) {
+            issue_sum += opponent_issues.value[key][issue];
+        }
+        opponent_issues_sum[key] = issue_sum;
+    }
+    for (let key in my_interests.value) {
+        my_interest_normalized[key] = my_interests.value[key] / my_interest_sum;
+        opponent_interest_normalized[key] = opponent_interests.value[key] / opponent_interest_sum;
+        prepare.value.my_interests[key] = my_interest_normalized[key];
+        prepare.value.opponent_interests[key] = opponent_interest_normalized[key];
+    }
+    for(let key in my_interests.value) {
+        for(let issue in my_issues.value[key]) {
+            prepare.value.my_issues[key][issue] = my_issues.value[key][issue] / my_issues_sum[key] * my_interest_normalized[key];
+        }
+    }
+    for(let key in opponent_interests.value) {
+        for(let issue in opponent_issues.value[key]) {
+            prepare.value.opponent_issues[key][issue] = opponent_issues.value[key][issue] / opponent_issues_sum[key] * opponent_interest_normalized[key];
+        }
+    }
+    updateChart();
 }
 
 
-watch(() => prepare.domain, (newVal) => {
-    console.log('domain changed');
+watch(() => prepare.value.domain, (newVal) => {
     initInterestIssues(newVal);
     initChart();
 })
-
-// watch(() => prepare.my_interests, (newVal) => {
-//     console.log('my_interests changed');
-//     updateInterestIssues();
-//     updateChart();
-// })
-
-// watch(() => prepare.opponent_interests, (newVal) => {
-//     console.log('opponent_interests changed');
-//     updateInterestIssues();
-//     updateChart();
-// })
-
-// watch(() => prepare.my_issues, (newVal) => {
-//     console.log('my_issues changed');
-//     updateInterestIssues();
-//     updateChart();
-// })
-
-// watch(() => prepare.opponent_issues, (newVal) => {
-//     console.log('opponent_issues changed');
-//     updateInterestIssues();
-//     updateChart();
-// })
 
 const marks_1 = {
     "-2": "完全不倾向竞争",
@@ -354,14 +374,14 @@ const handleOpponentData = (prepare) => {
     }
     return Data;
 }
+
 onMounted(() => {
     initInterestIssues(domains[0]);
-    initChart();
 })
 
 const initChart = () => {
-    const MyData = handleMyData(prepare);
-    const OpponentData = handleOpponentData(prepare);
+    const MyData = handleMyData(prepare.value);
+    const OpponentData = handleOpponentData(prepare.value);
     const myChart = echarts.init(document.getElementById('myChart'));
     const opponentChart = echarts.init(document.getElementById('opponentChart'));
 
@@ -407,53 +427,58 @@ const initChart = () => {
     opponentChart.setOption(opponentOption);
 }
 
-// const updateChart = () => {
-//     const MyData = handleMyData(prepare);
-//     const OpponentData = handleOpponentData(prepare);
-//     const myChart = echarts.init(document.getElementById('myChart'));
-//     const opponentChart = echarts.init(document.getElementById('opponentChart'));
+const updateChart = () => {
+    const MyData = handleMyData(prepare.value);
+    const OpponentData = handleOpponentData(prepare.value);
 
-//     const myOption = {
-//         title: {
-//             text: '我方兴趣与议题',
-//             left: 'center'
-//         },
-//         tooltip: {
-//             trigger: 'item',
-//             formatter: '项：{b}<br/>值：{c}'
-//         },
-//         series: {
-//             type: 'sunburst',
-//             data: MyData,
-//             radius: [0, '80%'],
-//             label: {
-//                 rotate: 'radial'
-//             }
-//         }
-//     };
+    const myChartDom = document.getElementById('myChart');
+    const opponentChartDom = document.getElementById('opponentChart');
 
-//     const opponentOption = {
-//         title: {
-//             text: '对方兴趣与议题',
-//             left: 'center'
-//         },
-//         tooltip: {
-//             trigger: 'item',
-//             formatter: '项：{b}<br/>值：{c}'
-//         },
-//         series: {
-//             type: 'sunburst',
-//             data: OpponentData,
-//             radius: [0, '80%'],
-//             label: {
-//                 rotate: 'radial'
-//             }
-//         }
-//     };
+    let myChart = echarts.getInstanceByDom(myChartDom);
+    let opponentChart = echarts.getInstanceByDom(opponentChartDom);
 
-//     myChart.setOption(myOption);
-//     opponentChart.setOption(opponentOption);
-// }
+    const myOption = {
+        title: {
+            text: '我方兴趣与议题',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '项：{b}<br/>值：{c}'
+        },
+        series: {
+            type: 'sunburst',
+            data: MyData,
+            radius: [0, '80%'],
+            label: {
+                rotate: 'radial'
+            }
+        }
+    };
+
+    const opponentOption = {
+        title: {
+            text: '对方兴趣与议题',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '项：{b}<br/>值：{c}'
+        },
+        series: {
+            type: 'sunburst',
+            data: OpponentData,
+            radius: [0, '80%'],
+            label: {
+                rotate: 'radial'
+            }
+        }
+    };
+
+    myChart.setOption(myOption);
+    opponentChart.setOption(opponentOption);
+}
+
 const updatePrepare = (prepare) => {
     store.commit('updatePrepare', prepare);
 }

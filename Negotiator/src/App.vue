@@ -5,12 +5,8 @@ import { useRouter, useRoute, RouterView } from 'vue-router';
 
 import { useStore } from 'vuex';
 
-<<<<<<< HEAD
 import {sendJson} from './pages/SendMessage';
 import { ElMessage } from 'element-plus';
-=======
-import { sendJson } from './pages/SendMessage';
->>>>>>> f7d0d8306821e864c930f9a6bd131998a8cecaac
 
 const router = useRouter();
 const route = useRoute();

@@ -5,7 +5,7 @@ import * as echarts from 'echarts';
 import { ElMessage } from 'element-plus';
 
 
-import {  onUnmounted } from 'vue';
+import { onUnmounted } from 'vue';
 import footerComp from '../../components/footer.vue';
 const nextTitle = ref('下一页')
 const nextDetail = ref('对方兴趣')
