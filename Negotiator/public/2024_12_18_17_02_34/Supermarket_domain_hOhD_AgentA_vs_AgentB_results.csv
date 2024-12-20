@@ -1,0 +1,2 @@
+self_agent,opp_agent,agreement,self_ufun_agreement,opp_ufun_agreement,number_of_steps,pareto_distance,nash_distance
+AgentA,AgentB,,0,0,2,1.0505605932548583,1.1308990042746718

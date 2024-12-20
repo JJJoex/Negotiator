@@ -1,0 +1,2 @@
+self_agent,opp_agent,agreement,self_ufun_agreement,opp_ufun_agreement,number_of_steps,total_social_welfare,pareto_distance,nash_distance
+AgentB,AgentA,"('fairly good', 'none', 'none', 'standard', 'fairly good', 'fairly good')",0.39862833333333325,0.9999999999999999,4,1.3986283333333331,0.0,0.545661407147326

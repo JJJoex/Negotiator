@@ -1,0 +1,2 @@
+self_agent,opp_agent,agreement,self_ufun_agreement,opp_ufun_agreement,number_of_steps,total_social_welfare,pareto_distance,nash_distance
+AgentA,AgentB,"('Crackers', 'Grapes', 'Nachos', 'Jam', 'Leek', 'Beer')",0.3263866666666666,0.9999999999999999,2,1.3263866666666666,0.0,0.5495239276587002
