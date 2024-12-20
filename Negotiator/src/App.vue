@@ -208,133 +208,87 @@ watch(
 </script>
 
 
-
-
-
-
 <template>
   <div id="app">
     <div class="header">
-      <div id="title">自动谈判平台</div>
-      <div id="steps">
+      <div id="title" class="header-title">自动谈判平台</div>
+      <div id="steps" class="steps-navigator">
         <steps />
       </div>
     </div>
     <div class="body">
       <RouterView style="width: 100%;"/>
-
-
-    </div>
-    <div class="footer">
-      <div id="previous" @click="goToPrevious" v-if="showPrevious">
-        <div style="font-size: 5px; text-align: right;">
-          <ArrowLeftBold style="width: 5em; height: 5em; margin: 20px;" />
-        </div>
-        <div style="text-align: left;">
-          <p>上一步</p>
-          <p style="font-size: 25px; font-weight: bolder;">{{ previousPage }}</p>
-        </div>
-      </div>
-      <div id="next" @click="goToNext">
-        <div style="text-align: right;">
-          <p>下一步</p>
-          <p style="font-size: 25px; font-weight: bolder;">{{ nextPage }}</p>
-        </div>
-        <div style="font-size: 5px; text-align: left;">
-          <ArrowRightBold style="width: 5em; height: 5em; margin: 20px;" />
-        </div>
-      </div>
     </div>
   </div>
 </template>
 
 <style>
-*{ 
- -webkit-touch-callout:none; 
- -webkit-user-select:none; 
- -khtml-user-select:none; 
- -moz-user-select:none;
- -ms-user-select:none; 
- user-select:none; 
-} 
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 #app {
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: 100vh;
-  font-family: "Times New Roman", "宋体";
-}
-
-.header {
-  font-weight: bold;
-  align-items: center;
-  display: flex;
   width: 100%;
-  height: 10%;
-  background-color: #8fcedac8;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  /* 浅灰背景提升内容区域对比度 */
+  /* font-family: "Times New Roman", "宋体"; */
 }
 
 .body {
+  flex: 1;
+  overflow-y: auto;
+  box-sizing: border-box;
   width: 100%;
-  height: 80%;
-  overflow: scroll;
-}
-
-.footer {
-  display: flex;
-  width: 100%;
-  height: 10%;
-  background-color: #8fcedac8;
-  justify-content: right;
-}
-
-#title {
-  display: flex;
-  width: 30%;
   height: 100%;
+}
+.header {
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  /* 标题和导航条分别靠左和靠右 */
+  width: 100%;
+  height: 60px;
+  /* 固定高度，可根据需求调整 */
+  padding: 0 20px;
+  /* 内边距，保持内容与边界间距 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* 添加阴影效果 */
+  background-color: #ffffff;
+  /* 背景色，可根据需求调整 */
+  box-sizing: border-box;
+}
+
+.header-title {
   font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  /* 标题文字颜色 */
 }
 
-#steps {
-  width: 70%;
-  height: 80%;
-  padding: 10px 0 0;
-}
-
-#previous,
-#next {
+.steps-navigator {
   display: flex;
-  width: 50%;
-  height: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  /* 右对齐 */
+  flex: 1;
+  /* 占据剩余空间 */
 }
 
-#previous div,
-#next div {
-  width: 50%;
-  flex-direction: row;
-  align-items: center;
-}
-
-p {
-  margin: 0;
-}
-
-#previous:hover,
-#next:hover {
-  background-color: #77adb7;
-}
-
-::-webkit-scrollbar {
-  /* display: none; */
-  width: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #c5c5c5;
-  /* border-radius: 10px; */
+.steps-navigator>* {
+  max-width: 1500px;
+  /* 导航条最大宽度 */
+  min-width: 300px;
+  /* 导航条最小宽度 */
+  width: 100%;
+  /* 根据父元素适配 */
 }
 </style>

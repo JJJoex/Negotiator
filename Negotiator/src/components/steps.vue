@@ -1,8 +1,9 @@
 <template>
   <el-steps :active="activeStep" align-center finish-status="success">
-    <el-step title="欢迎页面"/>
-    <el-step title="准备阶段"/>
-    <el-step title="谈判阶段"/>
+    <el-step title="主页"/>
+    <el-step title="准备设置"/>
+    <el-step title="准备确认"/>
+    <el-step title="开始谈判"/>
     <el-step title="查看结果"/>
   </el-steps>
 </template>
@@ -16,7 +17,8 @@ export default {
       const stepMap = {
         '/description': 0,
         '/preparation': 1,
-        '/negotiation': 2,
+        '/confirmation': 2,
+        '/negotiation': 3,
         '/finish': 4,
       };
       return stepMap[this.$route.path] || 0;

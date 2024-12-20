@@ -10,7 +10,9 @@ const store = createStore({
     nego_initial_data: null,
     curr_nego_state:"negotiating",
     figure_path:null,
-    csv_path:null
+    csv_path:null,
+    last_bidder: null,
+    last_bid: null,
   },
   mutations: {
     setNegoSettingsData(state, data) {
@@ -42,7 +44,12 @@ const store = createStore({
     setCsvPath(state, path) {
       state.csv_path = path;
     },
-
+    setLastBidder(state, bidder) {
+      state.last_bidder = bidder;
+    },
+    setLastBid(state, bid) {
+      state.last_bid = bid;
+    }
   }
 });
 

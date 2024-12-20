@@ -365,7 +365,7 @@ const marks_5 = {
   margin-left: 20px;
   margin-bottom: 20px;
   gap: 12px;
-  width: 200px;
+  width: 100px;
 }
 
 .option-item {
