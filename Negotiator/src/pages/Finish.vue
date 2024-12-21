@@ -3,7 +3,7 @@
         <h2>谈判结果</h2>
         <el-descriptions>
             <el-descriptions-item label="谈判结果">
-                <el-tag>{{ final_state }}</el-tag>
+                <el-tag>{{ final_state === '达成一致' ? '达成一致' : '谈判失败' }}</el-tag>
             </el-descriptions-item>
             <el-descriptions-item label="我方代理">{{ negotiation_settings.roles.my }}</el-descriptions-item>
             <el-descriptions-item label="对方代理">{{ negotiation_settings.roles.op }}</el-descriptions-item>
@@ -19,10 +19,13 @@
             <el-table-column prop="name" label="对比方"></el-table-column>
             <el-table-column prop="收益" label="收益"></el-table-column>
             <el-table-column prop="帕累托距离" label="帕累托距离"></el-table-column>
-            <el-table-column prop="纳什均衡距禇" label="纳什均衡距禇"></el-table-column>
+            <el-table-column prop="纳什均衡距离" label="纳什均衡距离"></el-table-column>
         </el-table>
 
-        <div>
+        <div v-if="final_state === '达成一致'" class="img-div">
+            <img src="../assets/2.png" />
+        </div>
+        <div v-else class="img-div" >
             <img src="../assets/1.png" />
         </div>
         <footerComp next="下一步" nextDetail="回到首页" :showPrevious=false :showNext=true @next-page="goToNextPage" />
@@ -60,5 +63,11 @@ const contrastData = ref([
     display: block;
     margin: 20px;
     /* justify-self: unset; */
+}
+.img-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 </style>

@@ -389,13 +389,16 @@ const handleBidClick = () => {
     //     bidContent: Object.values(userSelections.value)
     // }))
     do_bidding(userSelections.value, '我方');
+    setTimeout(() => {
+        Object.keys(domain_data_content.value).forEach(key => {
+            agentSuggestion.value[key] = getRandomInterger(0, domain_data_content.value[key].length - 1);
+        });
+    }, 4000);
 };
 
 const handleBidSuggestionClick = () => {
     userSelections.value = { ...agentSuggestion.value };
-    Object.keys(domain_data_content.value).forEach(key => {
-        agentSuggestion.value[key] = getRandomInterger(0, domain_data_content.value[key].length - 1);
-    });
+    
 };
 
 const handleAcceptClick = () => {
